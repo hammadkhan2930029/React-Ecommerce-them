@@ -1,0 +1,106 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 2px 25px;
+    flex-wrap: wrap;
+    /* responsive wrap support */
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    width: 100%;
+}
+.text{
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.call-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    gap: 8px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    gap: 15px;
+}
+
+.login-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.login-register:hover{
+    color: #ec8951;
+
+}
+
+/* ---------------------------------------- */
+.menuItems {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menuItems .menutext {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #222222;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+.menutext:hover{
+    color: #ec8951;
+
+}
+
+
+
+/* Responsive for tablets */
+@media (min-width: 600px) {
+    .header-left {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+        align-items: center;
+    }
+
+    .header-right {
+        width: 35%;
+        justify-content: space-between;
+    }
+    .icon{
+        margin-right: -25px;
+    }
+}
+
+/* Responsive for desktops */
+@media (min-width: 1024px) {
+    .header-left {
+        width: 30%;
+    }
+
+    .header-right {
+        width: 15%;
+    }
+}

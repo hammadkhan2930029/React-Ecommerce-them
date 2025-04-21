@@ -1,0 +1,200 @@
+.ourProductHeadings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px
+}
+
+.latestProduct {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.imgDiv {
+    width: 100%;
+    background-color: blue;
+    border-radius: 10px;
+
+
+}
+
+.latestCardImg {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.latestCardText_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+
+}
+
+.latestCardText1 {
+    font-size: 20px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.latestCardText2 {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text1 {
+    color: #ec8951;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+.text2 {
+    color: #000;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+.text3 {
+    color: #3c3c3c;
+    font-size: 17px;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.line {
+    background-color: #ec8951;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+
+}
+
+.latestProduct .tag_div span {
+    font-size: calc(10px + 2 * (100vw - 320px) / 1600);
+    font-weight: bold;
+    color: #eeeeee;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: calc(20px + 5 * (100vw - 320px) / 1600);
+    transform: rotate(-45deg);
+    width: 105px;
+    display: block;
+    background: var(--theme-color);
+    position: absolute;
+    top: 19px;
+    left: -21px;
+    background-color: #ec8951;
+}
+.textBtn_div{
+    display: flex;
+    justify-content: center;
+
+}
+.textBtn{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    margin-top: 20px;
+    color: #3c3c3c;
+    cursor: pointer;
+}
+.textBtn:hover{
+    color: #ec8951;
+    font-weight: bold;
+
+}
+.selected_textBtn{
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    margin-top: 20px;
+    color: #ec8951;
+    cursor: pointer;
+    font-weight: 500;
+
+}
+
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {}
+
+/* 991px to 768px */
+@media (max-width: 991px) {
+    .latestProduct {
+        width: 24%
+    }
+}
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .latestProduct {
+        width: 60%;
+    }
+
+    .text3 {
+        width: 100%;
+    }
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+    .latestProduct {
+        width: 80%;
+    }
+
+
+
+
+
+}
+
+@media (max-width: 440px) {
+
+    .latestProduct {
+        width: 90%;
+    }
+
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

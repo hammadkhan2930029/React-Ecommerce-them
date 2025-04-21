@@ -1,0 +1,112 @@
+.miniCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* margin-top: 80px; */
+    padding: 50px;
+
+}
+.card1{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 15px;
+    border-radius: 10px;
+    height: 160px;
+    /* border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee; */
+    /* border-right: 1px solid #eeeeee; */
+    border: 1px solid #eeeeee;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    
+
+
+}
+.textDiv{
+    display: flex;
+    flex-direction: column;
+}
+.cardImg{
+    width: 60px;
+
+}
+.cardText1{
+    font-size: 20px;
+    padding: 5px 10px;
+    font-weight: 700;
+    color: #000;
+
+
+}
+.cardText1:hover{
+    color: #ec8951;
+    font-weight: bold;
+}
+.cardText{
+    font-size: 16px;
+    padding: 5px 10px;
+    color: #3c3c3c;
+    font-family: 'Poppins', sans-serif;
+
+    
+
+}
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {
+    
+
+
+}
+
+/* 991px to 768px */
+@media (max-width: 991px) {
+    .cardText1{
+        font-size: 18px;
+    }
+    .cardText{
+        font-size: 16px;
+    }
+   
+
+}
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+    .miniCard{
+        flex-direction: column;
+    }
+    .card1{
+        width: 75%;
+        margin: 5px;
+    }
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+    
+
+
+
+
+}
+
+@media (max-width: 440px) {
+    .card1{
+        width: 100%;
+    }
+    .miniCard{
+        padding: 10px;
+    }
+
+    
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

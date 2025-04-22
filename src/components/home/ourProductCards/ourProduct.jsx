@@ -120,8 +120,8 @@ export const OurProductCards = () => {
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}
                 className='ourProductHeadings'>
-                <span className="text1">Our Products</span>
-                <span className="text2">Everyday Casual</span>
+                <span className="text_1">Our Products</span>
+                <span className="text_2">Everyday Casual</span>
                 <span className="line"></span>
                 <div className='textBtn_div'>
                     <span className={select == 1 ? 'selected_textBtn' :"textBtn"} onClick={() => setSelect(1)}>Featured</span>

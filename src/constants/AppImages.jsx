@@ -1,4 +1,6 @@
-
+import banner1 from '../assets/images/banner1.jpg';
+import banner2 from '../assets/images/banner2.jpg';
+import fullBanner from '../assets/images/fullBanner.jpeg'
 
 export const  AppImages = {
     logo:'../assets/images/foreeshop.png',
@@ -14,6 +16,10 @@ export const  AppImages = {
     cardimg5 :'../assets/images/cardimg5.jpeg',
     cardimg6 :'../assets/images/cardimg6.jpeg',
     cardimg7 :'../assets/images/cardimg7.jpg',
+    banner1 :banner1,
+    banner2 :banner2,
+    fullBanner:fullBanner,
+
 
 
 

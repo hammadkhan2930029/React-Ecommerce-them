@@ -4,8 +4,8 @@
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--background-color-dark);
+    color: var(--background-color);
     padding: 2px 25px;
     flex-wrap: wrap;
     /* responsive wrap support */
@@ -21,6 +21,8 @@
 }
 .text{
     font-family: 'Poppins', sans-serif;
+    color: var(--text-color-light);
+    font-size: 14px;
 
 }
 
@@ -49,7 +51,7 @@
     cursor: pointer;
 }
 .login-register:hover{
-    color: #ec8951;
+    color: var(--text-hover-color);
 
 }
 
@@ -62,17 +64,28 @@
 }
 
 .menuItems .menutext {
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 16px;
+    padding: 10px 10px;
     color: #222222;
     font-weight: 500;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 .menutext:hover{
-    color: #ec8951;
+    color: var(--text-hover-color);
+
 
 }
+.menutext:hover .menuIcon{
+    color: var(--text-hover-color);
+
+
+}
+
 
 
 

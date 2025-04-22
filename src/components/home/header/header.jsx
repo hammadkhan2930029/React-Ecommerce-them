@@ -10,16 +10,32 @@ import PersonIcon from '@mui/icons-material/Person';
 import PhoneIcon from '@mui/icons-material/Phone';
 import useScreenWidth from '../../../hooks/screenWidth';
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import './header.css'
 import RightDrawer from '../drawer/drawerRight';
+import Badge from '@mui/material/Badge';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { motion, useInView } from "framer-motion";
 
 
 
 
 export const Header = () => {
+
+
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  // -------------------------------------------------
 
 
   const [OpenDrawer, setOpenDrawer] = React.useState(false)
@@ -29,6 +45,18 @@ export const Header = () => {
   const refOne = React.useRef(null);
 
   const inViewOne = useInView(refOne, { triggerOnce: true });
+  // -----------------------------------------------
+  const menuItems = [
+    { id: 1, title: "Home" },
+    { id: 2, title: "Feature" },
+    { id: 3, title: "Product" },
+    { id: 4, title: "Shop" },
+    { id: 5, title: "Deal" },
+    { id: 6, title: "About" },
+    { id: 7, title: "Contact" }
+  ];
+
+
 
 
 
@@ -62,7 +90,7 @@ export const Header = () => {
       )}
       <motion.div
       >
-        <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', padding: 1 }}>
+        <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', }}>
           <Toolbar>
             <IconButton
               onClick={() => setOpenDrawer(true)}
@@ -96,19 +124,38 @@ export const Header = () => {
                 </IconButton>
               </motion.div>
             ) : (
-              <motion.div className='menuItems' 
-               ref={refOne}
-              initial={{ opacity: 0, y: -100 }}
-              animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: .8 }}>
-                <span className='menutext'>Home</span>
-                <span className='menutext'>Shop</span>
-                <span className='menutext'>Deal</span>
-                <span className='menutext'> About</span>
-                <span className='menutext'>Contact</span>
-                <SearchIcon sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
-                <ShoppingCartIcon sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
+              <motion.div className='menuItems'
+                ref={refOne}
+                initial={{ opacity: 0, y: -100 }}
+                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: .8 }}>
+                {menuItems.map((item, index) => (
 
+                  <span key={item.id} className='menutext'  onClick={handleClick}>
+                    {item.title}
+                    {item.title.toLowerCase() === 'home' ? null : (<KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />)}</span>
+                ))}
+
+                <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingCartOutlinedIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', cursor: 'pointer' }} />
+                </Badge>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <MenuItem onClick={handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  <MenuItem onClick={handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </Menu>
               </motion.div>
             )}
           </Toolbar>

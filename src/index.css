@@ -23,7 +23,16 @@
 }
 
 :root {
-  --primaryColor: '#000'
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --text-color-dark: #222222;
+  --text-color-light: #fff;
+
+  --text-hover-color:#ec8951;
+  --background-color: #ffffff;
+  --background-color-dark: #000;
+
+  --icons-color:#ec8951;
 }
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;

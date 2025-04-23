@@ -5,6 +5,9 @@ import { MiniCards } from "../components/home/service/miniCards";
 import { LatestDrops } from "../components/home/latestDrops/latestDrops";
 import { OurProductCards } from "../components/home/ourProductCards/ourProduct";
 import { Banner,FullBanner } from "../components/home/banner/banner";
+import { FashionForU } from "../components/home/FashionForU/fashionForU";
+import { BrandsIcons } from "../components/home/brands/brandsIcon";
+import Footer from "../components/home/Footer/footer";
 
 export const Home = ()=>{
     return(
@@ -17,6 +20,9 @@ export const Home = ()=>{
             <LatestDrops/>
             <FullBanner/>
             <OurProductCards/>
+            <FashionForU/>
+            <BrandsIcons/>
+            <Footer/>
         </div>
     )
 }

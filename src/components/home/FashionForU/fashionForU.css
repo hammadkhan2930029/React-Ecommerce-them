@@ -1,0 +1,150 @@
+.carousel_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+
+}
+.slick-dots {
+    display: block !important;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  }
+  
+.div_img{
+    width: 80%;
+
+
+}
+.carousel_card_img{
+    width: 100%;
+    border-radius: 15px;
+
+}
+.carousel_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.date{
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    color: var(--icons-color);
+
+}
+.description{
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+    color: var(--text-color-dark);
+
+}
+.description:hover{
+    color: var(--text-hover-color);
+}
+.fashionHeadings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+.fashionHeadings .h5 {
+    color: #ec8951;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+.h1 {
+    color: #000;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+
+
+.bottomLine {
+    background-color: #ec8951;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+
+}
+
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {}
+
+/* 991px to 768px */
+@media (max-width: 991px) {
+    
+}
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+    
+
+   
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+   .fashionHeadings{
+    padding: 20px;
+   }
+
+
+
+
+
+}
+
+@media (max-width: 440px) {
+    .div_img{
+        width: 90%;
+    }
+
+    .fashionHeadings {
+        padding: 10px;
+    }
+    .h5{
+        font-size: 18px;
+    }
+    .h1{
+        font-size: 28px;
+    }
+    .bottomLine{
+        padding: 2px;
+    }
+    .date{
+        font-size: 16px;
+    }
+    .description{
+        font-size: 18px;
+    }
+   
+    
+
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

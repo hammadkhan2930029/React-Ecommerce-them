@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { AppImages } from "../../../constants/AppImages";
 import './brandsIcon.css';
 import { motion, useInView } from "framer-motion";
-import { Spa } from "@mui/icons-material";
 
 const cardData = [
     { icon: AppImages.icon1 },

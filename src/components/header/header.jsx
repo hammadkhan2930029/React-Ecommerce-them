@@ -4,16 +4,16 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import LeftDrawer from '../drawer/drawer'
-import { AppImages } from '../../../constants/AppImages';
+import LeftDrawer from '../home/drawer/drawer'
+import { AppImages } from '../../constants/AppImages';
 import PersonIcon from '@mui/icons-material/Person';
 import PhoneIcon from '@mui/icons-material/Phone';
-import useScreenWidth from '../../../hooks/screenWidth';
+import useScreenWidth from '../../hooks/screenWidth';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import './header.css'
-import RightDrawer from '../drawer/drawerRight';
+import RightDrawer from '../home/drawer/drawerRight';
 import Badge from '@mui/material/Badge';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';

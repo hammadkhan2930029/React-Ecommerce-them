@@ -2,6 +2,7 @@ import React from 'react'
 import { AppImages } from '../../../constants/AppImages';
 import './latestDrops.css';
 import { motion, useInView } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const responsive = {
     desktop: {
@@ -49,6 +50,7 @@ const productDetails = [
 ];
 
 export const LatestDrops = ({ deviceType }) => {
+    const navigate = useNavigate()
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
@@ -76,7 +78,7 @@ export const LatestDrops = ({ deviceType }) => {
             transition={{ duration: .8 }} >
 
                 {productDetails.map((product, index) => (
-                    <motion.div className="latestProduct" key={index}>
+                    <motion.div className="latestProduct" key={index} onClick={()=> navigate('/productDetails')}>
                         <motion.div className="imgmotion.div">
                             <img src={product.image} className="latestCardImg" alt={product.title} />
                         </motion.div>

@@ -1,12 +1,12 @@
 import React from "react";
 import './footer.css';
-import { AppImages } from "../../../constants/AppImages";
+import { AppImages } from "../../constants/AppImages";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
 import { motion, useInView } from "framer-motion";
 
-const Footer = () => {
+export const Footer = () => {
 
   const refOne = React.useRef(null);
 
@@ -114,4 +114,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;

@@ -63,6 +63,12 @@
     align-items: center;
     padding: 20px;
 }
+.menuItems2 {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
 .menuItems .menutext {
     font-size: 16px;

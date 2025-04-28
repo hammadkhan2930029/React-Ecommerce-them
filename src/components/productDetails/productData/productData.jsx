@@ -28,6 +28,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -51,6 +52,14 @@ const slideImages = [
 
 
 export const ProductData = () => {
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
+    const navigate = useNavigate()
+    const [count, setCount] = useState(1)
     const [openDialogBox, setopenDialogBox] = useState(false)
     const [askQueation, setAskQueation] = useState(false)
 
@@ -65,9 +74,7 @@ export const ProductData = () => {
     const inViewOne = useInView(refOne, { triggerOnce: false });
     // ----------------------------------
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+   
     // --------------------------------------
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -76,6 +83,15 @@ export const ProductData = () => {
     };
     const handleClose = () => {
         setAnchorEl(null);
+    };
+
+    const [anchorElColor, setAnchorElColor] = React.useState(null);
+    const openColor = Boolean(anchorElColor);
+    const handleClickColor = (event) => {
+        setAnchorElColor(event.currentTarget);
+    };
+    const handleCloseColor = () => {
+        setAnchorElColor(null);
     };
     // ----------------------------------------
     const [showCart, setShowCart] = useState(false)
@@ -95,20 +111,15 @@ export const ProductData = () => {
         return () => window.removeEventListener("scroll", handleScroll);
 
     }, [])
-    console.log( 'show cart',showCart)
     return (
         <div>
             <motion.div className="productData_main">
-                <motion.div className="left"
-                    ref={refOne}
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={inViewOne ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: .8 }}>
+                <motion.div className="left">
                     <div className="img_slider">
                         <div className="img_div">
                             <Carousel>
                                 {slideImages.map((item, index) => (
-                                    <Carousel.Item>
+                                    <Carousel.Item key={index}>
                                         <img src={item.url} className="product_slider_img" />
 
                                     </Carousel.Item>
@@ -225,10 +236,7 @@ export const ProductData = () => {
                 </motion.div>
                 {/* ================================================================================================================ */}
                 <motion.div className="right"
-                    ref={refOne}
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={inViewOne ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: .8 }}>
+                >
                     <h3>Color</h3>
                     <div className="color_div">
                         <div className={selectColor == 1 ? "selected" : "color_border"} onClick={() => setSelectColor(1)}>
@@ -246,9 +254,9 @@ export const ProductData = () => {
 
                     </div>
                     <div className="qty_div">
-                        <button className="btn"><ArrowBackIosOutlinedIcon style={{ fontSize: '20px' }} /></button>
-                        <span className="qty">1</span>
-                        <button className="btn">< ArrowForwardIosOutlinedIcon style={{ fontSize: '20px' }} /></button>
+                        <button className="btn" disabled={count == 1} onClick={() => setCount(count - 1)}><ArrowBackIosOutlinedIcon style={{ fontSize: '20px' }} /></button>
+                        <span className="qty">{count}</span>
+                        <button className="btn" onClick={() => setCount(count + 1)}>< ArrowForwardIosOutlinedIcon style={{ fontSize: '20px' }} /></button>
 
 
                     </div>
@@ -268,54 +276,68 @@ export const ProductData = () => {
                 <Description />
             </div>
             {/* --------------------------------------- */}
-                {showCart && (
-                    <motion.div className="floatingCart_div"  >
-                        <div className="floating">
-                            <div className="part_1">
-                                <img src={AppImages.cardimg6} className="small_cart_img" />
-                                <div className="part_1_data">
-                                    <span> Gym Coords Set</span>
-                                    <span>$30.58</span>
-                                </div>
+            {showCart && (
+                <motion.div className="floatingCart_div"  >
+                    <div className="floating">
+                        <div className="part_1">
+                            <img src={AppImages.cardimg6} className="small_cart_img" />
+                            <div className="part_1_data">
+                                <span> Gym Coords Set</span>
+                                <span>$30.58</span>
                             </div>
-                            <div className="part_2">
-                                <span className="variant">Variants : </span>
-                                <div onClick={handleClick} className="menu">
-                                    <span>Color</span>
-                                    <KeyboardArrowDownIcon style={{ fontSize: '20px' }} />
+                        </div>
+                        <div className="part_2">
+                            <span className="variant">Variants : </span>
+                            <div onClick={handleClickColor} className="menu">
+                                <span>Color</span>
+                                <KeyboardArrowDownIcon style={{ fontSize: '20px' }} />
 
 
-                                </div>
-                                <div onClick={handleClick} className="menu">
-                                    <span>Size</span>
-                                    <KeyboardArrowDownIcon style={{ fontSize: '20px' }} />
-
-
-
-                                </div>
-                                <Menu
-                                    id="basic-menu"
-                                    anchorEl={anchorEl}
-                                    open={open}
-                                    onClose={handleClose}
-                                    MenuListProps={{
-                                        'aria-labelledby': 'basic-button',
-                                    }}
-                                >
-                                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                                    <MenuItem onClick={handleClose}>Logout</MenuItem>
-                                </Menu>
                             </div>
-                            <div className="part_3">
-                                <button className="add_to_card">Add To Cart <ShoppingCartOutlinedIcon/></button>
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorElColor}
+                                open={openColor}
+                                onClose={handleCloseColor}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}
+                            >
+                                <MenuItem onClick={handleCloseColor}>Red</MenuItem>
+                                <MenuItem onClick={handleCloseColor}>Green</MenuItem>
+                                <MenuItem onClick={handleCloseColor}>Yellow</MenuItem>
+                            </Menu>
+                            <div onClick={handleClick} className="menu">
+                                <span>Size</span>
+                                <KeyboardArrowDownIcon style={{ fontSize: '20px' }} />
+
+
+
                             </div>
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}
+                            >
+                                <MenuItem onClick={handleClose}>Small</MenuItem>
+                                <MenuItem onClick={handleClose}>Medium</MenuItem>
+                                <MenuItem onClick={handleClose}>Larg</MenuItem>
+                            </Menu>
 
                         </div>
+                        <div className="part_3">
+                            <button className="add_to_card" onClick={() => navigate('/cart')}>Add To Cart <ShoppingCartOutlinedIcon /></button>
+                        </div>
+
+                    </div>
 
 
-                    </motion.div >
-                )}
+                </motion.div >
+            )}
 
         </div >
     )

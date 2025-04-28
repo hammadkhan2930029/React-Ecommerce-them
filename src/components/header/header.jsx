@@ -19,18 +19,21 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { motion, useInView } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
+import { title } from 'motion/react-client';
 
 
 
 
 export const Header = () => {
 
-
+  const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+
   };
   const handleClose = () => {
     setAnchorEl(null);
@@ -47,7 +50,7 @@ export const Header = () => {
   const inViewOne = useInView(refOne, { triggerOnce: true });
   // -----------------------------------------------
   const menuItems = [
-    { id: 1, title: "Home" },
+    { id: 1, title: "Home", path: '/home' },
     { id: 2, title: "Feature" },
     { id: 3, title: "Product" },
     { id: 4, title: "Shop" },
@@ -56,7 +59,15 @@ export const Header = () => {
     { id: 7, title: "Contact" }
   ];
 
-
+  const handle = (title) => {
+    console.log(title)
+    if (title.toLowerCase() === 'home') {
+      navigate('/')
+    }
+    else {
+      console.log('Click on', title)
+    }
+  }
 
 
 
@@ -111,7 +122,7 @@ export const Header = () => {
                 objectFit: 'contain',
               }} />
             {screenWidth < 1100 ? (
-              <motion.div className='menuItems'>
+              <motion.div className='menuItems2'>
                 <IconButton
                   onClick={() => setOpenDrawerRight(true)}
                   size="large"
@@ -131,7 +142,10 @@ export const Header = () => {
                 transition={{ duration: .8 }}>
                 {menuItems.map((item, index) => (
 
-                  <span key={item.id} className='menutext'  onClick={handleClick}>
+                  <span key={item.id} className='menutext' onClick={() => {
+                    handle(item.title)
+                    handleClick()
+                  }} >
                     {item.title}
                     {item.title.toLowerCase() === 'home' ? null : (<KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />)}</span>
                 ))}

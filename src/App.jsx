@@ -5,8 +5,6 @@ import './App.css'
 function App() {
 
   return (
-   
-  
 
     <Routes>
       {appRoutes.map(({ path, element }, index) => (

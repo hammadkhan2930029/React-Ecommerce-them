@@ -64,6 +64,10 @@ export const Header = () => {
     if (title.toLowerCase() === 'home') {
       navigate('/')
     }
+
+    else if (title.toLowerCase() === 'about') {
+      navigate('/aboutUs')
+    }
     else {
       console.log('Click on', title)
     }
@@ -152,7 +156,7 @@ export const Header = () => {
 
                 <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
                 <Badge badgeContent={4} color="primary">
-                  <ShoppingCartOutlinedIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', cursor: 'pointer' }} onClick={()=> navigate('/cart')}/>
+                  <ShoppingCartOutlinedIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', cursor: 'pointer' }} onClick={() => navigate('/cart')} />
                 </Badge>
                 <Menu
                   id="basic-menu"

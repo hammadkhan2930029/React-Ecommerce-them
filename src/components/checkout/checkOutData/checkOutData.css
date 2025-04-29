@@ -1,7 +1,8 @@
 .checkOut_main {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 10px;
+    margin-top: 50px;
 }
 
 .one {
@@ -13,6 +14,8 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     width: 100%;
     padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
 
 
 }
@@ -22,6 +25,7 @@
     align-items: center;
     flex-direction: row;
     border-bottom: 1px solid #c0c0c0;
+    padding: 10px;
 
 }
 .top .h3{
@@ -32,21 +36,31 @@
     font-size: 18px;
     color: var(--text-hover-color);
 }
-
-.shipping {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+.alignment{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    
+}
+.shipping,
+.oldHome,
+.Office {
     border-radius: 10px;
-    width: 50%;
+    width: 48%;
     padding: 10px;
     display: flex;
     justify-content: start;
     align-items: self-start;
     flex-direction: column;
     margin-top: 10px;
+    gap: 10px;
+    background-color: #fff;
 }
-.alignment{
-    display: flex;
-}
+
 
 
 .newHome {
@@ -70,38 +84,299 @@
     font-size: 18px;
 }
 
-.two {
-    background-color: blue;
-    width: 40%;
 
-}
-.oldHome {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
-    width: 50%;
-    padding: 10px;
-    display: flex;
-    justify-content: start;
-    align-items: self-start;
-    flex-direction: column;
-    margin-top: 10px;
-}
+
 .oldHome .new_house_text {
     font-size: 24px;
     font-weight: 700;
 }
-.Office {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
-    width: 50%;
-    padding: 10px;
-    display: flex;
-    justify-content: start;
-    align-items: self-start;
-    flex-direction: column;
-    margin-top: 10px;
-}
+
 .Office .new_house_text {
     font-size: 24px;
     font-weight: 700;
 }
+
+.billing_address {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 10px;
+
+
+}
+.billing_address .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px solid #c0c0c0;
+    padding: 10px;
+
+}
+/* --------------Delivery Option-------------------------- */
+.deliver_options{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 10px;
+
+}
+.delivery{
+    border-bottom: 1px solid #c0c0c0;
+    padding: 10px;
+
+
+}
+.delivery .h2{
+    font-size: 24px;
+    color: var(--text-color-dark);
+
+
+}
+.delivery_card_div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.delivery_card{
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 46%;
+}
+/* ----------------------Two/summary------------------------------ */
+.two {
+    /* background-color: blue; */
+    width: 35%;
+
+}
+.summary_order{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 10px;
+
+}
+.summary_headings{
+    border-bottom: 1px solid #c0c0c0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.summary_headings .summary_h1{
+    font-size: 24px;
+    color: var(--text-color-dark);
+    font-weight: 500;
+}
+.summary_data{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+.img_div .img{
+    width: 100px;
+    border-radius: 10px;
+}
+.summery_text_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+.summery_text_div .summery_text1{
+    font-size: 20px;
+    color: var(--text-color-dark);
+
+}
+
+/* -------------------billing Summary------------------------ */
+.billing-summary {
+   
+    font-family: Arial, sans-serif;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .promo-code-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .view-all {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .coupons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .coupon-box {
+    border: 1px solid #eee;
+    padding: 10px;
+    width: 50%;
+    background-color: #fafafa;
+    position: relative;
+  }
+  
+  .coupon-box strong {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .copy-code {
+    font-size: 12px;
+    color: #ccc;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .coupon-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .summary-section {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 10px 0;
+  }
+  
+  .summary-item .small-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+  }
+  
+  .right-side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .summary-total {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .place-order-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #ccc;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+    cursor: not-allowed;
+  }
+  /* Tablet Devices (≤992px) */
+@media screen and (max-width: 992px) {
+    .checkOut_main {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .one, .two {
+      width: 100%;
+    }
+  
+    .alignment .shipping,
+    .alignment .oldHome,
+    .alignment .Office {
+      width: 100%;
+    }
+  
+    .delivery_card {
+      width: 100%;
+    }
+  
+    .coupons {
+      flex-direction: column;
+    }
+  
+    .coupon-box {
+      width: 100%;
+    }
+  }
+  
+  /* Mobile Devices (≤768px) */
+  @media screen and (max-width: 768px) {
+    .top .h3 {
+      font-size: 20px;
+    }
+  
+    .top .h4 {
+      font-size: 16px;
+    }
+  
+    .newHome span,
+    .shipping .new_house_text,
+    .oldHome .new_house_text,
+    .Office .new_house_text {
+      font-size: 16px;
+    }
+  
+    .summary-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .right-side {
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 5px;
+    }
+  
+    .summary-total {
+      font-size: 16px;
+    }
+  
+    .place-order-btn {
+      font-size: 14px;
+    }
+  
+    .summery_text_div .summery_text1 {
+      font-size: 16px;
+    }
+  
+    .img_div .img {
+      width: 80px;
+    }
+  }
+  

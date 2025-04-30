@@ -1,0 +1,137 @@
+.main_container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: #fff;
+    }
+.side_div{
+    width: 35%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.side_div .contact_h1{
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-color-dark);
+    padding: 10px;
+
+}
+.side_div .contact_h6{
+    font-size: 18px;
+    color: var(--text-color-dark);
+    padding: 10px;
+
+
+}
+.form-container {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    /* max-width: 700px; */
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 60%;
+    margin-top: 20px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: #ec8951;
+    box-shadow: 0 0 0 2px rgba(236, 137, 81, 0.2);
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form button {
+    background-color: #ec8951;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    min-width: 200px;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+  
+  .contact-form button:hover {
+    background-color: #dd7b41;
+  }
+  
+  /* ✅ Tablet & up */
+  @media (min-width: 600px) {
+    .form-group {
+      flex: 1 1 45%;
+    }
+  
+    .form-row {
+      justify-content: space-between;
+    }
+  
+    .contact-form button {
+      min-width: 200px;
+    }
+  }
+  
+  /* ✅ Desktop large */
+  @media (min-width: 992px) {
+    .form-container {
+      padding: 60px;
+    }
+  
+    .contact-form {
+      gap: 20px;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 16px;
+    }
+  
+    .contact-form button {
+      font-size: 17px;
+      padding: 14px 24px;
+    }
+  }
+  

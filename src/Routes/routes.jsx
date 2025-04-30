@@ -5,6 +5,8 @@ import { Cart } from "../pages/cart";
 import { CartData } from "../components/cart/cartData/cartData";
 import { CheckOut } from "../pages/checkOut";
 import { AboutUs } from "../pages/aboutUs";
+import { ContactUs } from "../pages/contactUs";
+import { Login } from "../pages/login";
 
 export const appRoutes = [
     { path: '/', element: <Home /> },
@@ -14,6 +16,10 @@ export const appRoutes = [
     { path: '/cartData', element: <CartData/> },
     { path: '/checkOut', element: <CheckOut/> },
     { path: '/aboutUs', element: <AboutUs/> },
+    { path: '/contactus', element: <ContactUs/> },
+    { path: '/login', element: <Login/> },
+
+
 
 
 

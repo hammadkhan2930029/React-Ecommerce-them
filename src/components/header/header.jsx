@@ -21,6 +21,7 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import { motion, useInView } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 import { title } from 'motion/react-client';
+import { patch } from '@mui/material';
 
 
 
@@ -68,6 +69,9 @@ export const Header = () => {
     else if (title.toLowerCase() === 'about') {
       navigate('/aboutUs')
     }
+    else if (title.toLowerCase() === 'contact') {
+      navigate('/contactus')
+    }
     else {
       console.log('Click on', title)
     }
@@ -92,7 +96,7 @@ export const Header = () => {
             </motion.div>
           </motion.div>
           <motion.div className="header-right">
-            <motion.div className="login-register">
+            <motion.div className="login-register" onClick={()=> navigate('./login')}>
               <PersonIcon />
               <span className='text'>Login</span>
             </motion.div>

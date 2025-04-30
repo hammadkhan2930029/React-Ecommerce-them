@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-import "./about_breadCrumbs.css"
+import "./contact_crumb.css";
 import { motion, useInView } from "framer-motion";
 
 function handleClick(event) {
@@ -9,7 +9,7 @@ function handleClick(event) {
   console.info('You clicked a breadcrumb.');
 }
 
-export const About_breadCrumbs = () => {
+export const Contact_breadCrumbs = () => {
   const refOne = React.useRef(null);
   const inViewOne = useInView(refOne, { triggerOnce: false });
   return (
@@ -22,7 +22,7 @@ export const About_breadCrumbs = () => {
       transition={{ duration: .8 }}
     >
       <div className='cartBreadCrumb'>
-        <span className='breadCrumb_heading'>About Us</span>
+        <span className='breadCrumb_heading'>Contact Us</span>
 
         <Breadcrumbs aria-label="breadcrumb">
 
@@ -34,7 +34,7 @@ export const About_breadCrumbs = () => {
             color="inherit"
             href="/material-ui/getting-started/installation/"
           >
-          about us
+          contact us
           </Link>
          
         </Breadcrumbs>

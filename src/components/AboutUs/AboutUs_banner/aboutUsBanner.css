@@ -1,34 +1,81 @@
 .about_us_main {
     display: flex;
     justify-content: center;
+    background-color: #fff; /* Optional: background match for better contrast */
 }
 
 .about_us {
-    width: 90%;
+    width: 95%;
     padding-top: 40px;
     padding-bottom: 40px;
-
-
 }
 
 .about_us_banner .img {
     width: 100%;
     height: 500px;
+    object-fit: cover;
     padding: 10px;
     border-radius: 20px;
 }
-.about_us_data{
+
+.about_us_data {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
-.about_us_text1{
+
+.about_us_text1 {
     font-size: 22px;
     font-weight: 700;
     padding: 10px;
-
+    line-height: 1.4;
 }
-.about_us_text2{
+
+.about_us_text2 {
     font-size: 18px;
     padding: 10px;
+    line-height: 1.6;
+    color: #555;
+}
 
+/* ------------------------------
+   ✅ Responsive Adjustments
+---------------------------------*/
+
+@media (max-width: 768px) {
+    .about_us_banner .img {
+        height: 300px;
+    }
+
+    .about_us_text1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .about_us_text2 {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about_us {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .about_us_banner .img {
+        height: 200px;
+        padding: 5px;
+    }
+
+    .about_us_text1 {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .about_us_text2 {
+        font-size: 15px;
+        padding: 8px;
+    }
 }

@@ -12,6 +12,11 @@ import icon3 from '../assets/images/icon/three.png';
 import icon4 from '../assets/images/icon/four.png';
 import icon5 from '../assets/images/icon/five.png';
 import icon6 from '../assets/images/icon/six.png';
+import owner1 from '../assets/images/owners/owner1.jpg';
+import owner2 from '../assets/images/owners/owner2.jpg';
+import owner3 from '../assets/images/owners/owner3.jpg';
+import owner4 from '../assets/images/owners/owner3.jpg';
+
 
 
 
@@ -44,6 +49,11 @@ export const  AppImages = {
     icon4:icon4,
     icon5:icon5,
     icon6:icon6,
+    owner1:owner1,
+    owner2:owner2,
+    owner3:owner3,
+    owner4:owner4,
+
 
 
 

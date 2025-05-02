@@ -7,6 +7,7 @@ import { CheckOut } from "../pages/checkOut";
 import { AboutUs } from "../pages/aboutUs";
 import { ContactUs } from "../pages/contactUs";
 import { Login } from "../pages/login";
+import { Register } from "../pages/register";
 
 export const appRoutes = [
     { path: '/', element: <Home /> },
@@ -18,12 +19,6 @@ export const appRoutes = [
     { path: '/aboutUs', element: <AboutUs/> },
     { path: '/contactus', element: <ContactUs/> },
     { path: '/login', element: <Login/> },
-
-
-
-
-
-
-
+    { path: '/register', element: <Register/> },
 
 ]

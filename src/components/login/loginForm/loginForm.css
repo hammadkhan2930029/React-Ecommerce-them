@@ -2,30 +2,48 @@
     width: 100%;
     display: flex;
 
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 10px;
+}
+.form_left{
+    width: 50%;
+
+}
+.form_right{
+    width: 40%;
+
+
+}
+.login{
+    font-size: 30px;
+    font-weight: 700;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.new_customer{
+    font-size: 30px;
+    font-weight: 700;
+    padding: 10px;
+    text-transform: uppercase;
+
 }
 
 .form-container_L {
     background-color: #f9f9f9;
     padding: 40px 20px;
-    margin: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     box-sizing: border-box;
-    width: 50%;
     margin-top: 20px;
     border: 1px solid lightgray;
 }
 .form-container_R{
     background-color: #f9f9f9;
     padding: 40px 20px;
-    margin: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     box-sizing: border-box;
-    width: 40%;
     margin-top: 20px;
     border: 1px solid lightgray;
 
@@ -123,7 +141,7 @@
 }
 
 /* ✅ Tablet & up */
-@media (min-width: 600px) {
+@media (max-width: 600px) {
     .form-group {
         flex: 1 1 45%;
     }
@@ -134,6 +152,39 @@
 
     .contact-form button {
         min-width: 200px;
+    }
+    .form_main{
+        flex-direction: column;
+        margin: 0;
+
+    }
+    .form_left{
+        width: 80%;
+    }
+    .form_right{
+        width: 80%;
+    }
+    .login{
+        font-size: 22px;
+    }
+    .new_customer{
+        font-size: 22px
+    }
+}
+@media (max-width: 360px) {
+   
+   
+    .form_left{
+        width: 90%;
+    }
+    .form_right{
+        width: 90%;
+    }
+    .login{
+        font-size: 22px;
+    }
+    .new_customer{
+        font-size: 22px
     }
 }
 

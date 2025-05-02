@@ -1,0 +1,126 @@
+.register_main_div{
+    display: flex;
+    justify-content: center;
+}
+.register_main{
+    width: 90%;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+.register_form_main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.first_row,
+.second_row,
+.third_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 95%;
+
+
+}
+
+.input_div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 10px;
+
+
+}
+.input_div label{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+.input{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+.input:focus{
+    outline: none;
+    border-color: #ec8951;
+    box-shadow: 0 0 0 2px rgba(236, 137, 81, 0.2);
+}
+.submit_btn{
+    background-color: #ec8951;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    min-width: 200px;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 30px;
+}
+.creat_acc{
+    font-size: 30px;
+    font-weight: 700;
+    padding: 10px;
+    text-transform: uppercase;
+}
+/* ------------------------- MEDIA QUERIES ------------------------- */
+
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+  
+    .first_row,
+    .second_row,
+    .third_row{
+      
+        flex-direction: column;
+        width: 100%;
+    
+    
+    }
+    .input_div{
+        width: 100%;
+    }
+    .input{
+        width: 100%;
+    }
+
+
+
+
+}
+
+@media (max-width: 440px) {
+   
+   .creat_acc{
+    font-size: 20px;
+   }
+   .input_div label{
+    font-size: 14px;
+   }
+    
+
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

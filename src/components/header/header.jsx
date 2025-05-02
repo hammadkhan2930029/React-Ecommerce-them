@@ -96,11 +96,11 @@ export const Header = () => {
             </motion.div>
           </motion.div>
           <motion.div className="header-right">
-            <motion.div className="login-register" onClick={()=> navigate('./login')}>
+            <motion.div className="login-register" onClick={()=> navigate('/login')}>
               <PersonIcon />
               <span className='text'>Login</span>
             </motion.div>
-            <motion.div className="login-register">
+            <motion.div className="login-register" onClick={()=> navigate('/register')}>
               <PersonIcon />
               <span className='text'>Register</span>
             </motion.div>

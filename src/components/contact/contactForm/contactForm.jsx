@@ -1,9 +1,18 @@
 import React from 'react';
 import './contactForm.css';
+import { motion, useInView } from "framer-motion";
+
 
 export const ContactForm = () => {
+      const refOne = React.useRef(null);
+    
+    const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
-        <div className='main_container'>
+        <motion.div className='main_container' 
+          ref={refOne}
+        initial={{ opacity: 0, y: -100 }}
+        animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: .8 }}>
             <div className='side_div'>
                 <span className='contact_h1'> Get In Touch</span>
                 <span className='contact_h6'>
@@ -36,7 +45,7 @@ export const ContactForm = () => {
                     <button type="submit">Send Your Message</button>
                 </form>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

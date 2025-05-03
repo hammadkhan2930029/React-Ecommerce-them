@@ -1,10 +1,19 @@
 import React from 'react';
 import { Formik } from 'formik';
-import './registerForm.css'
+import './registerForm.css';
+import { motion, useInView } from "framer-motion";
+
 
 export const RegisterForm = () => {
+    const refOne = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
-        <div className='register_main_div'>
+        <motion.div className='register_main_div'
+            ref={refOne}
+            initial={{ opacity: 0, y: -100 }}
+            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: .8 }}>
             <div className='register_main'>
                 <span className='creat_acc'>Create Account</span>
 
@@ -24,12 +33,16 @@ export const RegisterForm = () => {
                     {({ handleBlur, handleChange, handleSubmit, values }) => (
                         <form onSubmit={handleSubmit}>
                             <div className='register_form_main'>
-                                <div className='first_row'>
+                                <motion.div className='first_row'
+                                    ref={refOne}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: .8 }}>
 
                                     <div className='input_div'>
                                         <label>First Name</label>
                                         <input
-                                        className='input'
+                                            className='input'
                                             type="text"
                                             placeholder="First name"
                                             onChange={handleChange}
@@ -43,7 +56,7 @@ export const RegisterForm = () => {
                                     <div className='input_div'>
                                         <label>Last Name</label>
                                         <input
-                                          className='input'
+                                            className='input'
                                             type="text"
                                             placeholder="Last name"
                                             onChange={handleChange}
@@ -53,13 +66,17 @@ export const RegisterForm = () => {
                                         />
 
                                     </div>
-                                </div>
+                                </motion.div>
                                 {/* --------------- */}
-                                <div className='second_row'>
+                                <motion.div className='second_row'
+                                    ref={refOne}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: .8 }}>
                                     <div className='input_div'>
                                         <label>Email</label>
                                         <input
-                                          className='input'
+                                            className='input'
                                             type="email"
                                             placeholder="Email"
                                             onChange={handleChange}
@@ -72,7 +89,7 @@ export const RegisterForm = () => {
                                     <div className='input_div'>
                                         <label>Mobile No</label>
                                         <input
-                                          className='input'
+                                            className='input'
                                             type="number"
                                             placeholder="Mobile no"
                                             onChange={handleChange}
@@ -82,14 +99,18 @@ export const RegisterForm = () => {
                                         />
                                     </div>
 
-                                </div>
+                                </motion.div>
                                 {/* ----------------------------- */}
 
-                                <div className='third_row'>
+                                <motion.div className='third_row'
+                                    ref={refOne}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: .8 }}>
                                     <div className='input_div'>
                                         <label>Password</label>
                                         <input
-                                          className='input'
+                                            className='input'
                                             type="password"
                                             placeholder="Password"
                                             onChange={handleChange}
@@ -102,7 +123,7 @@ export const RegisterForm = () => {
                                     <div className='input_div'>
                                         <label>Confirm Password</label>
                                         <input
-                                          className='input'
+                                            className='input'
                                             type="password"
                                             placeholder="Confirm password"
                                             onChange={handleChange}
@@ -111,19 +132,22 @@ export const RegisterForm = () => {
                                             value={values.confirm_passwrod}
                                         />
                                     </div>
-                                </div>
+                                </motion.div>
 
 
-                                <div >
+                                <motion.div ref={refOne}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: .8 }}>
 
                                     <button className='submit_btn' type="submit">Login</button>
-                                </div>
+                                </motion.div>
                             </div>
 
                         </form>
                     )}
                 </Formik>
             </div>
-        </div>
+        </motion.div>
     );
 };

@@ -1,11 +1,24 @@
 import React from 'react';
 import './loginForm.css';
+import { useNavigate } from 'react-router-dom';
+import { motion, useInView } from "framer-motion";
+
+
 
 export const LoginForm = () => {
+    const navigate = useNavigate()
+      const refOne = React.useRef(null);
+        
+          const inViewOne = useInView(refOne, { triggerOnce: true });
+
     return (
         <div className='form_main'>
 
-            <div className='form_left'>
+            <motion.div className='form_left'
+             ref={refOne}
+             initial={{ opacity: 0, x: -100 }}
+             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+             transition={{ duration: .8 }} >
                 <span className='login'>Login</span>
 
                 <div className="form-container_L">
@@ -21,14 +34,21 @@ export const LoginForm = () => {
                             <label>Subject</label>
                             <input type="text" placeholder="Subject" />
                         </div>
+                        <div className='forgot_div' >
+                            <span onClick={()=> navigate('/forgot_pwd')}>Forgot password</span>
+                        </div>
 
 
                         <button type="submit">Login</button>
 
                     </form>
                 </div>
-            </div>
-            <div className='form_right'>
+            </motion.div>
+            <motion.div className='form_right' 
+             ref={refOne}
+        initial={{ opacity: 0, x: 100 }}
+        animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: .8 }}>
             <span className='new_customer'>New Customer</span>
 
 
@@ -39,7 +59,7 @@ export const LoginForm = () => {
                         <button className='btn2'>Create an Account</button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
         </div>
 

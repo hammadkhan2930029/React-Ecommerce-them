@@ -1,0 +1,126 @@
+.forgot_main {
+    display: flex;
+    justify-content: center;
+
+}
+
+.forgot {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+}
+
+.forgot_input_div {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px;
+
+
+}
+
+.forgot_h1{
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.forgot_input {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+    text-align: center;
+    font-size: 20px;
+}
+
+.forgot_input:focus {
+    outline: none;
+    border-color: #ec8951;
+    box-shadow: 0 0 0 2px rgba(236, 137, 81, 0.2);
+}
+
+.forgot_submit_btn {
+    background-color: #ec8951;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    min-width: 200px;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 30px;
+}
+
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {}
+
+/* 991px to 768px */
+@media (max-width: 991px) {
+    
+}
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+    .forgot{
+        width: 90%;
+    }
+   
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+    .forgot_h1{
+        font-size: 26px;
+    }
+    .forgot_input{
+        padding: 15px;
+    }
+    .forgot_submit_btn{
+        margin-top: 15px;
+    }
+    
+
+
+
+
+
+}
+
+@media (max-width: 440px) {
+    .forgot{
+        width: 100%;
+    }
+    .forgot_input_div{
+        width: 100%;
+    }
+    .forgot_h1{
+        font-size: 22px;
+    }
+    .forgot_input{
+        padding: 10px;
+        font-size: 16px;
+    }
+    .forgot_submit_btn{
+        min-width: 100px;
+    }
+
+    
+
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

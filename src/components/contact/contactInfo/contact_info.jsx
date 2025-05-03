@@ -4,13 +4,22 @@ import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 import BookIcon from '@mui/icons-material/Book';
+import { motion, useInView } from "framer-motion";
 
 export const Contact_info = () => {
+    const refOne = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
-        <div className="contact_info">
-            <div className="contact_info_data">
+        <motion.div className="contact_info"
+           >
+            <motion.div className="contact_info_data"
+             ref={refOne}
+             initial={{ opacity: 0, x: 100 }}
+             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+             transition={{ duration: .8 }}>
                 <div>
-                    <CallIcon sx={{ color: '#ec8951',fontSize:'32px' }}/>
+                    <CallIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">
@@ -19,10 +28,14 @@ export const Contact_info = () => {
                     <span className="contact_data2">+91 123 - 456 - 7890</span>
                 </div>
 
-            </div>
-            <div className="contact_info_data">
+            </motion.div>
+            <motion.div className="contact_info_data"
+             ref={refOne}
+             initial={{ opacity: 0, x: -100 }}
+             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+             transition={{ duration: .8 }}>
                 <div>
-                    <EmailIcon sx={{ color: '#ec8951',fontSize:'32px' }}/>
+                    <EmailIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">
@@ -31,23 +44,31 @@ export const Contact_info = () => {
                     <span className="contact_data2">support@multikart.com</span>
                 </div>
 
-            </div>
-            <div className="contact_info_data">
+            </motion.div>
+            <motion.div className="contact_info_data"
+             ref={refOne}
+             initial={{ opacity: 0, x: 100 }}
+             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+             transition={{ duration: .8 }}>
                 <div>
-                    <PlaceIcon sx={{ color: '#ec8951',fontSize:'32px' }}/>
+                    <PlaceIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">
 
                     <span className="contact_data1">
-                    Address</span>
+                        Address</span>
                     <span className="contact_data2">ABC Complex,Near xyz, New York</span>
                 </div>
 
-            </div>
-            <div className="contact_info_data">
+            </motion.div>
+            <motion.div className="contact_info_data"
+             ref={refOne}
+             initial={{ opacity: 0, x: -100 }}
+             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+             transition={{ duration: .8 }}>
                 <div>
-                    <BookIcon sx={{ color: '#ec8951',fontSize:'32px' }}/>
+                    <BookIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">
@@ -56,9 +77,9 @@ export const Contact_info = () => {
                     <span className="contact_data2">support@multikart.com</span>
                 </div>
 
-            </div>
-            
+            </motion.div>
 
-        </div>
+
+        </motion.div>
     )
 }

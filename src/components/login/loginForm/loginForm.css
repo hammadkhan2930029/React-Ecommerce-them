@@ -6,22 +6,26 @@
     align-items: center;
     margin: 10px;
 }
-.form_left{
+
+.form_left {
     width: 50%;
 
 }
-.form_right{
+
+.form_right {
     width: 40%;
 
 
 }
-.login{
+
+.login {
     font-size: 30px;
     font-weight: 700;
     padding: 10px;
     text-transform: uppercase;
 }
-.new_customer{
+
+.new_customer {
     font-size: 30px;
     font-weight: 700;
     padding: 10px;
@@ -38,7 +42,8 @@
     margin-top: 20px;
     border: 1px solid lightgray;
 }
-.form-container_R{
+
+.form-container_R {
     background-color: #f9f9f9;
     padding: 40px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -109,7 +114,8 @@
 .contact-form button:hover {
     background-color: #dd7b41;
 }
-.btn2{
+
+.btn2 {
     background-color: #ec8951;
     color: white;
     font-size: 16px;
@@ -123,21 +129,36 @@
     transition: background-color 0.3s ease;
     align-self: flex-start;
 }
-.n_customer1{
+
+.n_customer1 {
     font-size: 28px;
     font-weight: 600;
     padding: 10px;
 }
-.n_customer2{
+
+.n_customer2 {
     font-size: 20px;
     padding: 10px;
     font-weight: 600;
 
 }
-.n_customer3{
+
+.n_customer3 {
     font-size: 18px;
     padding: 10px;
 
+}
+
+.forgot_div {
+    display: flex;
+    justify-content: end;
+}
+
+.forgot_div span {
+    color: #dd7b41;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 /* ✅ Tablet & up */
@@ -153,37 +174,46 @@
     .contact-form button {
         min-width: 200px;
     }
-    .form_main{
+
+    .form_main {
         flex-direction: column;
         margin: 0;
 
     }
-    .form_left{
+
+    .form_left {
         width: 80%;
     }
-    .form_right{
+
+    .form_right {
         width: 80%;
     }
-    .login{
+
+    .login {
         font-size: 22px;
     }
-    .new_customer{
+
+    .new_customer {
         font-size: 22px
     }
 }
+
 @media (max-width: 360px) {
-   
-   
-    .form_left{
+
+
+    .form_left {
         width: 90%;
     }
-    .form_right{
+
+    .form_right {
         width: 90%;
     }
-    .login{
+
+    .login {
         font-size: 22px;
     }
-    .new_customer{
+
+    .new_customer {
         font-size: 22px
     }
 }

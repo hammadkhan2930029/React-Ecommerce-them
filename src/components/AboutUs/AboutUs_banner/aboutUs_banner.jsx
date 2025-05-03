@@ -1,7 +1,7 @@
 import React from "react";
 import { AppImages } from "../../../constants/AppImages";
 import './aboutUsBanner.css';
-import { motion } from "framer-motion";
+import { motion} from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
@@ -9,14 +9,17 @@ import { useInView } from "react-intersection-observer";
 
 export const AboutUs_banner = () => {
     const [refOne, inViewOne] = useInView({ triggerOnce: true, threshold: 0.1 });
+    // const refOne = React.useRef(null);
+    
+    // const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
         <div className="about_us_main">
             <div className="about_us">
 
                 <motion.div className="about_us_banner" 
                  ref={refOne}
-                    initial={{ opacity: 0, y: -100 }}
-                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.8 }}>
                     <img src={AppImages.banner2} className="img" />
 

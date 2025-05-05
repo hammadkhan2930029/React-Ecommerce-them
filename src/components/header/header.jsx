@@ -90,16 +90,16 @@ export const Header = () => {
           <motion.div className="header-left">
             <span>Welcome to Our Store</span>
             <motion.div className="call-info">
-              <PhoneIcon style={{ color: 'orange' }} />
+              <PhoneIcon style={{ color: '#c10037' }} />
               <span className='text'>Call Us: +92-311-9988080</span>
             </motion.div>
           </motion.div>
           <motion.div className="header-right">
-            <motion.div className="login-register" onClick={()=> navigate('/login')}>
+            <motion.div className="login-register" onClick={() => navigate('/login')}>
               <PersonIcon />
               <span className='text'>Login</span>
             </motion.div>
-            <motion.div className="login-register" onClick={()=> navigate('/register')}>
+            <motion.div className="login-register" onClick={() => navigate('/register')}>
               <PersonIcon />
               <span className='text'>Register</span>
             </motion.div>
@@ -154,11 +154,22 @@ export const Header = () => {
                     handleClick()
                   }} >
                     {item.title}
-                    {item.title.toLowerCase() === 'home' ? null : (<KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />)}</span>
+
+                    {item.title.toLowerCase() === 'home' ? null : item.title.toLowerCase() === 'about' ? null : item.title.toLowerCase() === 'contact' ? null :
+                      (<KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />)}
+
+
+                  </span>
                 ))}
 
                 <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
-                <Badge badgeContent={4} color="primary">
+                <Badge badgeContent={4} 
+                  sx={{
+                    '& .MuiBadge-badge': {
+                      backgroundColor: '#c10037',
+                      color: 'white',
+                    },
+                  }}>
                   <ShoppingCartOutlinedIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', cursor: 'pointer' }} onClick={() => navigate('/cart')} />
                 </Badge>
                 <Menu

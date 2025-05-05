@@ -12,14 +12,14 @@ export const Contact_info = () => {
     const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
         <motion.div className="contact_info"
-           >
+        >
             <motion.div className="contact_info_data"
-             ref={refOne}
-             initial={{ opacity: 0, x: 100 }}
-             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
-             transition={{ duration: .8 }}>
+                ref={refOne}
+                initial={{ opacity: 0, x: 100 }}
+                animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: .8 }}>
                 <div>
-                    <CallIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
+                    <CallIcon sx={{ color: '#c10037', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">
@@ -30,12 +30,12 @@ export const Contact_info = () => {
 
             </motion.div>
             <motion.div className="contact_info_data"
-             ref={refOne}
-             initial={{ opacity: 0, x: -100 }}
-             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
-             transition={{ duration: .8 }}>
+                ref={refOne}
+                initial={{ opacity: 0, x: -100 }}
+                animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: .8 }}>
                 <div>
-                    <EmailIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
+                    <EmailIcon sx={{ color: '#c10037', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">
@@ -46,12 +46,12 @@ export const Contact_info = () => {
 
             </motion.div>
             <motion.div className="contact_info_data"
-             ref={refOne}
-             initial={{ opacity: 0, x: 100 }}
-             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
-             transition={{ duration: .8 }}>
+                ref={refOne}
+                initial={{ opacity: 0, x: 100 }}
+                animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: .8 }}>
                 <div>
-                    <PlaceIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
+                    <PlaceIcon sx={{ color: '#c10037', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">
@@ -63,12 +63,12 @@ export const Contact_info = () => {
 
             </motion.div>
             <motion.div className="contact_info_data"
-             ref={refOne}
-             initial={{ opacity: 0, x: -100 }}
-             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
-             transition={{ duration: .8 }}>
+                ref={refOne}
+                initial={{ opacity: 0, x: -100 }}
+                animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: .8 }}>
                 <div>
-                    <BookIcon sx={{ color: '#ec8951', fontSize: '32px' }} />
+                    <BookIcon sx={{ color: '#c10037', fontSize: '32px' }} />
 
                 </div>
                 <div className="contact_data_div">

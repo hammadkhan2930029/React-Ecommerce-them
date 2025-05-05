@@ -16,9 +16,7 @@
     padding: 10px 15px;
     border-radius: 10px;
     height: 160px;
-    /* border-top: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee; */
-    /* border-right: 1px solid #eeeeee; */
+    
     border: 1px solid #eeeeee;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
@@ -43,7 +41,7 @@
 
 }
 .cardText1:hover{
-    color: #ec8951;
+    color: var( --text-hover-color);
     font-weight: bold;
 }
 .cardText{

@@ -57,7 +57,7 @@ export const ProductData = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    
+
     const navigate = useNavigate()
     const [count, setCount] = useState(1)
     const [openDialogBox, setopenDialogBox] = useState(false)
@@ -74,7 +74,7 @@ export const ProductData = () => {
     const inViewOne = useInView(refOne, { triggerOnce: false });
     // ----------------------------------
 
-   
+
     // --------------------------------------
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -185,8 +185,9 @@ export const ProductData = () => {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography>
-                                        "Gym Coords Set" offers a complete workout ensemble for the modern fitness enthusiast. This coordinated set includes everything needed for a stylish and functional gym session, from moisture-wicking tops to supportive leggings, ensuring both comfort and performance during workouts.
+                                        The "Gym Co-ords Set" is designed for those who take both fitness and fashion seriously. This matching workout set combines style, comfort, and functionality — featuring breathable, moisture-wicking fabric and a flattering fit that moves with you. Perfect for gym sessions, yoga, or active days on the go.
                                     </Typography>
+
                                 </AccordionDetails>
                             </Accordion>
                             <Accordion>

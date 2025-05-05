@@ -80,7 +80,7 @@
 
 .contact-form input:focus {
     outline: none;
-    border-color: #ec8951;
+    border-color: var( --text-hover-color);
     box-shadow: 0 0 0 2px rgba(236, 137, 81, 0.2);
 }
 
@@ -97,7 +97,7 @@
 }
 
 .contact-form button {
-    background-color: #ec8951;
+    background-color: var( --text-hover-color);
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -112,11 +112,11 @@
 }
 
 .contact-form button:hover {
-    background-color: #dd7b41;
+    background-color: var( --text-hover-color);
 }
 
 .btn2 {
-    background-color: #ec8951;
+    background-color: var( --text-hover-color);
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -155,7 +155,7 @@
 }
 
 .forgot_div span {
-    color: #dd7b41;
+    color: var( --text-hover-color);
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;

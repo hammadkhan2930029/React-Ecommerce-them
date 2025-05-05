@@ -18,9 +18,9 @@ export const Footer = () => {
       items: [
         { type: "text", label: "", logo: AppImages.logo },
         { type: "text", label: "Discover the latest trends and enjoy seamless shopping with our exclusive collections." },
-        { type: "location", label: "Shop# 12 , 1st Floor, Shopping Plaza, Karachi" },
-        { type: "phone", label: "Call Us", value: "+92-311-9988080" },
-        { type: "email", label: "Email Us", value: "info@ecommerce.com" },
+        { type: "location", label: "R-5, Row-5, Block D, National Cement Employees Housing Society, Rashid Minhas Road, Karachi, Pakistan" },
+        { type: "phone", label: "Call Us", value: "+92-331-9998780" },
+        { type: "email", label: "Email Us", value: " info@foreeshop.com" },
       ]
     },
     {
@@ -85,11 +85,11 @@ export const Footer = () => {
                 if (item.type === "link") {
                   return <li key={i}><a href={item.href}>{item.label}</a></li>;
                 } else if (item.type === "email") {
-                  return <li key={i}><EmailIcon sx={{ color: '#ec8951' }} /> <a href={`mailto:${item.value}`}>{item.label}: {item.value}</a></li>;
+                  return <li key={i}><EmailIcon  className="footer_icons"/> <a href={`mailto:${item.value}`}>{item.label}: {item.value}</a></li>;
                 } else if (item.type === "phone") {
-                  return <li key={i}><CallIcon sx={{ color: '#ec8951' }} /> <a href={`tel:${item.value}`}>{item.label}: {item.value}</a></li>;
+                  return <li key={i}><CallIcon  className="footer_icons" /> <a href={`tel:${item.value}`}>{item.label}: {item.value}</a></li>;
                 } else if (item.type === "location") {
-                  return <li key={i}><LocationOnIcon sx={{ color: '#ec8951' }} /> <a href={`tel:${item.value}`}>{item.label}: {item.value}</a></li>;
+                  return <li key={i}><LocationOnIcon  className="footer_icons" /> <a href={`tel:${item.value}`}>{item.label}: {item.value}</a></li>;
                 } else {
                   return <li key={i}>{item.label}</li>;
                 }

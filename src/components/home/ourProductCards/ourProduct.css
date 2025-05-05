@@ -66,7 +66,7 @@
 }
 
 .text_1 {
-    color: #ec8951;
+    color: var(--text-hover-color);
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -87,7 +87,7 @@
 
 
 .line {
-    background-color: #ec8951;
+    background-color: var(--text-hover-color);
     padding: 5px;
     width: 100px;
     border-radius: 5px;
@@ -108,7 +108,7 @@
     position: absolute;
     top: 19px;
     left: -21px;
-    background-color: #ec8951;
+    background-color:var(--text-hover-color);
 }
 .textBtn_div{
     display: flex;
@@ -125,7 +125,7 @@
     cursor: pointer;
 }
 .textBtn:hover{
-    color: #ec8951;
+    color: var(--text-hover-color);
     font-weight: bold;
 
 }
@@ -134,7 +134,7 @@
     text-transform: uppercase;
     padding: 10px 25px;
     margin-top: 20px;
-    color: #ec8951;
+    color: var(--text-hover-color);
     cursor: pointer;
     font-weight: 500;
 

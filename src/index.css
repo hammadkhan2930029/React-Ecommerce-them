@@ -28,15 +28,16 @@
   --text-color-dark: #222222;
   --text-color-light: #fff;
 
-  --text-hover-color:#ec8951;
+  --text-hover-color:#c10037;
   --background-color: #ffffff;
   --background-color-dark: #000;
 
-  --icons-color:#ec8951;
+  --icons-color:#c10037;
 }
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-family: 'Poppins', sans-serif;
+  cursor: url('/src/assets/images/cursor.png'), auto;
 }
 .pt-serif-regular {
   font-family: "PT Serif", serif;

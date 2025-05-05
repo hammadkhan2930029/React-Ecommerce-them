@@ -57,11 +57,11 @@
 }
 .input:focus{
     outline: none;
-    border-color: #ec8951;
+    border-color: var( --text-hover-color);
     box-shadow: 0 0 0 2px rgba(236, 137, 81, 0.2);
 }
 .submit_btn{
-    background-color: #ec8951;
+    background-color: var( --text-hover-color);
     color: white;
     font-size: 16px;
     font-weight: 600;

@@ -58,7 +58,7 @@
 }
 
 .text1 {
-    color: #ec8951;
+    color: var(--text-hover-color);
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -77,7 +77,7 @@
 }
 
 .text3 {
-    color: #3c3c3c;
+    color: #989898;
     font-size: 17px;
     text-align: center;
     width: 50%;
@@ -87,7 +87,7 @@
 }
 
 .line {
-    background-color: #ec8951;
+    background-color: var(--text-hover-color);
     padding: 5px;
     width: 100px;
     border-radius: 5px;
@@ -108,7 +108,7 @@
     position: absolute;
     top: 19px;
     left: -21px;
-    background-color: #ec8951;
+    background-color: var(--text-hover-color);
 }
 
 /* ------------------------- MEDIA QUERIES ------------------------- */

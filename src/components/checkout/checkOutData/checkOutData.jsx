@@ -86,13 +86,14 @@ export const CheckOutData = () => {
                                     value="a"
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': 'A' }}
+                                    style={{ color: '#c10037' }}
                                 />
-                                <span className="new_house_text">New Home</span>
+                                <span className="new_house_text">Address 1</span>
                             </div>
                             <div className="newHome">
-                                <span>Address : 26, Starts Hollow Colony, Denver, Colorado, United States</span>
+                                <span>Address : R-5, Row-5, Block D, National Cement Employees Housing Society, Rashid Minhas Road, Karachi, Pakistan</span>
                                 <span>Pin Code : 80014</span>
-                                <span>Phone : +1 5551855359</span>
+                                <span>Phone : +92-331-9998780</span>
 
                             </div>
                         </div>
@@ -106,13 +107,15 @@ export const CheckOutData = () => {
                                     value="b"
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': 'A' }}
+                                    style={{ color: '#c10037' }}
+
                                 />
-                                <span className="new_house_text">Old Home</span>
+                                <span className="new_house_text">Address 2</span>
                             </div>
                             <div className="newHome">
-                                <span>Address : 26, Starts Hollow Colony, Denver, Colorado, United States</span>
+                                <span>Address : R-5, Row-5, Block D, National Cement Employees Housing Society, Rashid Minhas Road, Karachi, Pakistan</span>
                                 <span>Pin Code : 80014</span>
-                                <span>Phone : +1 5551855359</span>
+                                <span>Phone : +92-331-9998780</span>
 
                             </div>
                         </div>
@@ -126,13 +129,15 @@ export const CheckOutData = () => {
                                     value="c"
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': 'A' }}
+                                    style={{ color: '#c10037' }}
+
                                 />
-                                <span className="new_house_text">Office</span>
+                                <span className="new_house_text">Address 3</span>
                             </div>
                             <div className="newHome">
-                                <span>Address : 26, Starts Hollow Colony, Denver, Colorado, United States</span>
+                                <span>Address : R-5, Row-5, Block D, National Cement Employees Housing Society, Rashid Minhas Road, Karachi, Pakistan</span>
                                 <span>Pin Code : 80014</span>
-                                <span>Phone : +1 5551855359</span>
+                                <span>Phone : +92-331-9998780</span>
 
                             </div>
                         </div>
@@ -160,13 +165,15 @@ export const CheckOutData = () => {
                                     value="a"
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': 'A' }}
+                                    style={{ color: '#c10037' }}
+
                                 />
-                                <span className="new_house_text">New Home</span>
+                                <span className="new_house_text">Address 1</span>
                             </div>
                             <div className="newHome">
-                                <span>Address : 26, Starts Hollow Colony, Denver, Colorado, United States</span>
+                                <span>Address : R-5, Row-5, Block D, National Cement Employees Housing Society, Rashid Minhas Road, Karachi, Pakistan</span>
                                 <span>Pin Code : 80014</span>
-                                <span>Phone : +1 5551855359</span>
+                                <span>Phone : +92-331-9998780</span>
 
                             </div>
                         </div>
@@ -180,13 +187,15 @@ export const CheckOutData = () => {
                                     value="b"
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': 'A' }}
+                                    style={{ color: '#c10037' }}
+
                                 />
-                                <span className="new_house_text">Old Home</span>
+                                <span className="new_house_text">Address 2</span>
                             </div>
                             <div className="newHome">
-                                <span>Address : 26, Starts Hollow Colony, Denver, Colorado, United States</span>
+                                <span>Address : R-5, Row-5, Block D, National Cement Employees Housing Society, Rashid Minhas Road, Karachi, Pakistan</span>
                                 <span>Pin Code : 80014</span>
-                                <span>Phone : +1 5551855359</span>
+                                <span>Phone : +92-331-9998780</span>
 
                             </div>
                         </div>
@@ -200,13 +209,15 @@ export const CheckOutData = () => {
                                     value="c"
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': 'A' }}
+                                    style={{ color: '#c10037' }}
+
                                 />
-                                <span className="new_house_text">Office</span>
+                                <span className="new_house_text">Address 3</span>
                             </div>
                             <div className="newHome">
-                                <span>Address : 26, Starts Hollow Colony, Denver, Colorado, United States</span>
+                                <span>Address : R-5, Row-5, Block D, National Cement Employees Housing Society, Rashid Minhas Road, Karachi, Pakistan</span>
                                 <span>Pin Code : 80014</span>
-                                <span>Phone : +1 5551855359</span>
+                                <span>Phone : +92-331-9998780</span>
 
                             </div>
                         </div>
@@ -231,6 +242,8 @@ export const CheckOutData = () => {
                                 value="a"
                                 name="radio-buttons"
                                 inputProps={{ 'aria-label': 'A' }}
+                                style={{ color: '#c10037' }}
+
                             />
                             <span>Standard Delivery | Approx 5 to 7 Days</span>
                         </div>
@@ -241,6 +254,8 @@ export const CheckOutData = () => {
                                 value="b"
                                 name="radio-buttons"
                                 inputProps={{ 'aria-label': 'A' }}
+                                style={{ color: '#c10037' }}
+
                             />
                             <span> Express Delivery | Schedule</span>
                         </div>
@@ -266,6 +281,8 @@ export const CheckOutData = () => {
                                     value={method.value}
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': method.label }}
+                                    style={{ color: '#c10037' }}
+
                                 />
                                 <span>{method.label}</span>
                             </div>

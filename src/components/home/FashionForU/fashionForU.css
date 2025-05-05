@@ -60,7 +60,7 @@
     padding: 50px;
 }
 .fashionHeadings .h5 {
-    color: #ec8951;
+    color: var(--text-hover-color);
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -81,7 +81,7 @@
 
 
 .bottomLine {
-    background-color: #ec8951;
+    background-color: var(--text-hover-color);
     padding: 5px;
     width: 100px;
     border-radius: 5px;

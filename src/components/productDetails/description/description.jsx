@@ -71,8 +71,8 @@ export const Description = () => {
     const maxCount = Math.max(...ratings.map(r => r.count));
     const [value, setValue] = React.useState(2);
     const [select, setSelect] = useState(1)
-     const refOne = React.useRef(null);
-      const inViewOne = useInView(refOne, { triggerOnce: false });
+    const refOne = React.useRef(null);
+    const inViewOne = useInView(refOne, { triggerOnce: false });
     return (
         <motion.div>
             <div style={{ display: 'flex', justifyContent: 'center', }}>
@@ -86,50 +86,48 @@ export const Description = () => {
 
             </div>
             {select === 1 ? (
-                <motion.div style={{ display: 'flex', justifyContent: 'center' }} 
-                 ref={refOne}
-                initial={{ opacity: 0, y: -100 }}
-                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: .8 }}>
+                <motion.div style={{ display: 'flex', justifyContent: 'center' }}
+                    ref={refOne}
+                    initial={{ opacity: 0, y: -100 }}
+                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: .8 }}>
 
 
                     <div className="product_description">
                         <span>
-                            The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.it has text written on it in a black cursive language which looks great on a white color.
+                            This outfit features a white blouse selected by our in-house stylist. The blouse showcases elegant black cursive text that adds a unique charm to the minimalist design. It’s a stylish and versatile choice, ideal for both casual and semi-formal wear.
                         </span>
-                        <h5>fabric:</h5>
+
+                        <h5>Fabric:</h5>
                         <span>
-                            Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.
+                            Crafted from premium art silk — a soft, lightweight fabric made from rayon — this outfit offers a luxurious feel and all-day comfort, especially suited for warm weather.
                         </span>
-                        <h5>size & fit:</h5>
+
+                        <h5>Size & Fit:</h5>
                         <span>
-
-                            The model (height 5'8") is wearing a size S
+                            The model is 5'8" and is wearing a size Small. The fit is designed to be flattering while providing ease of movement.
                         </span>
 
-                        <h5> Material & Care:</h5>
+                        <h5>Material & Care:</h5>
                         <span>
-                            Top fabric: pure cotton
-
+                            Top Fabric: 100% Pure Cotton
                         </span>
                         <span>
-
-                            Bottom fabric: pure cotton
+                            Bottom Fabric: 100% Pure Cotton
                         </span>
-
                         <span>
-
-                            Hand-wash
+                            Care Instructions: Hand-wash separately in cold water. Dry in shade for fabric longevity.
                         </span>
+
                     </div>
 
                 </motion.div>
             ) : select === 2 ? (
                 <motion.div style={{ display: 'flex', justifyContent: 'center' }}
-                  ref={refOne}
-                initial={{ opacity: 0, y: 100 }}
-                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: .8 }}>
+                    ref={refOne}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: .8 }}>
                     <div className="reviews">
                         <div className="reviewLeft">
                             <div className="rating">

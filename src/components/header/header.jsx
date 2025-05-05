@@ -136,9 +136,9 @@ export const Header = () => {
                   edge="start"
                   color="inherit"
                   aria-label="open drawer"
-                  sx={{ mr: 2 }}
+                  // sx={{ mr: 2 }}
                 >
-                  <MenuOpenIcon className='icon' style={{ fontSize: 32, color: 'orange' }} />
+                  <MenuOpenIcon className='icon' style={{ fontSize: 36, color: '#c10037' }} />
                 </IconButton>
               </motion.div>
             ) : (

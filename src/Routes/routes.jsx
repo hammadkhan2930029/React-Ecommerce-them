@@ -10,6 +10,8 @@ import { Login } from "../pages/login";
 import { Register } from "../pages/register";
 import { Forget_pwd } from "../pages/forgetPwd";
 import { LoginForm } from "../components/login/loginForm/loginForm";
+import { Review } from "../pages/review";
+import { Profile } from "../pages/profile";
 
 export const appRoutes = [
     { path: '/', element: <Home /> },
@@ -22,9 +24,12 @@ export const appRoutes = [
     { path: '/contactus', element: <ContactUs/> },
     { path: '/login', element: <Login/> },
     { path: '/loginForm', element: <LoginForm/> },
-
     { path: '/register', element: <Register/> },
     { path: '/forgot_pwd', element: <Forget_pwd/> },
+    { path: '/review', element: <Review/> },
+    { path: '/profile', element: <Profile/> },
+
+
 
 
 ]

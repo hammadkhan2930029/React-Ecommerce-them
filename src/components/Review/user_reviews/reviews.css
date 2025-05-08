@@ -1,0 +1,115 @@
+.review{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+.reviews_div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+
+}
+.review_main{
+    width: 100%;
+    display: flex;
+    padding: 30px 10px;
+    margin: 10px;
+    border-bottom: 1px solid #bababa;
+
+    
+}
+.review_avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 75px;
+}
+.review_text_area{
+    padding: 10px;
+}
+.user_name{
+    font-size: 18px;
+    font-weight: 700;
+}
+.user_date{
+    font-size: 16px;
+    padding-left: 10px;
+
+}
+.user_description{
+    font-size: 16px;
+}
+.user_like{
+    display: flex;
+    width: 20%;
+    padding: 10px;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.user_like span {
+    font-size: 18px;
+    padding: 5px 10px;
+}
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {}
+
+/* 991px to 768px */
+@media (max-width: 991px) {
+    .user_like{
+        width: 30%;
+    }
+   
+}
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+    .user_like{
+        width: 40%;
+    }
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+    .user_like{
+        width: 100%;
+        justify-content: center;
+    }
+.review_main{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}  
+.review_user_name{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+}
+
+@media (max-width: 440px) {
+
+   
+.user_name{
+    font-size: 16px;
+
+}
+
+.user_date{
+    font-size: 12px;
+}
+.user_description{
+    text-align: center;
+    display: flex;
+}
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

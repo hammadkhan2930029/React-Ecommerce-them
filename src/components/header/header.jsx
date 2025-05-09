@@ -95,14 +95,14 @@ export const Header = () => {
             </motion.div>
           </motion.div>
           <motion.div className="header-right">
-            <motion.div className="login-register" onClick={() => navigate('/login')}>
+            <motion.div className="login-register" onClick={handleClick}>
               <PersonIcon />
-              <span className='text'>Login</span>
+              <span className='text'>Login/Signup</span>
             </motion.div>
-            <motion.div className="login-register" onClick={() => navigate('/register')}>
+            {/* <motion.div className="login-register" onClick={() => navigate('/register')}>
               <PersonIcon />
               <span className='text'>Register</span>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </motion.div>
       )}
@@ -150,7 +150,6 @@ export const Header = () => {
 
                   <span key={item.id} className='menutext' onClick={() => {
                     handle(item.title)
-                    handleClick()
                   }} >
                     {item.title}
 
@@ -162,7 +161,7 @@ export const Header = () => {
                 ))}
 
                 <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
-                <Badge badgeContent={4} 
+                <Badge badgeContent={4}
                   sx={{
                     '& .MuiBadge-badge': {
                       backgroundColor: '#c10037',
@@ -180,12 +179,19 @@ export const Header = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                 >
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleClose}>Logout</MenuItem>
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  <MenuItem onClick={() => {
+                    navigate('/login')
+                    handleClose()
+                  }}>Login</MenuItem>
+                  <MenuItem onClick={() => {
+                    navigate('/register')
+                    handleClose()
+                  }}>Register</MenuItem>
+                  <MenuItem onClick={() => {
+                    navigate('/profile')
+                    handleClose()
+                  }}>Profile</MenuItem>
+
                 </Menu>
               </motion.div>
             )}

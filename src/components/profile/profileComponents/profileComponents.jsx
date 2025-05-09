@@ -14,13 +14,18 @@ import useScreenWidth from "../../../hooks/screenWidth";
 import TopDrawer from "../TopDrawer/topDrawer";
 import { NotificationsList } from "../Notification/notification";
 import { BankDetailsForm } from "../BankDetailsForm/bankDetails";
+import { MyWallet } from "../myWallet/myWallet";
+import { EarningPoints } from "../EarningPoints/earningPoints";
+import { MyOrders } from "../MyOrders/myOrders";
+import { RefundHistory } from "../RefundHistory/refundHistory";
+import { AddressBook } from "../AddressBook/AddressBook";
 
 
 export const ProfileComponent = () => {
       const [OpenTopDrawer, setOpenTopDrawer] = useState(false)
     
     const screenWidth = useScreenWidth()
-    const [click, setClick] = useState(0)
+    const [click, setClick] = useState(1)
     return (
         <div className="profile">
             <div className="profile_component">
@@ -95,6 +100,11 @@ export const ProfileComponent = () => {
                    {click === 1 && <Dashboard/>}
                    {click === 2 && <NotificationsList/>}
                    {click === 3 && <BankDetailsForm/>}
+                   {click === 4 && <MyWallet/>}
+                   {click === 5 && <EarningPoints/>}
+                   {click === 6 && <MyOrders/>}
+                   {click === 7 && <RefundHistory/>}
+                   {click === 8 && <AddressBook/>}
                 </div>
 
             </div>

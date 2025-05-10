@@ -4,29 +4,30 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 const notifications = [
     {
         id: 1,
-        message: 'Your order has been successfully placed. Order ID: #1013. Thank you for choosing us.',
-        date: '24 Jun 2024',
-        time: '02:29PM',
+        message: 'New login detected from a different device. If this wasn’t you, please secure your account.',
+        date: '10 May 2025',
+        time: '08:15AM',
     },
     {
         id: 2,
-        message: 'Your Refund request status has been rejected',
-        date: '21 Jun 2024',
-        time: '05:42PM',
+        message: 'Your password was successfully changed. If you didn’t initiate this, contact support immediately.',
+        date: '09 May 2025',
+        time: '11:30AM',
     },
     {
         id: 3,
-        message: 'Your order has been successfully placed. Order ID: #1012. Thank you for choosing us.',
-        date: '21 Jun 2024',
-        time: '05:18PM',
+        message: 'Your subscription has been renewed successfully. Plan: Premium, Valid till: 10 June 2025.',
+        date: '08 May 2025',
+        time: '04:22PM',
     },
     {
         id: 4,
-        message: 'Your order has been successfully placed. Order ID: #1011. Thank you for choosing us.',
-        date: '21 Jun 2024',
-        time: '05:18PM',
-    },
+        message: 'Reminder: Your free trial will expire in 3 days. Upgrade now to continue using premium features.',
+        date: '07 May 2025',
+        time: '07:05PM',
+    }
 ];
+
 
 export const NotificationsList = () => {
     return (

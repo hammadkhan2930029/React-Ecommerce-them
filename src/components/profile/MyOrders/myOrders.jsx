@@ -6,113 +6,114 @@ export const MyOrders = () => {
     const screenWidth = useScreenWidth()
 
 
-    const orders = [
-        {
-            orderNumber: "#1020",
-            date: "06 Jul 2024 03:51 PM",
-            amount: 61.73,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1017",
-            date: "06 Jul 2024 03:15 PM",
-            amount: 1.97,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1016",
-            date: "26 Jun 2024 10:23 AM",
-            amount: 46.14,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1015",
-            date: "25 Jun 2024 06:34 PM",
-            amount: 18.75,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1013",
-            date: "24 Jun 2024 02:29 PM",
-            amount: 1.72,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1020",
-            date: "06 Jul 2024 03:51 PM",
-            amount: 61.73,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1017",
-            date: "06 Jul 2024 03:15 PM",
-            amount: 1.97,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1016",
-            date: "26 Jun 2024 10:23 AM",
-            amount: 46.14,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1015",
-            date: "25 Jun 2024 06:34 PM",
-            amount: 18.75,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1013",
-            date: "24 Jun 2024 02:29 PM",
-            amount: 1.72,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1020",
-            date: "06 Jul 2024 03:51 PM",
-            amount: 61.73,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1017",
-            date: "06 Jul 2024 03:15 PM",
-            amount: 1.97,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1016",
-            date: "26 Jun 2024 10:23 AM",
-            amount: 46.14,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1015",
-            date: "25 Jun 2024 06:34 PM",
-            amount: 18.75,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        },
-        {
-            orderNumber: "#1013",
-            date: "24 Jun 2024 02:29 PM",
-            amount: 1.72,
-            paymentStatus: "Pending",
-            paymentMethod: "COD"
-        }
-    ];
+   const orders = [
+    {
+        orderNumber: "#1025",
+        date: "10 May 2025 11:10 AM",
+        amount: 54.89,
+        paymentStatus: "Paid",
+        paymentMethod: "Credit Card"
+    },
+    {
+        orderNumber: "#1024",
+        date: "09 May 2025 02:45 PM",
+        amount: 23.60,
+        paymentStatus: "Pending",
+        paymentMethod: "PayPal"
+    },
+    {
+        orderNumber: "#1023",
+        date: "08 May 2025 09:35 AM",
+        amount: 78.45,
+        paymentStatus: "Cancelled",
+        paymentMethod: "UPI"
+    },
+    {
+        orderNumber: "#1022",
+        date: "07 May 2025 05:10 PM",
+        amount: 99.99,
+        paymentStatus: "Paid",
+        paymentMethod: "COD"
+    },
+    {
+        orderNumber: "#1021",
+        date: "06 May 2025 12:00 PM",
+        amount: 10.50,
+        paymentStatus: "Pending",
+        paymentMethod: "Bank Transfer"
+    },
+    {
+        orderNumber: "#1020",
+        date: "05 May 2025 04:15 PM",
+        amount: 31.00,
+        paymentStatus: "Failed",
+        paymentMethod: "Credit Card"
+    },
+    {
+        orderNumber: "#1019",
+        date: "04 May 2025 03:25 PM",
+        amount: 45.67,
+        paymentStatus: "Paid",
+        paymentMethod: "PayPal"
+    },
+    {
+        orderNumber: "#1018",
+        date: "03 May 2025 10:45 AM",
+        amount: 26.40,
+        paymentStatus: "Pending",
+        paymentMethod: "COD"
+    },
+    {
+        orderNumber: "#1017",
+        date: "02 May 2025 01:15 PM",
+        amount: 72.33,
+        paymentStatus: "Paid",
+        paymentMethod: "Debit Card"
+    },
+    {
+        orderNumber: "#1016",
+        date: "01 May 2025 06:30 PM",
+        amount: 19.99,
+        paymentStatus: "Cancelled",
+        paymentMethod: "UPI"
+    },
+    {
+        orderNumber: "#1015",
+        date: "30 Apr 2025 08:00 AM",
+        amount: 38.88,
+        paymentStatus: "Paid",
+        paymentMethod: "Bank Transfer"
+    },
+    {
+        orderNumber: "#1014",
+        date: "29 Apr 2025 09:50 PM",
+        amount: 67.25,
+        paymentStatus: "Failed",
+        paymentMethod: "COD"
+    },
+    {
+        orderNumber: "#1013",
+        date: "28 Apr 2025 11:30 AM",
+        amount: 12.00,
+        paymentStatus: "Paid",
+        paymentMethod: "Credit Card"
+    },
+    {
+        orderNumber: "#1012",
+        date: "27 Apr 2025 03:20 PM",
+        amount: 84.10,
+        paymentStatus: "Pending",
+        paymentMethod: "PayPal"
+    },
+    {
+        orderNumber: "#1011",
+        date: "26 Apr 2025 07:05 PM",
+        amount: 91.35,
+        paymentStatus: "Paid",
+        paymentMethod: "COD"
+    }
+];
+
 
     const [currentPage, setCurrentpage] = useState(0);
     const [rowPerPage, setRowPerPage] = useState(5);

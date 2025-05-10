@@ -11,75 +11,70 @@ import { motion, useInView } from "framer-motion";
 
 export const Reviews = () => {
 
-  
+
     const [like, setLike] = useState(1)
     const [dislike, setdisLike] = useState(1)
 
 
-    const posts = [
-        {
-            image: AppImages.owner1,
-            author: "Mark Jecno",
-            date: "(12 January 2018 at 1:30AM)",
-            content: "Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est sit amet felis fringilla bibendum at at leo. Proin molestie ac nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor. Aenean nec felis dui. Integer tristique odio mi, in volutpat metus posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget lectus sit amet diam vestibulum varius. Suspendisse dignissim mattis leo, nec facilisis erat tempor quis. Vestibulum eu vestibulum ex.",
-            likes: 14,
-            dislike: 2
-        },
-        {
-            image: AppImages.owner2,
+  const posts = [
+    {
+        image: AppImages.owner1,
+        author: "Ayesha Ahmed",
+        date: "(10 April 2025 at 3:20PM)",
+        content: "The future of technology lies in how we adapt it for humanity’s benefit. Innovation without ethics is like a car without brakes.",
+        likes: 34,
+        dislike: 0
+    },
+    {
+        image: AppImages.owner2,
+        author: "Hassan Raza",
+        date: "(22 March 2025 at 11:00AM)",
+        content: "A healthy lifestyle begins with a balanced mind. Meditation and discipline are the cornerstones of long-term well-being.",
+        likes: 18,
+        dislike: 2
+    },
+    {
+        image: AppImages.owner3,
+        author: "Fatima Noor",
+        date: "(8 February 2025 at 6:45AM)",
+        content: "Reading a book a month changed my perspective on life. Knowledge builds confidence, and confidence builds success.",
+        likes: 42,
+        dislike: 3
+    },
+    {
+        image: AppImages.owner1,
+        author: "Zain Malik",
+        date: "(16 January 2025 at 9:15PM)",
+        content: "Every day is a new chance to improve yourself. Don't wait for the perfect moment—create it.",
+        likes: 29,
+        dislike: 1
+    },
+    {
+        image: AppImages.owner4,
+        author: "Mehak Shah",
+        date: "(1 January 2025 at 8:10AM)",
+        content: "Traveling opens the heart and mind like nothing else. It’s not just about seeing places—it’s about discovering yourself.",
+        likes: 53,
+        dislike: 4
+    },
+    {
+        image: AppImages.owner1,
+        author: "Ali Tufail",
+        date: "(20 December 2024 at 5:30PM)",
+        content: "If your dreams don’t scare you, they’re not big enough. Take risks, fail forward, and grow beyond your limits.",
+        likes: 37,
+        dislike: 2
+    },
+    {
+        image: AppImages.owner2,
+        author: "Nimra Shahid",
+        date: "(10 December 2024 at 12:00PM)",
+        content: "Kindness costs nothing but means everything. A small act can change someone’s entire day.",
+        likes: 46,
+        dislike: 1
+    }
+];
 
-            author: "Mark Jecno",
-            date: "(12 January 2018 at 1:30AM)",
-            content: "Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est sit amet felis fringilla bibendum at at leo. Proin molestie ac nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor. Aenean nec felis dui. Integer tristique odio mi, in volutpat metus posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget lectus sit amet diam vestibulum varius. Suspendisse dignissim mattis leo, nec facilisis erat tempor quis. Vestibulum eu vestibulum ex.",
-            likes: 14,
-            dislike: 2
-        },
-        {
-            image: AppImages.owner3,
-
-            author: "Mark Jecno",
-            date: "(12 January 2018 at 1:30AM)",
-            content: "Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est sit amet felis fringilla bibendum at at leo. Proin molestie ac nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor. Aenean nec felis dui. Integer tristique odio mi, in volutpat metus posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget lectus sit amet diam vestibulum varius. Suspendisse dignissim mattis leo, nec facilisis erat tempor quis. Vestibulum eu vestibulum ex.",
-            likes: 14,
-            dislike: 2
-        },
-        {
-            image: AppImages.owner1,
-
-            author: "Mark Jecno",
-            date: "(12 January 2018 at 1:30AM)",
-            content: "Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est sit amet felis fringilla bibendum at at leo. Proin molestie ac nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor. Aenean nec felis dui. Integer tristique odio mi, in volutpat metus posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget lectus sit amet diam vestibulum varius. Suspendisse dignissim mattis leo, nec facilisis erat tempor quis. Vestibulum eu vestibulum ex.",
-            likes: 14,
-            dislike: 2
-        },
-        {
-            image: AppImages.owner4,
-
-            author: "Mark Jecno",
-            date: "(12 January 2018 at 1:30AM)",
-            content: "Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est sit amet felis fringilla bibendum at at leo. Proin molestie ac nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor. Aenean nec felis dui. Integer tristique odio mi, in volutpat metus posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget lectus sit amet diam vestibulum varius. Suspendisse dignissim mattis leo, nec facilisis erat tempor quis. Vestibulum eu vestibulum ex.",
-            likes: 14,
-            dislike: 2
-        },
-        {
-            image: AppImages.owner1,
-
-            author: "Mark Jecno",
-            date: "(12 January 2018 at 1:30AM)",
-            content: "Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est sit amet felis fringilla bibendum at at leo. Proin molestie ac nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor. Aenean nec felis dui. Integer tristique odio mi, in volutpat metus posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget lectus sit amet diam vestibulum varius. Suspendisse dignissim mattis leo, nec facilisis erat tempor quis. Vestibulum eu vestibulum ex.",
-            likes: 14,
-            dislike: 2
-        },
-        {
-            image: AppImages.owner2,
-
-            author: "Mark Jecno",
-            date: "(12 January 2018 at 1:30AM)",
-            content: "Donec rhoncus massa quis nibh imperdiet dictum. Vestibulum id est sit amet felis fringilla bibendum at at leo. Proin molestie ac nisi eu laoreet. Integer faucibus enim nec ullamcorper tempor. Aenean nec felis dui. Integer tristique odio mi, in volutpat metus posuere eu. Aenean suscipit ipsum nunc, id volutpat lorem hendrerit ac. Sed id elit quam. In ac mauris arcu. Praesent eget lectus sit amet diam vestibulum varius. Suspendisse dignissim mattis leo, nec facilisis erat tempor quis. Vestibulum eu vestibulum ex.",
-            likes: 14,
-            dislike: 2
-        },
-    ];
     const [postData, setPostData] = useState(posts)
 
     const handleLike = (index) => {
@@ -100,7 +95,7 @@ export const Reviews = () => {
             <div className="reviews_div">
                 {postData.map((item, index) => (
                     <motion.div className="review_main" key={index}
-                       >
+                    >
                         <div className="review_img_div">
                             <Stack>
                                 <Avatar

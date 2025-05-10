@@ -3,6 +3,7 @@ import Drawer from '@mui/material/Drawer';
 import './drawer.css';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { AppImages } from '../../../constants/AppImages';
 
 
 
@@ -105,7 +106,16 @@ export default function LeftDrawer({ open, onClose }) {
   return (
     <div>
 
+
       <Drawer anchor="left" open={open} onClose={onClose}>
+        <div className='user_profile_div'>
+          <img src={AppImages.owner1} className='drawerImg'/>
+          <div style={{display:'flex',flexDirection:'column',padding:10}}>
+            <span style={{color:"#333",fontSize:18,fontWeight:700}}>Jhone wick</span>
+            <span style={{color:"#333",fontSize:14}}>jhonWick123@gmail.com</span>
+
+          </div>
+        </div>
 
         <div className="menu-container">
           {Object.entries(menuData).map(([mainCategory, subCategories]) => (

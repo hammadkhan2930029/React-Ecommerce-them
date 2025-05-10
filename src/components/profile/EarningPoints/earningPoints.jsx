@@ -182,14 +182,15 @@ const createData = (date, amount, remark, status) => {
 };
 
 const rows = [
-    createData('06 Jul 2024 03:15 PM', '$39.40', 'Wallet amount successfully debited for Order #1017', 'Debit'),
-    createData('25 Jun 2024 06:34 PM', '$375.00', 'Wallet amount successfully debited for Order #1015', 'Debit'),
-    createData('24 Jun 2024 02:29 PM', '$34.44', 'Wallet amount successfully debited for Order #1013', 'Debit'),
-    createData('21 Jun 2024 04:29 PM', '$75.21', 'Wallet amount successfully debited for Order #1010', 'Debit'),
-    createData('21 Jun 2024 03:57 PM', '$30.52', 'Wallet amount successfully debited for Order #1009', 'Debit'),
-    createData('21 Jun 2024 03:48 PM', '$109.97', 'Wallet amount successfully debited for Order #1006', 'Debit'),
-    createData('21 Jun 2024 03:42 PM', '$323.00', 'Admin has credited the balance.', 'Credit'),
+    createData('10 May 2025 09:10 AM', '$45.60', 'Wallet amount successfully debited for Order #1023', 'Debit'),
+    createData('08 May 2025 01:45 PM', '$120.00', 'Admin has credited a bonus to your wallet.', 'Credit'),
+    createData('05 May 2025 06:05 PM', '$88.20', 'Wallet amount successfully debited for Order #1019', 'Debit'),
+    createData('01 May 2025 04:30 PM', '$150.75', 'Refund processed for Order #1016', 'Credit'),
+    createData('28 Apr 2025 11:22 AM', '$63.00', 'Wallet amount successfully debited for Order #1014', 'Debit'),
+    createData('25 Apr 2025 07:15 PM', '$200.99', 'Admin has credited your referral reward.', 'Credit'),
+    createData('20 Apr 2025 02:55 PM', '$37.50', 'Wallet amount successfully debited for Order #1011', 'Debit'),
 ];
+
 
 const grey = {
     50: '#F9FAFB',

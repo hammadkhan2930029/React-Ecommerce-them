@@ -3,24 +3,37 @@ import "./addressBook.css";
 
 const addressList = [
   {
-    name: "John Due",
-    tag: "New Home",
-    address: "26, Starts Hollow Colony, Denver, Colorado, United States 80014",
-    phone: "+1 5551855359",
+    name: "Sarah Thompson",
+    tag: "Home",
+    address: "1452 Maple Drive, Austin, Texas, United States 73301",
+    phone: "+1 5126549871",
   },
   {
-    name: "John Due",
-    tag: "Old Home",
-    address: "53B, Claire New Street, San Jose, United States 94088",
-    phone: "+1 5551855359",
+    name: "Michael Green",
+    tag: "Work",
+    address: "9821 Mission Street, San Francisco, California, United States 94110",
+    phone: "+1 4152237890",
   },
   {
-    name: "John Due",
-    tag: "Office",
-    address: "21B, Row New Street, San Jose, California, United States 94088",
-    phone: "+1 551865359",
+    name: "Emily Davis",
+    tag: "Parents' House",
+    address: "402 Lakeview Road, Orlando, Florida, United States 32801",
+    phone: "+1 3217746652",
+  },
+  {
+    name: "David Wilson",
+    tag: "Vacation Home",
+    address: "88 Ocean Breeze Lane, Honolulu, Hawaii, United States 96815",
+    phone: "+1 8085559012",
+  },
+  {
+    name: "Aisha Khan",
+    tag: "Friend's Place",
+    address: "19 Rosewood Avenue, Seattle, Washington, United States 98101",
+    phone: "+1 2063331188",
   },
 ];
+
 
 export const AddressBook = () => {
   return (

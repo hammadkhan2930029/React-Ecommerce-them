@@ -11,28 +11,38 @@ import Stack from '@mui/material/Stack';
 const cardData = [
     {
         img: AppImages.owner1,
-        description: 'London Fashion clothing and ideas for valentines day',
-        date: '25 January 2021'
-    },
-    {
-        img: AppImages.owner2,
-        description: 'London Fashion clothing and ideas for valentines day',
-        date: '25 January 2021'
-    },
-    {
-        img: AppImages.owner3,
-        description: 'London Fashion clothing and ideas for valentines day',
-        date: '25 January 2021'
-    },
-    {
-        img: AppImages.owner4,
-        description: 'London Fashion clothing and ideas for valentines day',
-        date: '25 January 2021'
+        description: 'you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.',
+        date: '25 January 2021',
+        name:'Jhone wick',
+        designation:'CEO',
     },
     {
         img: AppImages.owner1,
-        description: 'London Fashion clothing and ideas for valentines day',
-        date: '25 January 2021'
+        description: 'you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.',
+        date: '25 January 2021',
+        name:'Henray',
+        designation:'Designer',
+    },
+    {
+        img: AppImages.owner2,
+        description: 'you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.',
+        date: '25 January 2021',
+        name:'Simson',
+        designation:'Team Leader',
+    },
+    {
+        img: AppImages.owner3,
+        description: 'you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.',
+        date: '25 January 2021',
+        name:'vicky ',
+        designation:'Designer',
+    },
+    {
+        img: AppImages.owner4,
+        description: 'you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.',
+        date: '25 January 2021',
+        name:'Jhone',
+        designation:'Co_owner   ',
     },
 
 
@@ -85,8 +95,8 @@ export const AvatarCard = () => {
                                         sx={{ width: 150, height: 150 }}
                                     />
                                 </Stack>
-                                <span className='avatar_text1'>Mark Junco</span>
-                                <span className='avatar_text2'>Designer</span>
+                                <span className='avatar_text1'>{item.name}</span>
+                                <span className='avatar_text2'>{item.designation}</span>
 
                             </motion.div>
                             <motion.div className="avatar_text_div">

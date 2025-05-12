@@ -75,9 +75,11 @@ const productMap = {
 };
 
 const renderProductList = ({ data, tag, key }) => (
+    <div className='ourProduct_main'>
+
     <motion.div
         key={key}
-        className="main"
+        className="our_main"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
@@ -99,6 +101,8 @@ const renderProductList = ({ data, tag, key }) => (
             </motion.div>
         ))}
     </motion.div>
+    </div>
+
 );
 
 export const OurProductCards = () => {

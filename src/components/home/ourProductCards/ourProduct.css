@@ -5,9 +5,13 @@
     flex-direction: column;
     margin-top: 50px;
 }
+.ourProduct_main{
+    display: flex;
+    justify-content: center;
 
-.main {
-    width: 100%;
+}
+.our_main {
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,7 +22,7 @@
 .latestProduct {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 24%;
     padding: 10px;
     border: 1px solid #eeeeee;
     border-radius: 10px;
@@ -153,7 +157,7 @@
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-    .main {
+    .our_main {
         flex-direction: column;
     }
 

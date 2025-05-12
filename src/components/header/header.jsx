@@ -20,7 +20,7 @@ import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { motion, useInView } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
-
+import RateReviewIcon from '@mui/icons-material/RateReview';
 
 
 
@@ -54,7 +54,7 @@ export const Header = () => {
     { id: 2, title: "Feature" },
     { id: 3, title: "Product" },
     { id: 4, title: "Shop" },
-    { id: 5, title: "Deal" },
+    { id: 5, title: "Blogs" },
     { id: 6, title: "About" },
     { id: 7, title: "Contact" }
   ];
@@ -70,6 +70,9 @@ export const Header = () => {
     }
     else if (title.toLowerCase() === 'contact') {
       navigate('/contactus')
+    }
+     else if (title.toLowerCase() === 'blogs') {
+      navigate('/blogs')
     }
     else {
       console.log('Click on', title)
@@ -95,14 +98,15 @@ export const Header = () => {
             </motion.div>
           </motion.div>
           <motion.div className="header-right">
+              <motion.div className="login-register" onClick={() => navigate('/review')}>
+              <RateReviewIcon />
+              <span className='text'>Reviews</span>
+            </motion.div>
             <motion.div className="login-register" onClick={handleClick}>
               <PersonIcon />
-              <span className='text'>Login/Signup</span>
+              <span className='text'>Login</span>
             </motion.div>
-            {/* <motion.div className="login-register" onClick={() => navigate('/register')}>
-              <PersonIcon />
-              <span className='text'>Register</span>
-            </motion.div> */}
+          
           </motion.div>
         </motion.div>
       )}
@@ -153,7 +157,7 @@ export const Header = () => {
                   }} >
                     {item.title}
 
-                    {item.title.toLowerCase() === 'home' ? null : item.title.toLowerCase() === 'about' ? null : item.title.toLowerCase() === 'contact' ? null :
+                    {item.title.toLowerCase() === 'home' ? null : item.title.toLowerCase() === 'about' ? null : item.title.toLowerCase() === 'contact' ? null : item.title.toLowerCase() === 'blogs' ? null :
                       (<KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />)}
 
 

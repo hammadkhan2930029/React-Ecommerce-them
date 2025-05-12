@@ -3,24 +3,27 @@ import { AppImages } from '../../../constants/AppImages';
 import './latestDrops.css';
 import { motion, useInView } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const responsive = {
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 3,
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        slidesToSlide: 2,
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-        slidesToSlide: 1,
-    },
-};
+// const responsive = {
+//     desktop: {
+//         breakpoint: { max: 3000, min: 1024 },
+//         items: 3,
+//         slidesToSlide: 3,
+//     },
+//     tablet: {
+//         breakpoint: { max: 1024, min: 464 },
+//         items: 2,
+//         slidesToSlide: 2,
+//     },
+//     mobile: {
+//         breakpoint: { max: 464, min: 0 },
+//         items: 1,
+//         slidesToSlide: 1,
+//     },
+// };
 
 const productDetails = [
     {
@@ -47,6 +50,7 @@ const productDetails = [
         price: 2500,
         image: AppImages.cardimg5,
     },
+    
 ];
 
 export const LatestDrops = ({ deviceType }) => {
@@ -54,8 +58,34 @@ export const LatestDrops = ({ deviceType }) => {
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
+   const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 3 },
+    },
+    {
+      breakpoint: 768,
+      settings: { slidesToShow: 2 },
+    },
+    {
+      breakpoint: 480,
+      settings: { slidesToShow: 1 },
+    },
+  ],
+};
+
+
+
     return (
-        <motion.div>
+        <motion.div className='latest_main'>
             <motion.div
                 ref={refOne}
                 initial={{ opacity: 0, y: -100 }}
@@ -71,28 +101,27 @@ export const LatestDrops = ({ deviceType }) => {
             </motion.div>
 
 
-            <motion.div className='main' 
-             ref={refOne}
-            initial={{ opacity: 0, y: -100 }}
-            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: .8 }} >
-
-                {productDetails.map((product, index) => (
-                    <motion.div className="latestProduct" key={index} onClick={()=> navigate('/productDetails')}>
-                        <motion.div className="imgmotion.div">
-                            <img src={product.image} className="latestCardImg" alt={product.title} />
-                        </motion.div>
-                        <motion.div className="latestCardText_div">
-                            <motion.div className='tag_div'>
-
-                                <span className='tag'>Exclusive</span>
+            <motion.div className='main_main'
+                ref={refOne}
+                initial={{ opacity: 0, y: -100 }}
+                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: .8 }} >
+                    {productDetails.map((product, index) => (
+                        <motion.div className="latestProduct" key={index} onClick={() => navigate('/productDetails')}>
+                            <motion.div className="imgdiv">
+                                <img src={product.image} className="latestCardImg" alt={product.title} />
                             </motion.div>
-                            <span className="latestCardText1">{product.title}</span>
-                            <span className="latestCardText2">{product.category}</span>
-                            <span className="latestCardText1">RS.{product.price}</span>
+                            <motion.div className="latestCardText_div">
+                                <motion.div className='tag_div'>
+
+                                    <span className='tag'>Exclusive</span>
+                                </motion.div>
+                                <span className="latestCardText1">{product.title}</span>
+                                <span className="latestCardText2">{product.category}</span>
+                                <span className="latestCardText1">RS.{product.price}</span>
+                            </motion.div>
                         </motion.div>
-                    </motion.div>
-                ))}
+                    ))}
             </motion.div>
 
         </motion.div>

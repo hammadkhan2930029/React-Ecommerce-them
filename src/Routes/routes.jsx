@@ -12,6 +12,9 @@ import { Forget_pwd } from "../pages/forgetPwd";
 import { LoginForm } from "../components/login/loginForm/loginForm";
 import { Review } from "../pages/review";
 import { Profile } from "../pages/profile";
+import { Blogs } from "../pages/blogs";
+import { Blogs_card } from "../components/Blogs/blogs_card/blogs_card";
+import { Blog_details_page } from "../components/Blogs/blogsDetails/detailPage/detailPage";
 
 export const appRoutes = [
     { path: '/', element: <Home /> },
@@ -28,6 +31,13 @@ export const appRoutes = [
     { path: '/forgot_pwd', element: <Forget_pwd/> },
     { path: '/review', element: <Review/> },
     { path: '/profile', element: <Profile/> },
+    { path: '/blogs', element: <Blogs/> },
+    { path: '/blogs_card', element: <Blogs_card/> },
+    { path: '/blogs_details_page', element: <Blog_details_page/> },
+
+
+
+
 
 
 

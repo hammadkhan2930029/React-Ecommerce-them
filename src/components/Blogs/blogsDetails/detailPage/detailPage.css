@@ -1,8 +1,9 @@
 .blog-detail-container {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: 40px auto;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
+  width: 100%;
 }
 
 .blog-banner {
@@ -19,6 +20,7 @@
   display: block;
   border-radius: 10px;
   object-fit: cover;
+  height: 500px;
 }
 
 .blog-detail-content {
@@ -95,5 +97,8 @@
 
   .blog-detail-container {
     padding: 10px;
+  }
+  .blog-banner-img{
+    height: 350px;
   }
 }

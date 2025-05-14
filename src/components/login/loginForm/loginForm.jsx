@@ -56,7 +56,7 @@ export const LoginForm = () => {
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <span className='n_customer2'>Create A Account</span>
                         <span className='n_customer3'>Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</span>
-                        <button className='btn2'>Create an Account</button>
+                        <button className='btn2' onClick={()=> navigate('/register')}>Create an Account</button>
                     </div>
                 </div>
             </motion.div>

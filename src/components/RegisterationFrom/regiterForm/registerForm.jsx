@@ -140,7 +140,7 @@ export const RegisterForm = () => {
                                     animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: .8 }}>
 
-                                    <button className='submit_btn' type="submit">Login</button>
+                                    <button className='submit_btn' type="submit">Submit</button>
                                 </motion.div>
                             </div>
 

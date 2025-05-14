@@ -15,12 +15,15 @@ import { Profile } from "../pages/profile";
 import { Blogs } from "../pages/blogs";
 import { Blogs_card } from "../components/Blogs/blogs_card/blogs_card";
 import { Blog_details_page } from "../components/Blogs/blogsDetails/detailPage/detailPage";
+import { FashionForU } from "../components/home/FashionForU/fashionForU";
 
 export const appRoutes = [
     { path: '/', element: <Home /> },
     { path: '/productDetails', element: <ProductDetailPage /> },
     { path: '/productData', element: <ProductData/> },
     { path: '/cart', element: <Cart/> },
+    { path: '/fashionForU', element: <FashionForU/> },
+
     { path: '/cartData', element: <CartData/> },
     { path: '/checkOut', element: <CheckOut/> },
     { path: '/aboutUs', element: <AboutUs/> },

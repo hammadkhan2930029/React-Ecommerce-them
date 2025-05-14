@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { AppImages } from "../../../constants/AppImages";
 import './fashionForU.css'
 import { motion, useInView } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 
 const cardData = [
     {
@@ -38,6 +40,7 @@ const cardData = [
 ];
 
 export const FashionForU = () => {
+    const navigate = useNavigate()
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: false });
@@ -84,7 +87,7 @@ export const FashionForU = () => {
                 <Slider {...settings}>
 
                     {cardData.map((item, index) => (
-                        <motion.div key={index} className="carousel">
+                        <motion.div key={index} className="carousel" onClick={()=> navigate('/blogs')}>
 
                             <motion.div className="carousel_main">
                                 <motion.div className="div_img">

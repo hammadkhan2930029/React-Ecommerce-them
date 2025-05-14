@@ -1,30 +1,74 @@
-.contact_info{
+.contact_info {
     width: 100%;
     display: flex;
-   justify-content: center;
-   margin: 10px;
+    justify-content: center;
+    margin: 10px;
 }
-.contact_info_data{
+
+.contact_info_data {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f7;
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     width: 22%;
     margin-left: 5px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-border: 1px solid lightgrey;
 
 
 }
-.contact_data_div{
+
+.contact_data_div {
     display: flex;
     flex-direction: column;
     align-items: start;
     padding: 10px;
 }
-.contact_data_div .contact_data1{
+
+.contact_data_div .contact_data1 {
     font-weight: 600;
     font-size: 20px;
 }
+/* ------------------------- MEDIA QUERIES ------------------------- */
+
+
+
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+    .contact_info{
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .contact_info_data{
+        width: 45%;
+        margin-left: 0px;
+        margin: 10px;
+    }
+  
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+   
+
+
+
+
+
+}
+
+@media (max-width: 440px) {
+  .contact_info_data{
+        width: 90%;
+       padding: 10px;
+    }
+  
+
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

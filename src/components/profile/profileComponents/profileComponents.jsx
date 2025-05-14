@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './profileComponents.css'
 import { AppImages } from "../../../constants/AppImages";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -19,96 +19,120 @@ import { EarningPoints } from "../EarningPoints/earningPoints";
 import { MyOrders } from "../MyOrders/myOrders";
 import { RefundHistory } from "../RefundHistory/refundHistory";
 import { AddressBook } from "../AddressBook/AddressBook";
+import { useSelector } from "react-redux";
 
 
 export const ProfileComponent = () => {
-      const [OpenTopDrawer, setOpenTopDrawer] = useState(false)
-    
+
+    // -----------------------------------------------------
+    const [OpenTopDrawer, setOpenTopDrawer] = useState(false)
+
     const screenWidth = useScreenWidth()
     const [click, setClick] = useState(1)
+    // ----------------------------------
+    const selectedItemId = useSelector((state) => state.menu.selectedItemId)
+    console.log('get id :', selectedItemId)
+    useEffect(() => {
+        if (selectedItemId) {
+            setClick(selectedItemId)
+        }
+
+    }, [selectedItemId])
+    const componentMap = {
+        1: <Dashboard />,
+        2: <NotificationsList />,
+        3: <BankDetailsForm />,
+        4: <MyWallet />,
+        5: <EarningPoints />,
+        6: <MyOrders />,
+        7: <RefundHistory />,
+        8: <AddressBook />
+    };
+
     return (
         <div className="profile">
             <div className="profile_component">
                 {screenWidth < 991 ? (
-                    <div  onClick={() => setOpenTopDrawer(true)}>
-                    <span className="logout">Show menu</span>
-                </div>
+                    <div onClick={() => setOpenTopDrawer(true)}>
+                        <span className="logout">Show menu</span>
+                    </div>
                 ) :
-                <div className="profile_left" >
-                    <div className="user_div">
-                        <div><img src={AppImages.owner1} className="user_image" /></div>
-                        <div className="user_data">
-                            <span className="user_name_1">John Due</span>
-                            <span className="email">john.customer@example.com</span>
+                    <div className="profile_left" >
+                        <div className="user_div">
+                            <div><img src={AppImages.owner1} className="user_image" /></div>
+                            <div className="user_data">
+                                <span className="user_name_1">John Due</span>
+                                <span className="email">john.customer@example.com</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(1)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 1 ? "#c10037" : null }}>
-                            <HomeOutlinedIcon className="profile_icon" style={{ color: click === 1 ? "#fff" : "#000" }} />
+                        <div className="profile_list" onClick={() => setClick(1)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 1 ? "#c10037" : null }}>
+                                <HomeOutlinedIcon className="profile_icon" style={{ color: click === 1 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 1 ? "#c10037" : "#000" }}>Dashboard</span>
                         </div>
-                        <span style={{ color: click === 1 ? "#c10037" : "#000" }}>Dashboard</span>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(2)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 2 ? "#c10037" : null }}>
-                            <NotificationsNoneOutlinedIcon className="profile_icon" style={{ color: click === 2 ? "#fff" : "#000" }}/>
+                        <div className="profile_list" onClick={() => setClick(2)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 2 ? "#c10037" : null }}>
+                                <NotificationsNoneOutlinedIcon className="profile_icon" style={{ color: click === 2 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 2 ? "#c10037" : "#000" }}>Notifications</span>
                         </div>
-                        <span style={{ color: click === 2 ? "#c10037" : "#000" }}>Notifications</span>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(3)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 3 ? "#c10037" : null }}>
-                            <AccountBalanceOutlinedIcon className="profile_icon" style={{ color: click === 3 ? "#fff" : "#000" }} />
+                        <div className="profile_list" onClick={() => setClick(3)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 3 ? "#c10037" : null }}>
+                                <AccountBalanceOutlinedIcon className="profile_icon" style={{ color: click === 3 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 3 ? "#c10037" : "#000" }}>Bank Details</span>
                         </div>
-                        <span style={{ color: click === 3 ? "#c10037" : "#000" }}>Bank Details</span>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(4)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 4 ? "#c10037" : null }}>
-                            <AccountBalanceWalletOutlinedIcon className="profile_icon" style={{ color: click === 4 ? "#fff" : "#000" }} />
+                        <div className="profile_list" onClick={() => setClick(4)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 4 ? "#c10037" : null }}>
+                                <AccountBalanceWalletOutlinedIcon className="profile_icon" style={{ color: click === 4 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 4 ? "#c10037" : "#000" }}>My Wallet</span>
                         </div>
-                        <span style={{ color: click === 4 ? "#c10037" : "#000" }}>My Wallet</span>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(5)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 5 ? "#c10037" : null }}>
-                            <TollOutlinedIcon className="profile_icon" style={{ color: click === 5 ? "#fff" : "#000" }}/>
+                        <div className="profile_list" onClick={() => setClick(5)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 5 ? "#c10037" : null }}>
+                                <TollOutlinedIcon className="profile_icon" style={{ color: click === 5 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 5 ? "#c10037" : "#000" }}>Earning Points</span>
                         </div>
-                        <span style={{ color: click === 5 ? "#c10037" : "#000" }}>Earning Points</span>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(6)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 6 ? "#c10037" : null }}>
-                            <AssignmentOutlinedIcon className="profile_icon" style={{ color: click === 6 ? "#fff" : "#000" }}/>
+                        <div className="profile_list" onClick={() => setClick(6)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 6 ? "#c10037" : null }}>
+                                <AssignmentOutlinedIcon className="profile_icon" style={{ color: click === 6 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 6 ? "#c10037" : "#000" }}>My Orders</span>
                         </div>
-                        <span style={{ color: click === 6 ? "#c10037" : "#000" }}>My Orders</span>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(7)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 7 ? "#c10037" : null }}>
-                            <PaidOutlinedIcon className="profile_icon" style={{ color: click === 7 ? "#fff" : "#000" }}/>
+                        <div className="profile_list" onClick={() => setClick(7)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 7 ? "#c10037" : null }}>
+                                <PaidOutlinedIcon className="profile_icon" style={{ color: click === 7 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 7 ? "#c10037" : "#000" }}>Refund History</span>
                         </div>
-                        <span style={{ color: click === 7 ? "#c10037" : "#000" }}>Refund History</span>
-                    </div>
-                    <div className="profile_list" onClick={() => setClick(8)}>
-                        <div className="profile_icon_div" style={{ backgroundColor: click === 8 ? "#c10037" : null }}>
-                            <LocationOnOutlinedIcon className="profile_icon" style={{ color: click === 8 ? "#fff" : "#000" }}/>
+                        <div className="profile_list" onClick={() => setClick(8)}>
+                            <div className="profile_icon_div" style={{ backgroundColor: click === 8 ? "#c10037" : null }}>
+                                <LocationOnOutlinedIcon className="profile_icon" style={{ color: click === 8 ? "#fff" : "#000" }} />
+                            </div>
+                            <span style={{ color: click === 8 ? "#c10037" : "#000" }}>Save Address</span>
                         </div>
-                        <span style={{ color: click === 8 ? "#c10037" : "#000" }}>Save Address</span>
-                    </div>
-                    <div >
-                        <span className="logout">Logout</span>
-                    </div>
+                        <div >
+                            <span className="logout">Logout</span>
+                        </div>
 
-                </div>
-                 }
+                    </div>
+                }
                 <div className="profile_right">
-                   {click === 1 && <Dashboard/>}
-                   {click === 2 && <NotificationsList/>}
-                   {click === 3 && <BankDetailsForm/>}
-                   {click === 4 && <MyWallet/>}
-                   {click === 5 && <EarningPoints/>}
-                   {click === 6 && <MyOrders/>}
-                   {click === 7 && <RefundHistory/>}
-                   {click === 8 && <AddressBook/>}
+                    {/* {click === 1 && <Dashboard />}
+                    {click === 2 && <NotificationsList />}
+                    {click === 3 && <BankDetailsForm />}
+                    {click === 4 && <MyWallet />}
+                    {click === 5 && <EarningPoints />}
+                    {click === 6 && <MyOrders />}
+                    {click === 7 && <RefundHistory />}
+                    {click === 8 && <AddressBook />} */}
+                    {componentMap[click]}
                 </div>
 
             </div>
-            <TopDrawer open={OpenTopDrawer} onClose={() => setOpenTopDrawer(false)}/>
+            <TopDrawer open={OpenTopDrawer} onClose={() => setOpenTopDrawer(false)} />
         </div>
     )
 }

@@ -6,7 +6,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import LeftDrawer from '../home/drawer/drawer'
 import { AppImages } from '../../constants/AppImages';
-import PersonIcon from '@mui/icons-material/Person';
 import PhoneIcon from '@mui/icons-material/Phone';
 import useScreenWidth from '../../hooks/screenWidth';
 import SearchIcon from '@mui/icons-material/Search';
@@ -21,6 +20,7 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import { motion, useInView } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 import RateReviewIcon from '@mui/icons-material/RateReview';
+import PersonIcon from '@mui/icons-material/Person';
 
 
 

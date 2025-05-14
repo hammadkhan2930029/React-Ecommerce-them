@@ -1,0 +1,46 @@
+.drawer_R_main{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+}
+.drawer_right_main{
+    background-color: #f8f8f8;
+    width: 100%;
+}
+.drawer_right{
+    background-color: #fff;
+    width: 200px;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+
+}
+
+.right_drawer_item{
+  font-size: 18px;
+    color: var(--text-dark-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.right_drawer_icon{
+      color: var(--text-dark-color);
+
+
+}
+.right_drawer_login{
+    background-color: var(--text-hover-color);
+    color: #ffff;
+    display: flex;
+    padding: 10px 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+.right_drawer_login span{
+    font-family: 'Poppins', sans-serif;
+
+}

@@ -1,66 +1,73 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import React from 'react';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import './drawerRight.css'
+import { useNavigate } from 'react-router-dom';
+import RateReviewIcon from '@mui/icons-material/RateReview';
+import PersonIcon from '@mui/icons-material/Person';
 
-export default function RightDrawer({open,onClose}) {
-//   const [open, setOpen] = React.useState(false);
+export default function RightDrawer({ open, onClose }) {
+  const navigate = useNavigate()
 
-//   const toggleDrawer = (open) => (event) => {
-//     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-//       return;
-//     }
-//     setOpen(open);
-//   };
+  const menuItems = [
+    { id: 1, title: "Home", path: '/home' },
+    { id: 2, title: "Feature" },
+    { id: 3, title: "Product" },
+    { id: 4, title: "Shop" },
+    { id: 5, title: "Blogs" },
+    { id: 6, title: "About" },
+    { id: 7, title: "Contact" },
+    { id: 8, title: "Reviews" },
 
-  const drawerList = (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={onclose}
-      onKeyDown={onclose}
-    >
-      <List>
-        {['Home', 'Shop', 'Deal', 'About','Contact'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      {/* <Divider /> */}
-      {/* <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List> */}
-    </Box>
-  );
+
+  ];
+  const handleNavigate = (title) => {
+    console.log(title)
+    if (title.toLowerCase() === 'home') {
+
+      navigate('/')
+    }
+    else if (title.toLowerCase() === 'blogs') {
+      navigate('/blogs')
+    }
+    else if (title.toLowerCase() === 'about') {
+      navigate('/aboutUs')
+    }
+    else if (title.toLowerCase() === 'contact') {
+      navigate('/contactus')
+    }
+    else if (title.toLowerCase() === 'reviews') {
+      navigate('/review')
+    }
+
+  }
+
 
   return (
     <div>
-      
       <Drawer anchor="right" open={open} onClose={onClose}>
-        {drawerList}
+        <div className='drawer_R_main'>
+
+          <div className='drawer_right_main'>
+            {menuItems.map((item, index) => (
+              <div className='drawer_right' onClick={() => {
+                handleNavigate(item.title)
+              }}>
+                <span className='right_drawer_item'>{item.title}</span>
+                {item.title.toLowerCase() === 'reviews' ? <RateReviewIcon className='right_drawer_icon' /> :
+                  <KeyboardArrowRightIcon className='right_drawer_icon' />
+                }
+              </div>
+            ))}
+          </div>
+          <div className='right_drawer_login' onClick={()=>  navigate('/login')}>
+            <PersonIcon/>
+            <span>Register Now</span>
+
+          </div>
+        </div>
+
+
       </Drawer>
     </div>
   );

@@ -100,7 +100,7 @@
   }
   
   /* ✅ Tablet & up */
-  @media (min-width: 600px) {
+  @media (max-width: 600px) {
     .form-group {
       flex: 1 1 45%;
     }
@@ -112,12 +112,31 @@
     .contact-form button {
       min-width: 200px;
     }
+    .main_container{
+      flex-direction: column;
+      align-items: center;
+    }
+    .side_div{
+      width: 100%;
+    }
+    .side_div .contact_h1{
+      font-size: 28px;
+      padding: 5px;
+    }
+    .side_div .contact_h6{
+      font-size: 15px;
+      padding: 5px;
+    }
+    .form-container{
+      width: 95%;
+      padding: 5px;
+    }
   }
   
   /* ✅ Desktop large */
-  @media (min-width: 992px) {
+  @media (max-width: 992px) {
     .form-container {
-      padding: 60px;
+      padding: 35px;
     }
   
     .contact-form {

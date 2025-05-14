@@ -10,10 +10,21 @@ import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import { AppImages } from '../../../constants/AppImages';
+import { useDispatch } from 'react-redux';
+import { setSelectedItemId } from '../../../Redux/sliceData';
 
 
 export default function TopDrawer({ open, onClose }) {
+
   const [click, setClick] = React.useState(0);
+
+  const dispatch = useDispatch();
+   const handleClick = (id) => {
+    dispatch(setSelectedItemId(id))
+    console.log('id ', id)
+
+  }
+// -----------------------------------------
 
   const menuItems = [
     { id: 1, label: 'Dashboard', icon: <HomeOutlinedIcon /> },
@@ -25,6 +36,7 @@ export default function TopDrawer({ open, onClose }) {
     { id: 7, label: 'Refund History', icon: <PaidOutlinedIcon /> },
     { id: 8, label: 'Save Address', icon: <LocationOnOutlinedIcon /> },
   ];
+ 
 
   return (
     <Drawer anchor="top" open={open} onClose={onClose}>
@@ -54,7 +66,11 @@ export default function TopDrawer({ open, onClose }) {
           {menuItems.map(item => (
             <div
               key={item.id}
-              onClick={() => setClick(item.id)}
+              onClick={() =>{ 
+                setClick(item.id)
+                handleClick(item.id)
+                onClose()
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',

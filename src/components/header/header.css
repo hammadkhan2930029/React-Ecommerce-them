@@ -118,10 +118,10 @@
 /* Responsive for desktops */
 @media (min-width: 1024px) {
     .header-left {
-        width: 30%;
+        width: 27%;
     }
 
     .header-right {
-        width: 15%;
+        width: 13%;
     }
 }

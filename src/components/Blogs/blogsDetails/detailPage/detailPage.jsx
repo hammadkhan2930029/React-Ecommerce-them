@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "../../../header/header";
 import { Footer } from "../../../Footer/footer";
 import { useLocation, useNavigate } from 'react-router-dom';
 import './detailPage.css'; // Import the new CSS file
+import { Blogs_details_Breadcrumb } from "../blogsDetailBreadCrumbs/blogs_details_breadCrumbs";
 
 export const Blog_details_page = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -19,6 +23,7 @@ export const Blog_details_page = () => {
   return (
     <div>
       <Header />
+      <Blogs_details_Breadcrumb />
 
       <div className="blog-detail-container">
         <div className="blog-banner">

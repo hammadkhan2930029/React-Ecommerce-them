@@ -1,0 +1,195 @@
+.main_shop {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.icons_slider{
+    width: 90%;
+
+}
+
+.shop_brands_icon_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    overflow: hidden;
+
+
+}
+
+.shop_slick-dots {
+    display: block !important;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.shop_icon_div {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    transition: all 0.3s ease-in-out;
+}
+.shop_icon_div span{
+    padding: 5px;
+}
+
+.shop_icon_div:hover {
+    background-color: var(--text-hover-color);
+}
+.shop_icon_div:hover span{
+    color: #fff;
+    font-weight: 700;
+}
+
+.shop_brand_icon {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+
+}
+/* ---------------------------------------------------- */
+.product_aera{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+.side_bar_category{
+    background-color: #f8f8f8;
+    padding: 15px;
+    width: 20%;
+    margin: 5px;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    height: 100%;
+
+}
+.category_name{
+    font-size: 22px;
+    font-weight: 500;
+}
+.checkBox_div{
+    padding-left: 15px;
+    height: 200px;
+    overflow-y: auto;
+    background-color: #f8f8f8;
+
+
+}
+.checkBox_div::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+.checkBox_div::-webkit-scrollbar-track{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+.checkBox_div::-webkit-scrollbar-thumb{
+    background-color: var(--text-hover-color);
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+}
+.checkBox_div::-webkit-scrollbar-thumb:hover{
+    background-color: #555;
+    cursor: pointer;
+}
+.priceRange_div{
+    width: 100%;
+    padding: 15px;
+    background-color: #f8f8f8;
+
+}
+.product{
+    
+    width: 70%;
+    margin: 5px;
+
+}
+.filter_div{
+    /* background-color: #555; */
+    width: 90%;
+}
+.filter{
+    border: 1px solid;
+    border-color: var(--text-hover-color);
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--text-hover-color);
+    border-radius: 5px;
+}
+.filter:hover{
+    background-color: #f8f8f8;
+    color: var(--text-hover-color);
+}
+
+
+
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {}
+
+/* 991px to 768px */
+@media (max-width: 991px) {
+    .product{
+        width: 100%;
+    }
+    
+}
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+ 
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+    .shop_heading_1 {
+        font-size: 32px;
+    }
+
+
+
+
+
+}
+
+@media (max-width: 440px) {
+
+     .shop_heading_1 {
+        font-size: 28px;
+    }
+    .shop_brand_icon{
+        width: 60px;
+        height: 60px;
+    }
+    .shop_icon_div {
+    width: 100px;
+    height: 100px;
+}
+
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

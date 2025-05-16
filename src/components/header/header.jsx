@@ -71,8 +71,11 @@ export const Header = () => {
     else if (title.toLowerCase() === 'contact') {
       navigate('/contactus')
     }
-     else if (title.toLowerCase() === 'blogs') {
+    else if (title.toLowerCase() === 'blogs') {
       navigate('/blogs')
+    }
+    else if (title.toLowerCase() === 'shop') {
+      navigate('/shop')
     }
     else {
       console.log('Click on', title)
@@ -98,7 +101,7 @@ export const Header = () => {
             </motion.div>
           </motion.div>
           <motion.div className="header-right">
-              <motion.div className="login-register" onClick={() => navigate('/review')}>
+            <motion.div className="login-register" onClick={() => navigate('/review')}>
               <RateReviewIcon />
               <span className='text'>Reviews</span>
             </motion.div>
@@ -106,7 +109,7 @@ export const Header = () => {
               <PersonIcon />
               <span className='text'>Login</span>
             </motion.div>
-          
+
           </motion.div>
         </motion.div>
       )}
@@ -156,10 +159,11 @@ export const Header = () => {
                     handle(item.title)
                   }} >
                     {item.title}
-
+                    
                     {item.title.toLowerCase() === 'home' ? null : item.title.toLowerCase() === 'about' ? null : item.title.toLowerCase() === 'contact' ? null : item.title.toLowerCase() === 'blogs' ? null :
+                     item.title.toLowerCase() === 'shop' ? null :
                       (<KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />)}
-
+                    {/* {item.title.toLowerCase() == 'Product' ? <KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} /> : null} */}
 
                   </span>
                 ))}

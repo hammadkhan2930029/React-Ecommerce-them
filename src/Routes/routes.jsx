@@ -16,6 +16,7 @@ import { Blogs } from "../pages/blogs";
 import { Blogs_card } from "../components/Blogs/blogs_card/blogs_card";
 import { Blog_details_page } from "../components/Blogs/blogsDetails/detailPage/detailPage";
 import { FashionForU } from "../components/home/FashionForU/fashionForU";
+import { Shop } from "../pages/shop";
 
 export const appRoutes = [
     { path: '/', element: <Home /> },
@@ -23,6 +24,7 @@ export const appRoutes = [
     { path: '/productData', element: <ProductData/> },
     { path: '/cart', element: <Cart/> },
     { path: '/fashionForU', element: <FashionForU/> },
+    { path: '/shop', element: <Shop/> },
 
     { path: '/cartData', element: <CartData/> },
     { path: '/checkOut', element: <CheckOut/> },

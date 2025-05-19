@@ -1,22 +1,23 @@
 .shop_latest_main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.shop_main_main {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
- /* ---------------------------------------------------------- */
- .product_card {
+.shop_main_main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------- */
+.product_card {
   width: 32%;
   border: 1px solid #e5e5e5;
   border-radius: 6px;
@@ -150,48 +151,61 @@
   padding-top: 8px;
 }
 
+.productPagination button {
+   background-color: var(--text-hover-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
 @media (max-width: 1180px) {}
 
 /* 991px to 768px */
-@media (max-width: 991px) {
-   
-}
+@media (max-width: 991px) {}
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-   .product_card{
+  .product_card {
     width: 48%;
-   }
+  }
 }
 
 /* 575px to 360px */
 @media (max-width: 575px) {
-    .product_card{
+  .product_card {
     width: 45%;
-   }
-   .product_image_container{
+  }
+
+  .product_image_container {
     height: 250px;
-   }
+  }
 }
 
 @media (max-width: 440px) {
-    .product_card{
+  .product_card {
     width: 46%;
-   }
-   .product_image_container{
+  }
+
+  .product_image_container {
     height: 200px;
-   }
-   .product_actions button {
- 
-  border-radius: 50px;
+  }
 
-  width: 25px;
-  height: 25px;
+  .product_actions button {
 
-}
+    border-radius: 50px;
+
+    width: 25px;
+    height: 25px;
+
+  }
 }
 
 /* Below 360px */

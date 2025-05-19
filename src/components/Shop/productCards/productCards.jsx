@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AppImages } from '../../../constants/AppImages';
 import './productCards.css';
 import { motion, useInView } from "framer-motion";
@@ -128,6 +128,43 @@ const productDetails = [
 ];
 
 export const ProductCards = ({ deviceType }) => {
+    //    const [currentPage,setCurrentPage]=useState(1)
+    //     const itemsPerPage = 3
+    //        const indexOfLastItem = currentPage * itemsPerPage;
+    // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    // const currentItems = cartItems.slice(indexOfFirstItem,indexOfLastItem)
+    // const totalPages =Math.ceil(cartItems.length / itemsPerPage)
+
+    // const nextPage = ()=>{
+    //     if(currentPage < totalPages){
+    //         setCurrentPage(currentPage + 1)
+    //     }
+    // }
+    // const prevPage = () => {
+    //     if (currentPage > 1) {
+    //         setCurrentPage(currentPage - 1);
+    //     }
+    // }
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 9
+    const indexOfLastitem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastitem - itemsPerPage;
+    const currentItems = productDetails.slice(indexOfFirstItem, indexOfLastitem)
+    const totalPage = Math.ceil(productDetails.length / itemsPerPage)
+    const totallenght = productDetails.length
+
+    const nextPage = () => {
+        if (currentPage < totalPage) {
+            setCurrentPage(currentPage + 1)
+        }
+    }
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+
+    // -------------------------------------------
     const screenWidth = useScreenWidth()
     // ---------------------------------------------
     const [state, setState] = React.useState({
@@ -158,7 +195,7 @@ export const ProductCards = ({ deviceType }) => {
                 initial={{ opacity: 0, y: -100 }}
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}>
-                {productDetails.map((item, index) => (
+                {currentItems.map((item, index) => (
                     <div className="product_card">
                         <div className="product_image_container">
                             <img
@@ -167,7 +204,7 @@ export const ProductCards = ({ deviceType }) => {
                                 className="product_image"
                             />
                             <div className="product_rating">
-                                <StarOutlinedIcon style={{ color: '	#FFD700' }} /> <span>4.5</span>
+                                <StarOutlinedIcon style={{ color: '#FFD700' }} /> <span>4.5</span>
                             </div>
                             <div className="product_actions">
                                 <button onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
@@ -201,6 +238,11 @@ export const ProductCards = ({ deviceType }) => {
                 ))}
 
             </motion.div>
+            <div className='productPagination'>
+               
+                <button disabled={currentPage === 1} onClick={() => prevPage()}>Prev</button>
+                <button disabled={currentPage === totalPage} onClick={() => nextPage()}>Next</button>
+            </div>
             <Box sx={{ width: 500 }}>
                 <Snackbar
                     anchorOrigin={{ vertical, horizontal }}

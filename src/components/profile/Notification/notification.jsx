@@ -1,5 +1,6 @@
 import React from 'react';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { motion, useInView } from "framer-motion";
 
 const notifications = [
     {
@@ -30,8 +31,16 @@ const notifications = [
 
 
 export const NotificationsList = () => {
+    const refOne = React.useRef(null);
+    const inViewOne = useInView(refOne, { triggerOnce: false });
+    // ------------------------------
     return (
-        <div style={{width:'100%', padding: 20, backgroundColor: '#f9f9f9', borderRadius: 8 }}>
+        <motion.div
+            ref={refOne}
+            initial={{ opacity: 0, x: -100 }}
+            animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: .8 }}
+            style={{ width: '100%', padding: 20, backgroundColor: '#f9f9f9', borderRadius: 8 }}>
             <h2 style={{ marginBottom: 20 }}>Notifications</h2>
 
             {notifications.map((item) => (
@@ -53,6 +62,6 @@ export const NotificationsList = () => {
                     </div>
                 </div>
             ))}
-        </div>
+        </motion.div>
     );
 }

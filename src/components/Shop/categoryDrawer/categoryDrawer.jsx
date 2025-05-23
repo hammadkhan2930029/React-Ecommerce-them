@@ -16,7 +16,19 @@ function valuetext(value) {
 }
 
 export default function CategoryDrawer({ open, onClose }) {
-    const [expanded, setExpanded] = useState(true);
+    const [ expandedAccordians,setExpandedAccordians]=useState({
+           category:true,
+           brand:true,
+           rating:true,
+           colors:true,
+           price:true
+       })
+       const toggleAccordian = (key)=>{
+           setExpandedAccordians(prev => ({
+               ...prev,
+               [key]:!prev[key]
+           }))
+       }
     const [value1, setValue1] = useState(2);
     const [value, setValue] = useState([0, 1500]);
 
@@ -30,7 +42,7 @@ export default function CategoryDrawer({ open, onClose }) {
                     <div className="side_bar_category_drawer">
 
                         {/* Category */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.category} onChange={() => toggleAccordian('category')}>
                             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                                 <span className="category_name_drawer">Category</span>
                             </AccordionSummary>
@@ -47,7 +59,7 @@ export default function CategoryDrawer({ open, onClose }) {
                         </Accordion>
 
                         {/* Brand */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.brand} onChange={() => toggleAccordian('brand')}>
                             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                                 <span className="category_name_drawer">Brand</span>
                             </AccordionSummary>
@@ -64,7 +76,7 @@ export default function CategoryDrawer({ open, onClose }) {
                         </Accordion>
 
                         {/* Colors */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.colors} onChange={() => toggleAccordian('colors')}>
                             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                                 <span className="category_name_drawer">Colors</span>
                             </AccordionSummary>
@@ -81,7 +93,7 @@ export default function CategoryDrawer({ open, onClose }) {
                         </Accordion>
 
                         {/* Rating */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.rating} onChange={() => toggleAccordian('rating')}>
                             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                                 <span className="category_name_drawer">Rating</span>
                             </AccordionSummary>
@@ -97,7 +109,7 @@ export default function CategoryDrawer({ open, onClose }) {
                         </Accordion>
 
                         {/* Price */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.price} onChange={() => toggleAccordian('price')}>
                             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                                 <span className="category_name_drawer">Price</span>
                             </AccordionSummary>

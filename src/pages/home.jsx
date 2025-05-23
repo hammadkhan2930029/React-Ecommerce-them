@@ -8,10 +8,13 @@ import { FashionForU } from "../components/home/FashionForU/fashionForU";
 import { BrandsIcons } from "../components/home/brands/brandsIcon";
 import { Header } from "../components/header/header";
 import { Footer } from "../components/Footer/footer";
+import { NewsLetter } from "../components/home/NewsLetterModal/newsLetterModal";
+import { CookieBar } from "../components/home/cookieBar/cookieBar";
 export const Home = ()=>{
     return(
        
         <div style={{overflow:'hidden'}}>
+            <NewsLetter/>
             <Header/>
             <Slider/>
             <MiniCards/>
@@ -22,6 +25,7 @@ export const Home = ()=>{
             <FashionForU/>
             <BrandsIcons/>
             <Footer/>
+            <CookieBar/>
         </div>
     )
 }

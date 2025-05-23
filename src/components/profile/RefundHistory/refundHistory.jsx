@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import './refundHistory.css';
 import useScreenWidth from "../../../hooks/screenWidth";
+import { motion, useInView } from "framer-motion";
 
 export const RefundHistory = () => {
+    const refOne = React.useRef(null);
+    const inViewOne = useInView(refOne, { triggerOnce: false });
+    // ------------------------------
     const screenWidth = useScreenWidth()
 
 
@@ -11,15 +15,15 @@ export const RefundHistory = () => {
             orderNumber: "#1020",
             status: "Rejected",
             reason: 'Item was damaged . also fabric was not good as expected',
-            creadedAt:'21 Jun 2024'
+            creadedAt: '21 Jun 2024'
         },
         {
             orderNumber: "#1020",
             status: "Rejected",
             reason: 'Item was damaged . also fabric was not good as expected',
-            creadedAt:'21 Jun 2024'
+            creadedAt: '21 Jun 2024'
         },
-        
+
     ];
 
     const [currentPage, setCurrentpage] = useState(0);
@@ -42,7 +46,12 @@ export const RefundHistory = () => {
     }
 
     return (
-        <div className="refund_myOrder">
+        <motion.div
+            ref={refOne}
+            initial={{ opacity: 0, x: -100 }}
+            animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: .8 }}
+            className="refund_myOrder">
             <div>
                 <span className="refund_myOrder_text">Refund History</span>
             </div>
@@ -54,7 +63,7 @@ export const RefundHistory = () => {
                             <th>status</th>
                             <th>Reason</th>
                             <th>CreadetAt Status</th>
-                           
+
 
 
                         </tr>
@@ -67,7 +76,7 @@ export const RefundHistory = () => {
                                 <td>{item.status}</td>
                                 <td>{item.reason}</td>
                                 <td>{item.creadedAt}</td>
-                               
+
 
 
 
@@ -79,7 +88,7 @@ export const RefundHistory = () => {
                         <tr>
                             <td colSpan="6">
                                 <div className="refund_pagination-controls">
-                                    <div style={{ width: '25%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <div style={{ width: screenWidth <= 430 ? '50%' : '25%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <label>Rows per page :  </label>
                                         <select value={rowPerPage} onChange={handleRowperPageChange} >
                                             <option value={5}>5</option>
@@ -87,7 +96,12 @@ export const RefundHistory = () => {
                                             <option value={25}>25</option>
                                         </select>
                                     </div>
-                                    <div>
+                                    <div style={{
+                                        width: '100%',
+                                        display: 'flex',
+                                        justifyContent: 'space-evenly',
+                                        padding: '10px'
+                                    }}>
                                         <button onClick={handlePrevPage} disabled={currentPage === 0}>
                                             Prev
                                         </button>
@@ -104,7 +118,7 @@ export const RefundHistory = () => {
                     </tfoot>
                 </table>
             </div>
-        </div>
+        </motion.div >
 
     )
 }

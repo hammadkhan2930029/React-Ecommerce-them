@@ -39,6 +39,9 @@ export default function RightDrawer({ open, onClose }) {
     else if (title.toLowerCase() === 'reviews') {
       navigate('/review')
     }
+    else if (title.toLowerCase() === 'shop') {
+      navigate('/shop')
+    }
 
   }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./addressBook.css";
+import { motion, useInView } from "framer-motion";
 
 const addressList = [
   {
@@ -36,8 +37,14 @@ const addressList = [
 
 
 export const AddressBook = () => {
+  const refOne = React.useRef(null);
+  const inViewOne = useInView(refOne, { triggerOnce: false });
   return (
-    <div className="address-book">
+    <motion.div className="address-book"
+      ref={refOne}
+      initial={{ opacity: 0, x: -100 }}
+      animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: .8 }}>
       <div className="header">
         <h2>Address Book</h2>
         <button className="add-btn">+ Add New</button>
@@ -59,7 +66,7 @@ export const AddressBook = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

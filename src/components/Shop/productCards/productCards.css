@@ -152,16 +152,61 @@
 }
 
 .productPagination button {
-   background-color: var(--text-hover-color);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    margin: 5px;
+  background-color: var(--text-hover-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 5px;
 }
+
+/* --------------------------- */
+.searchBar {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 5px 10px;
+  border-radius: 25px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.search {
+  background: #f5f5f5;
+  padding: 5px;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+
+
+}
+
+.searchInput {
+  border: none;
+  width: 100%;
+  border-radius: 20px;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: #000;
+  
+}
+.searchIcon{
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
 
 
 /* ------------------------- MEDIA QUERIES ------------------------- */

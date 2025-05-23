@@ -5,6 +5,8 @@ import {
     tablePaginationClasses as classes,
 } from '@mui/base/TablePagination';
 import TollOutlinedIcon from '@mui/icons-material/TollOutlined';
+import useScreenWidth from '../../../hooks/screenWidth';
+import { motion, useInView } from "framer-motion";
 
 
 
@@ -23,6 +25,10 @@ const paginationButtonStyle = (disabled) => ({
 
 
 export const EarningPoints = () => {
+    const refOne = React.useRef(null);
+    const inViewOne = useInView(refOne, { triggerOnce: false });
+    // ------------------------------
+    const screenWidth = useScreenWidth()
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -39,10 +45,14 @@ export const EarningPoints = () => {
     };
 
     return (
-        <div>
+        <motion.div
+            ref={refOne}
+            initial={{ opacity: 0, x: -100 }}
+            animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: .8 }}>
             <div style={{ backgroundColor: '#f9f9f9', padding: 20, marginBottom: 15, borderRadius: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{display:'flex',justifyContent:'center'}}>
-                    <div style={{backgroundColor:'#fff',padding:10}}>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ backgroundColor: '#fff', padding: 10 }}>
 
                         <TollOutlinedIcon style={{ fontSize: '54px', color: 'var(--text-hover-color)' }} />
                     </div>
@@ -52,7 +62,7 @@ export const EarningPoints = () => {
                         <span style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-hover-color)' }}>1970</span>
                     </div>
                 </div>
-                <div style={{backgroundColor:'#fff',padding:10}}>
+                <div style={{ backgroundColor: '#fff', padding: 10 }}>
                     <span> 1 Points = $0.03 Balance</span>
                 </div>
 
@@ -94,7 +104,7 @@ export const EarningPoints = () => {
                         <tr>
                             <td colSpan={4} style={{ padding: '0', backgroundColor: '#f9fafb' }}>
                                 <div style={{
-                                    padding: '16px',
+                                    padding: screenWidth <= 430 ? '6px' : '16px',
                                     display: 'flex',
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
@@ -172,7 +182,7 @@ export const EarningPoints = () => {
 
                 </table>
             </Root>
-        </div>
+        </motion.div>
 
     );
 };

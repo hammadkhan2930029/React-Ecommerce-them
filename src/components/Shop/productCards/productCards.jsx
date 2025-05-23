@@ -10,9 +10,10 @@ import AutorenewOutlinedIcon from '@mui/icons-material/AutorenewOutlined';
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import SearchIcon from '@mui/icons-material/Search';
 import Snackbar from '@mui/material/Snackbar';
 import useScreenWidth from '../../../hooks/screenWidth';
+import { IconButton } from '@mui/material';
 const productDetails = [
     {
         title: "Arabic Abaya",
@@ -125,26 +126,38 @@ const productDetails = [
         image: AppImages.placeholderImg,
 
     },
+    {
+        title: "Arabic Abaya",
+        category: "Fashion",
+        price: 2500,
+        image: AppImages.placeholderImg,
+
+    },
+    {
+        title: "Arabic Abaya",
+        category: "Fashion",
+        price: 2500,
+        image: AppImages.placeholderImg,
+
+    },
+    {
+        title: "Arabic Abaya",
+        category: "Fashion",
+        price: 2500,
+        image: AppImages.placeholderImg,
+
+    },
+    {
+        title: "Arabic Abaya",
+        category: "Fashion",
+        price: 2500,
+        image: AppImages.placeholderImg,
+
+    },
 ];
 
 export const ProductCards = ({ deviceType }) => {
-    //    const [currentPage,setCurrentPage]=useState(1)
-    //     const itemsPerPage = 3
-    //        const indexOfLastItem = currentPage * itemsPerPage;
-    // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    // const currentItems = cartItems.slice(indexOfFirstItem,indexOfLastItem)
-    // const totalPages =Math.ceil(cartItems.length / itemsPerPage)
 
-    // const nextPage = ()=>{
-    //     if(currentPage < totalPages){
-    //         setCurrentPage(currentPage + 1)
-    //     }
-    // }
-    // const prevPage = () => {
-    //     if (currentPage > 1) {
-    //         setCurrentPage(currentPage - 1);
-    //     }
-    // }
     const [currentPage, setCurrentPage] = useState(1)
     const itemsPerPage = 9
     const indexOfLastitem = currentPage * itemsPerPage;
@@ -186,9 +199,29 @@ export const ProductCards = ({ deviceType }) => {
     const navigate = useNavigate();
     const refOne = React.useRef(null);
     const inViewOne = useInView(refOne, { triggerOnce: true });
-
+    const [click, setclick] = useState(false)
     return (
         <motion.div className='shop_latest_main'>
+            <div style={{ display: 'flex', justifyContent: 'end', width: '95%' }}>
+                <motion.div
+                  
+                    className={click ? 'searchBar' : null}>
+
+                    {click &&
+                        <motion.div
+                            className='search'
+                            ref={refOne}
+                            initial={{ opacity: 0, x: 100 }}
+                            animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                            transition={{ duration: .8 }}>
+                            <input className='searchInput' placeholder='Search' />
+
+                        </motion.div>}
+                    <IconButton className='searchIcon' onClick={() => setclick(!click)} sx={{backgroundColor:'#f5f5f5'}}>
+                        <SearchIcon style={{ fontSize: '28px' }} />
+                    </IconButton>
+                </motion.div>
+            </div>
 
             <motion.div className='shop_main_main'
                 ref={refOne}
@@ -196,7 +229,7 @@ export const ProductCards = ({ deviceType }) => {
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}>
                 {currentItems.map((item, index) => (
-                    <div className="product_card">
+                    <div className="product_card" onClick={() => navigate('/productDetails')}>
                         <div className="product_image_container">
                             <img
                                 src={item.image}
@@ -239,9 +272,9 @@ export const ProductCards = ({ deviceType }) => {
 
             </motion.div>
             <div className='productPagination'>
-               
-                <button disabled={currentPage === 1} onClick={() => prevPage()}>Prev</button>
-                <button disabled={currentPage === totalPage} onClick={() => nextPage()}>Next</button>
+
+                <button disabled={currentPage === 1} style={{ backgroundColor: currentPage === 1 ? "gray" : null }} onClick={() => prevPage()}>Prev</button>
+                <button disabled={currentPage === totalPage} style={{ backgroundColor: currentPage === totalPage ? "gray" : null }} onClick={() => nextPage()}>Next</button>
             </div>
             <Box sx={{ width: 500 }}>
                 <Snackbar

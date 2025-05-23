@@ -1,205 +1,4 @@
-// import React from "react";
-// import './dashboard.css';
-// import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-// import TollIcon from '@mui/icons-material/Toll';
-// import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
 
-// export const Dashboard = () => {
-//     return (
-//         <div className="dashboard">
-//             <div className="dashboard_main">
-//                 <div className="dashboard_head">
-//                     <span className="dashboard_h1">
-//                         Hello, MARK JECNO !
-//                     </span>
-//                     <span className="dashboard_h4">From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</span>
-//                 </div>
-//                 <div className="pricing_div">
-//                     <div className="div_one">
-//                         <div>
-//                             <AccountBalanceWalletIcon className="dashboard_icon" />
-//                         </div>
-//                         <div className="text_div">
-//                             <span className="d_text_1">$12.52</span>
-//                             <span className="d_text_2">Total Order</span>
-
-//                         </div>
-//                     </div>
-//                     <div className="div_one">
-//                         <div>
-//                             <TollIcon className="dashboard_icon" />
-//                         </div>
-//                         <div  className="text_div">
-//                             <span className="d_text_1">2523</span>
-//                             <span className="d_text_2">Total Points</span>
-
-//                         </div>
-//                     </div>
-//                     <div className="div_one">
-//                         <div>
-//                             <ViewQuiltIcon className="dashboard_icon" />
-//                         </div>
-//                         <div className="text_div">
-//                             <span className="d_text_1">15</span>
-//                             <span className="d_text_2">Total Orders</span>
-
-//                         </div>
-//                     </div>
-
-//                 </div>
-//                 <div className="dashboard_list">
-//                     <span>Account Information</span>
-//                     <li>Full Name: John Due</li>
-//                     <li>Phone: +1 65558845</li>
-//                     <li>Address: 26, Starts Hollow Colony Denver, Colorado, United States 80014</li>
-
-//                 </div>
-//                 <div className="login_details">
-//                     <span className="login_h1">Login Details</span>
-//                     <div style={{display:'flex',justifyContent:'space-between',padding:10,alignItems:'center',width:'70%'}}>
-//                         <div className="login_info">
-//                             <span className="dashboard_email">Email : john.customer@example.com</span>
-//                             <span className="edit">Edit</span>
-//                         </div>
-//                         <div className="login_info">
-//                             <span  className="dashboard_email">Password : 123456</span>
-//                             <span className="edit">Edit</span>
-//                         </div>
-//                     </div>
-
-//                 </div>
-
-//             </div>
-//         </div>
-//     )
-// }
-// import React from "react";
-// import './dashboard.css';
-// import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-// import TollIcon from '@mui/icons-material/Toll';
-// import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
-// import Button from '@mui/material/Button';
-// import Dialog from '@mui/material/Dialog';
-// import DialogActions from '@mui/material/DialogActions';
-// import DialogContent from '@mui/material/DialogContent';
-// import DialogContentText from '@mui/material/DialogContentText';
-// import DialogTitle from '@mui/material/DialogTitle';
-// import Slide from '@mui/material/Slide';
-
-// const Transition = React.forwardRef(function Transition(props, ref) {
-//     return <Slide direction="up" ref={ref} {...props} />;
-// });
-
-// export const Dashboard = () => {
-//     const [open, setOpen] = React.useState(false);
-
-//     const handleClickOpen = () => {
-//         setOpen(true);
-//     };
-
-//     const handleClose = () => {
-//         setOpen(false);
-//     };
-
-//     return (
-//         <div className="dashboard">
-//             <div className="dashboard_main">
-//                 <div className="dashboard_head">
-//                     <span className="dashboard_h1">Hello, MARK JECNO !</span>
-//                     <span className="dashboard_h4">
-//                         From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.
-//                     </span>
-//                 </div>
-
-//                 <div className="pricing_div">
-//                     <div className="div_one">
-//                         <AccountBalanceWalletIcon className="dashboard_icon" />
-//                         <div className="text_div">
-//                             <span className="d_text_1">$12.52</span>
-//                             <span className="d_text_2">Total Order</span>
-//                         </div>
-//                     </div>
-//                     <div className="div_one">
-//                         <TollIcon className="dashboard_icon" />
-//                         <div className="text_div">
-//                             <span className="d_text_1">2523</span>
-//                             <span className="d_text_2">Total Points</span>
-//                         </div>
-//                     </div>
-//                     <div className="div_one">
-//                         <ViewQuiltIcon className="dashboard_icon" />
-//                         <div className="text_div">
-//                             <span className="d_text_1">15</span>
-//                             <span className="d_text_2">Total Orders</span>
-//                         </div>
-//                     </div>
-//                 </div>
-
-//                 <div className="dashboard_list">
-//                     <span>Account Information</span>
-//                     <li>Full Name: John Due</li>
-//                     <li>Phone: +1 65558845</li>
-//                     <li>Address: 26, Starts Hollow Colony Denver, Colorado, United States 80014</li>
-//                 </div>
-
-//                 <div className="login_details">
-//                     <span className="login_h1">Login Details</span>
-//                     <div style={{ display: 'flex', justifyContent: 'space-between', padding: 10, alignItems: 'center', width: '70%' }}>
-//                         <div className="login_info">
-//                             <span className="dashboard_email">Email : john.customer@example.com</span>
-//                             <span className="edit" onClick={handleClickOpen}>Edit</span>
-//                         </div>
-//                         <div className="login_info">
-//                             <span className="dashboard_email">Password : 123456</span>
-//                             <span className="edit" onClick={handleClickOpen}>Edit</span>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-
-//             {/* Dialog Box email*/}
-//             <Dialog
-//                 open={open}
-//                 TransitionComponent={Transition}
-//                 keepMounted
-//                 onClose={handleClose}
-//                 aria-describedby="alert-dialog-slide-description"
-//             >
-//                 <DialogTitle>Update Email</DialogTitle>
-//                 <DialogContent>
-//                     <form style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '8px' }}>
-//                         <label htmlFor="email">New Email Address</label>
-//                         <input
-//                             type="email"
-//                             id="email"
-//                             name="email"
-//                             required
-//                             placeholder="Enter new email"
-//                             style={{
-//                                 padding: '8px',
-//                                 borderRadius: '4px',
-//                                 border: '1px solid #ccc',
-//                                 fontSize: '16px',
-//                                 width: '100%',
-//                             }}
-//                         />
-//                     </form>
-//                 </DialogContent>
-//                 <DialogActions>
-//                     <Button onClick={handleClose}>Cancel</Button>
-//                     <Button onClick={() => {
-//                         // Yahan aap handleSave function bana sakte hain
-//                         alert("Email updated successfully!");
-//                         handleClose();
-//                     }}>
-//                         Save
-//                     </Button>
-//                 </DialogActions>
-//             </Dialog>
-
-//         </div>
-//     );
-// };
 import React from "react";
 import './dashboard.css';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
@@ -215,12 +14,15 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import useScreenWidth from "../../../hooks/screenWidth";
+import { motion, useInView } from "framer-motion";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export const Dashboard = () => {
+    const refOne = React.useRef(null);
+    const inViewOne = useInView(refOne, { triggerOnce: false });
     const screenWidth = useScreenWidth()
     const [open, setOpen] = React.useState(false);
     const [formData, setFormData] = React.useState({
@@ -243,7 +45,11 @@ export const Dashboard = () => {
     };
 
     return (
-        <div className="dashboard">
+        <motion.div className="dashboard"
+            ref={refOne}
+            initial={{ opacity: 0, x: -100 }}
+            animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: .8 }}>
             <div className="dashboard_main">
                 <div className="dashboard_head">
                     <span className="dashboard_h1">Hello, MARK JECNO !</span>
@@ -360,7 +166,7 @@ export const Dashboard = () => {
                     </Button>
                 </DialogActions>
             </Dialog>
-        </div>
+        </motion.div>
     );
 };
 

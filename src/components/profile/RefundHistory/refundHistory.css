@@ -1,100 +1,133 @@
-.refund_myOrder{
-    overflow-x: hidden;
-    width: 100%;
+.refund_myOrder {
+  overflow-x: hidden;
+  width: 100%;
 }
+
 /* myOrder.css */
 .refund_table-container {
-    width: 100%;
-    overflow-x: auto;
-  }
-  
-.refund_myOrder table{
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 100%;
+  overflow-x: auto;
+}
 
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
+.refund_myOrder table {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
 
 
 }
-.refund_myOrder table thead{
-    border-radius: 10px;
 
-}
-.myOrder table tbody{
-    background-color: #ffff;
-    border-radius: 10px;
+.refund_myOrder table thead {
+  border-radius: 10px;
 
 }
 
-.refund_myOrder table thead th{
-    color: var(--text-dark-color);
-    padding: 25px 20px;
-    text-align: center;
-    font-size: 18px;
-    font-family:  sans-serif;
+.myOrder table tbody {
+  background-color: #ffff;
+  border-radius: 10px;
 
 }
-.refund_myOrder table tbody td{
-    text-align: center;
-    font-size: 15px;
-    padding: 15px 5px;
-    border-bottom: 1px solid #E5EAF2;
+
+.refund_myOrder table thead th {
+  color: var(--text-dark-color);
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-family: sans-serif;
 
 }
-tbody tr:hover{
-    background-color: #F3F6F9;
+
+.refund_myOrder table tbody td {
+  text-align: center;
+  font-size: 15px;
+  padding: 15px 5px;
+  border-bottom: 1px solid #E5EAF2;
+
 }
+
+tbody tr:hover {
+  background-color: #F3F6F9;
+}
+
 .refund_pagination-controls {
-    display: flex;
+  /* display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px;
     background-color: #f9fafb;
     border-top: 1px solid #e0e0e0;
-    flex-wrap: wrap;
-  }
-  
-  .refund_pagination-controls select
-   {
-    padding: 6px 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    color: var(--text-dark-color);
-    background-color: #ffff;
-  }
- 
-  .refund_pagination-controls button {
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: var(--text-hover-color);
-    cursor: pointer;
-    color: #fff;
-  }
-  
-  .refund_pagination-controls button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  .refund_myOrder_text{
-    font-size: 24px;
-    font-weight: 600;
-    padding: 10px;
-    font-family:  sans-serif;
+    flex-wrap: wrap; */
 
+
+  /* padding: screenWidth <= 430 ? '6px' : '16px',
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    flexWrap: 'wrap',
+                                    borderTop: '1px solid #e0e0e0',
+                                    backgroundColor: '#f9fafb',
+                                    borderBottomLeftRadius: '8px',
+                                    borderBottomRightRadius: '8px',
+                                    gap: '1rem' */
+                                    padding: 5px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    border: 1px solid #e0e0e0;
+                                    background-color: #f9fafb;
+                                    border-bottom-left-radius: 8px;
+                                    border-bottom-left-radius: 8px;
+                                    flex-direction: column;
+
+}
+
+.refund_pagination-controls select {
+  padding: 6px 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  color: var(--text-dark-color);
+  background-color: #ffff;
+}
+
+.refund_pagination-controls button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: var(--text-hover-color);
+  cursor: pointer;
+  color: #fff;
+}
+
+.refund_pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refund_myOrder_text {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px;
+  font-family: sans-serif;
+
+}
+
+@media (max-width: 430px) {
+  .refund_myOrder {
+    overflow-x: scroll;
+    /* Show horizontal scroll */
   }
-  @media (max-width: 430px) {
-    .refund_myOrder {
-      overflow-x: scroll;  /* Show horizontal scroll */
-    }
-  
-    table {
-      min-width: 600px;  /* Ensure table is wider than screen */
-    }
-  
-    body {
-      overflow-x: hidden; /* Hide body overflow to avoid double scroll */
-    }
+
+  table {
+    min-width: 600px;
+    /* Ensure table is wider than screen */
   }
+
+  body {
+    overflow-x: hidden;
+    /* Hide body overflow to avoid double scroll */
+  }
+}

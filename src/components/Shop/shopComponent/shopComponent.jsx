@@ -17,6 +17,7 @@ import { ProductCards } from "../productCards/productCards";
 import CategoryDrawer from "../categoryDrawer/categoryDrawer";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import useScreenWidth from "../../../hooks/screenWidth";
+import { Category } from "@mui/icons-material";
 
 const cardData = [
     { icon: AppImages.shopIcon1 },
@@ -43,7 +44,21 @@ export const ShopComponent = () => {
     const [openDrawer, setOpendrawer] = useState(false)
 
     const [value1, setValue1] = React.useState(2);
-    const [expanded, setExpanded] = useState(true);
+    
+    const [ expandedAccordians,setExpandedAccordians]=useState({
+        category:true,
+        brand:true,
+        rating:true,
+        colors:true,
+        price:true
+    })
+    const toggleAccordian = (key)=>{
+        setExpandedAccordians(prev => ({
+            ...prev,
+            [key]:!prev[key]
+        }))
+    }
+
     const [value, setValue] = React.useState([0, 1500]);
 
     const handleChange = (event, newValue) => {
@@ -110,7 +125,7 @@ export const ShopComponent = () => {
             <div className="product_aera">
                 {screenWidth < 991 ? null : (
                     <div className="side_bar_category">
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)} >
+                        <Accordion expanded={expandedAccordians.category} onChange={() => toggleAccordian('category')} >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1-content"
@@ -132,7 +147,7 @@ export const ShopComponent = () => {
                         </Accordion>
 
                         {/* ------------------------- */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.brand} onChange={() => toggleAccordian('brand')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1-content"
@@ -153,7 +168,7 @@ export const ShopComponent = () => {
 
                         </Accordion>
                         {/* ----------------------------- */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.colors} onChange={() => toggleAccordian('colors')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1-content"
@@ -174,7 +189,7 @@ export const ShopComponent = () => {
 
                         </Accordion>
                         {/* ------------------------------------- */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.rating} onChange={() => toggleAccordian('rating')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1-content"
@@ -195,7 +210,7 @@ export const ShopComponent = () => {
 
                         </Accordion>
                         {/* ----------------------------------------------- */}
-                        <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+                        <Accordion expanded={expandedAccordians.price} onChange={() => toggleAccordian('price')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1-content"

@@ -28,7 +28,7 @@ import shopicon9 from '../assets/images/icon/9.png';
 import shopicon11 from '../assets/images/icon/11.png';
 import shopicon12 from '../assets/images/icon/12.png';
 import placeholderImg  from '../assets/images/placholder_img.png';
-
+import newsletter from '../assets/images/newsletter.jpg'
 
 
 
@@ -74,7 +74,8 @@ export const  AppImages = {
     shopIcon9:shopicon9,
     shopIcon11:shopicon11,
     shopIcon12:shopicon12,
-    placeholderImg:placeholderImg
+    placeholderImg:placeholderImg,
+    newsletter:newsletter
 
 
 

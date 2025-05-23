@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik } from 'formik';
 import './registerForm.css';
 import { motion, useInView } from "framer-motion";
@@ -8,6 +8,9 @@ export const RegisterForm = () => {
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <motion.div className='register_main_div'
             ref={refOne}

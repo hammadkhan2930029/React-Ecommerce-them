@@ -5,14 +5,14 @@ import './drawerRight.css'
 import { useNavigate } from 'react-router-dom';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import PersonIcon from '@mui/icons-material/Person';
-
+import { CategoryDropdownTwo } from '../../header/categoryDropDown/categoryDropDownTwo';
 export default function RightDrawer({ open, onClose }) {
   const navigate = useNavigate()
 
   const menuItems = [
     { id: 1, title: "Home", path: '/home' },
     { id: 2, title: "Feature" },
-    { id: 3, title: "Product" },
+    { id: 3, title: "Category" },
     { id: 4, title: "Shop" },
     { id: 5, title: "Blogs" },
     { id: 6, title: "About" },
@@ -53,18 +53,27 @@ export default function RightDrawer({ open, onClose }) {
 
           <div className='drawer_right_main'>
             {menuItems.map((item, index) => (
-              <div className='drawer_right' onClick={() => {
-                handleNavigate(item.title)
-              }}>
-                <span className='right_drawer_item'>{item.title}</span>
-                {item.title.toLowerCase() === 'reviews' ? <RateReviewIcon className='right_drawer_icon' /> :
-                  <KeyboardArrowRightIcon className='right_drawer_icon' />
-                }
+              <div>
+                {item.title.toLowerCase() === 'category' ? (
+
+                  <CategoryDropdownTwo key={item.id} onNavigate={(val) => console.log('Navigate to:', val)} />
+                ):(
+
+                <div className='drawer_right' onClick={() => {
+                  handleNavigate(item.title)
+                }}>
+                  <span className='right_drawer_item'>{item.title}</span>
+                  {item.title.toLowerCase() === 'reviews' ? <RateReviewIcon className='right_drawer_icon' /> :
+                    <KeyboardArrowRightIcon className='right_drawer_icon' />
+                  }
+                </div>
+                )}
+
               </div>
             ))}
           </div>
-          <div className='right_drawer_login' onClick={()=>  navigate('/login')}>
-            <PersonIcon/>
+          <div className='right_drawer_login' onClick={() => navigate('/login')}>
+            <PersonIcon />
             <span>Register Now</span>
 
           </div>

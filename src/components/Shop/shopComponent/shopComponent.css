@@ -21,6 +21,7 @@
     overflow: hidden;
 
 
+
 }
 
 .shop_slick-dots {
@@ -173,7 +174,7 @@
 
 }
 
-@media (max-width: 440px) {
+@media (max-width: 430px) {
 
      .shop_heading_1 {
         font-size: 28px;
@@ -185,6 +186,9 @@
     .shop_icon_div {
     width: 100px;
     height: 100px;
+}
+.shop_brands_icon_main{
+        margin-bottom: 20px;
 }
 
 

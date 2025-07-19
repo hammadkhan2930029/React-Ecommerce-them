@@ -7,16 +7,15 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading (e.g., API call or delay)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // 2 seconds loader
+    }, 3000); 
 
-    return () => clearTimeout(timer); // Cleanup
+    return () => clearTimeout(timer); 
   }, []);
 
   if (loading) {
-    return <Loader />; // Show spinner
+    return <Loader />; 
   }
 
   return (

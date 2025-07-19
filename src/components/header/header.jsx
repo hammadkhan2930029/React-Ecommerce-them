@@ -21,7 +21,7 @@ import { motion, useInView } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import PersonIcon from '@mui/icons-material/Person';
-
+import CategoryDropdown from './categoryDropDown/categoryDropDown';
 
 
 
@@ -52,7 +52,7 @@ export const Header = () => {
   const menuItems = [
     { id: 1, title: "Home", path: '/home' },
     { id: 2, title: "Feature" },
-    { id: 3, title: "Product" },
+    { id: 3, title: "Category" },
     { id: 4, title: "Shop" },
     { id: 5, title: "Blogs" },
     { id: 6, title: "About" },
@@ -87,7 +87,7 @@ export const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      {screenWidth < 600 ? null : (
+      {screenWidth < 700 ? null : (
         <motion.div className="header-container"
           ref={refOne}
           initial={{ opacity: 0, x: -100 }}
@@ -117,7 +117,7 @@ export const Header = () => {
       >
         <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', }}>
           <Toolbar>
-            <IconButton
+            {/* <IconButton
               onClick={() => setOpenDrawer(true)}
               size="large"
               edge="start"
@@ -126,7 +126,7 @@ export const Header = () => {
               sx={{ mr: 2 }}
             >
               <MenuIcon style={{ fontSize: 32 }} />
-            </IconButton>
+            </IconButton> */}
             <img src={AppImages.logo}
               alt="Logo"
               style={{
@@ -135,7 +135,7 @@ export const Header = () => {
                 height: 'auto',
                 objectFit: 'contain',
               }} />
-            {screenWidth < 1100 ? (
+            {screenWidth < 1024 ? (
               <motion.div className='menuItems2'>
                 <IconButton
                   onClick={() => setOpenDrawerRight(true)}
@@ -154,18 +154,23 @@ export const Header = () => {
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>
                 {menuItems.map((item, index) => (
+                  item.title === 'Category' ? (
+                    <CategoryDropdown key={item.id} onNavigate={(val) => console.log('Navigate to:', val)} />
+                  ) : (
+                    <span
+                      key={item.id}
+                      className='menutext'
+                      onClick={() => handle(item.title)}
+                    >
+                      {item.title}
+                      {!(["home", "about", "contact", "blogs", "shop"].includes(item.title.toLowerCase())) &&
+                        <KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />}
+                    </span>
+                  )
 
-                  <span key={item.id} className='menutext' onClick={() => {
-                    handle(item.title)
-                  }} >
-                    {item.title}
-                    
-                    {item.title.toLowerCase() === 'home' ? null : item.title.toLowerCase() === 'about' ? null : item.title.toLowerCase() === 'contact' ? null : item.title.toLowerCase() === 'blogs' ? null :
-                     item.title.toLowerCase() === 'shop' ? null :
-                      (<KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />)}
-                    {/* {item.title.toLowerCase() == 'Product' ? <KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} /> : null} */}
 
-                  </span>
+
+               
                 ))}
 
                 <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />

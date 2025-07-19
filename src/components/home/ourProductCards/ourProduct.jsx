@@ -86,17 +86,17 @@ const renderProductList = ({ data, tag, key }) => (
         transition={{ duration: 0.5 }}
     >
         {data.map((product, index) => (
-            <motion.div className="latestProduct" key={index}>
-                <motion.div className="imgMotionDiv">
-                    <img src={product.image} className="latestCardImg" alt={product.title} />
+            <motion.div className="our_latestProduct" key={index}>
+                <motion.div className="our_imgMotionDiv">
+                    <img src={product.image} className="our_latestCardImg" alt={product.title} />
                 </motion.div>
-                <motion.div className="latestCardText_div">
-                    <motion.div className="tag_div">
-                        <span className="tag">{tag}</span>
+                <motion.div className="our_latestCardText_div">
+                    <motion.div className="our_tag_div">
+                        <span className="our_tag">{tag}</span>
                     </motion.div>
-                    <span className="latestCardText1">{product.title}</span>
-                    <span className="latestCardText2">{product.category}</span>
-                    <span className="latestCardText1">RS.{product.price}</span>
+                    <span className="our_latestCardText1">{product.title}</span>
+                    <span className="our_latestCardText2">{product.category}</span>
+                    <span className="our_latestCardText1">RS.{product.price}</span>
                 </motion.div>
             </motion.div>
         ))}
@@ -124,13 +124,13 @@ export const OurProductCards = () => {
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}
                 className='ourProductHeadings'>
-                <span className="text_1">Our Products</span>
-                <span className="text_2">Everyday Casual</span>
-                <span className="line"></span>
-                <div className='textBtn_div'>
-                    <span className={select == 1 ? 'selected_textBtn' :"textBtn"} onClick={() => setSelect(1)}>Featured</span>
-                    <span className={select == 2 ? 'selected_textBtn' :"textBtn"} onClick={() => setSelect(2)}>New Arrivals</span>
-                    <span className={select == 3 ? 'selected_textBtn' :"textBtn"} onClick={() => setSelect(3)}>On Sale</span>
+                <span className="our_text_1">Our Products</span>
+                <span className="our_text_2">Casual Comfort</span>
+                <span className="our_line"></span>
+                <div className='our_textBtn_div'>
+                    <span className={select == 1 ? 'our_selected_textBtn' :"our_textBtn"} onClick={() => setSelect(1)}>Featured</span>
+                    <span className={select == 2 ? 'our_selected_textBtn' :"our_textBtn"} onClick={() => setSelect(2)}>New Arrivals</span>
+                    <span className={select == 3 ? 'our_selected_textBtn' :"our_textBtn"} onClick={() => setSelect(3)}>On Sale</span>
                 </div>
             </motion.div>
          

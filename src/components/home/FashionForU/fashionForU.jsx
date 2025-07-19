@@ -76,7 +76,7 @@ export const FashionForU = () => {
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>
                 <span className="h5">From The Blog</span>
-                <span className="h1">Fashion For u</span>
+                <span className="h1">Your Style Story</span>
                 <span className="bottomLine"></span>
             </motion.div>
             <motion.div

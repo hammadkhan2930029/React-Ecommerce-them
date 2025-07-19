@@ -7,17 +7,18 @@
     background-color: var(--background-color-dark);
     color: var(--background-color);
     padding: 2px 25px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* responsive wrap support */
 }
 
 .header-left {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: row;
     padding: 5px;
-    width: 100%;
+    width: 40%;
+    /* background-color: aqua; */
 
 }
 .text{
@@ -31,7 +32,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 5px;
+   padding-left: 8px;
     gap: 8px;
 }
 
@@ -42,6 +43,8 @@
     padding: 5px;
     width: 100%;
     gap: 15px;
+    /* background-color: aqua; */
+
 }
 
 .login-register {
@@ -58,7 +61,7 @@
 
 /* ---------------------------------------- */
 .menuItems {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -97,8 +100,29 @@
 
 
 
+
+
+
+
+/* Responsive for desktops */
+@media (max-width: 1024px) {
+    .header-left {
+        width: 43%;
+    }
+
+    .header-right {
+        width: 20%;
+    }
+}
+@media (max-width: 767px) {
+    .header-left {
+        width: 55%;
+    }
+
+    
+}
 /* Responsive for tablets */
-@media (min-width: 600px) {
+@media (max-width: 600px) {
     .header-left {
         flex-direction: row;
         justify-content: space-between;
@@ -112,16 +136,5 @@
     }
     .icon{
         margin-right: -25px;
-    }
-}
-
-/* Responsive for desktops */
-@media (min-width: 1024px) {
-    .header-left {
-        width: 27%;
-    }
-
-    .header-right {
-        width: 13%;
     }
 }

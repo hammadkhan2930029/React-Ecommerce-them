@@ -53,7 +53,7 @@ export const BrandsIcons = () => {
             animate={inViewOne ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: .8 }}>
             <motion.div className="brand_tag">
-                <span className="heading_1">#Whowerewhat</span>
+                <span className="heading_1">Brands</span>
             </motion.div>
             <motion.div>
                 <Slider {...settings}>

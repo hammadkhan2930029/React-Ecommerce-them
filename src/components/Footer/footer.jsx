@@ -46,7 +46,7 @@ export const Footer = () => {
       ]
     },
     {
-      category: "Help Center",
+      category: "Others",
       items: [
         { type: "link", label: "My Account", href: "/account" },
         { type: "link", label: "My Orders", href: "/orders" },

@@ -32,7 +32,15 @@
 }
 /* ------------------------- MEDIA QUERIES ------------------------- */
 
-
+@media (max-width: 991px) {
+   
+    .contact_info_data{
+        width: 23%;
+        padding: 5px;
+       
+    }
+  
+}
 
 
 /* 767px to 576px */

@@ -1,12 +1,11 @@
 
 .side_bar_category_drawer{
-    background-color: #f8f8f8;
     padding: 15px;
     width: 100%;
     margin: 5px;
     border-radius: 10px;
     border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); */
     height: 100%;
 
 }
@@ -23,8 +22,9 @@
 
 }
 .checkBox_div_drawer::-webkit-scrollbar{
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
+    background-color: #e70f0f;
 }
 .checkBox_div_drawer::-webkit-scrollbar-track{
     background-color: #f0f0f0;

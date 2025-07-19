@@ -120,7 +120,7 @@ export const NewsLetter = () => {
                         lg: '40%',
                     },
                     bgcolor: 'background.paper',
-                    boxShadow: 24,
+                    // boxShadow: 24,
                     borderRadius: 2,
                     p: 3,
                     display: 'flex',

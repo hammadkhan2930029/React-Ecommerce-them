@@ -69,29 +69,60 @@ export const ShopComponent = () => {
     const refOne = React.useRef(null);
     const inViewOne = useInView(refOne, { triggerOnce: false });
     // ---------------------------------
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow:  8,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                },
+const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+        {
+            breakpoint: 1440, // Large desktop
+            settings: {
+                slidesToShow: 7,
             },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 3,
-                },
+        },
+        {
+            breakpoint: 1280, // Standard desktop
+            settings: {
+                slidesToShow: 6,
             },
-        ],
-    };
+        },
+        {
+            breakpoint: 1024, // Small desktop / large tablet
+            settings: {
+                slidesToShow: 5,
+            },
+        },
+        {
+            breakpoint: 900, // Tablet landscape
+            settings: {
+                slidesToShow: 4,
+            },
+        },
+        {
+            breakpoint: 768, // Tablet portrait
+            settings: {
+                slidesToShow: 3,
+            },
+        },
+        {
+            breakpoint: 600, // Large mobile
+            settings: {
+                slidesToShow: 3,
+            },
+        },
+        {
+            breakpoint: 430, // Small mobile
+            settings: {
+                slidesToShow: 3,
+            },
+        },
+    ],
+};
+
     return (
         <div className="main_shop">
             <div className="icons_slider">

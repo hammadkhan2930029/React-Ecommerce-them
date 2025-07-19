@@ -211,13 +211,20 @@
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
-@media (max-width: 1180px) {}
+@media (max-width: 1180px) {
+   .product_card {
+    width: 48%;
+  }
+}
 
 /* 991px to 768px */
 @media (max-width: 991px) {}
 
 /* 767px to 576px */
 @media (max-width: 767px) {
+  .searchBar{
+    width: 50%;
+  }
   .product_card {
     width: 48%;
   }
@@ -231,6 +238,9 @@
 
   .product_image_container {
     height: 250px;
+  }
+  .searchBar{
+    width: 60%;
   }
 }
 

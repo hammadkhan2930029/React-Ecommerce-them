@@ -52,35 +52,16 @@ tbody tr:hover {
 }
 
 .refund_pagination-controls {
-  /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    background-color: #f9fafb;
-    border-top: 1px solid #e0e0e0;
-    flex-wrap: wrap; */
 
-
-  /* padding: screenWidth <= 430 ? '6px' : '16px',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    flexWrap: 'wrap',
-                                    borderTop: '1px solid #e0e0e0',
-                                    backgroundColor: '#f9fafb',
-                                    borderBottomLeftRadius: '8px',
-                                    borderBottomRightRadius: '8px',
-                                    gap: '1rem' */
-                                    padding: 5px;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    flex-wrap: wrap;
-                                    border: 1px solid #e0e0e0;
-                                    background-color: #f9fafb;
-                                    border-bottom-left-radius: 8px;
-                                    border-bottom-left-radius: 8px;
-                                    flex-direction: column;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f9fafb;
+  border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  flex-direction: column;
 
 }
 

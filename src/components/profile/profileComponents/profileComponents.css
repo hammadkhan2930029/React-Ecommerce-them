@@ -12,7 +12,7 @@
 }
 .profile_left{
     padding: 10px;
-    width: 25%;
+    width: 28%;
     height: 685px;
     background-color: #f9f9f9;
     border-radius: 5px;
@@ -20,7 +20,7 @@
 }
 .profile_right{
     /* padding: 10px; */
-    width: 65%;
+    width: 68%;
 }
 .user_div{
     display: flex;
@@ -47,7 +47,7 @@
 
 }
 .user_data .email{
-    font-size: 16px;
+    font-size: 15px;
     color: var(--text-dark-color);
 }
 .profile_list{

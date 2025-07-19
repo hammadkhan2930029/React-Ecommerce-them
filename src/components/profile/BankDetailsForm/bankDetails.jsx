@@ -10,7 +10,7 @@ export const BankDetailsForm = () => {
       initial={{ opacity: 0, x: -100 }}
       animate={inViewOne ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: .8 }}>
-      <Paper sx={{ p: 4, backgroundColor: '#f9f9f9', width: '100%' }}>
+      <Paper sx={{ p: 4, backgroundColor: '#f9f9f9', width: '100%',boxShadow:'none' }}>
         <Typography variant="h6" fontWeight="bold" gutterBottom>
           Bank Details
         </Typography>

@@ -14,6 +14,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import Snackbar from '@mui/material/Snackbar';
 import useScreenWidth from '../../../hooks/screenWidth';
 import { IconButton } from '@mui/material';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 const productDetails = [
     {
         title: "Arabic Abaya",
@@ -185,10 +190,11 @@ export const ProductCards = ({ deviceType }) => {
         vertical: 'top',
         horizontal: 'center',
     });
+
     const { vertical, horizontal, open } = state;
 
     const handleClick = (newState) => () => {
-        setState({ ...newState, open: true });
+        setState({ open: true, ...newState });
     };
 
     const handleClose = () => {
@@ -204,7 +210,7 @@ export const ProductCards = ({ deviceType }) => {
         <motion.div className='shop_latest_main'>
             <div style={{ display: 'flex', justifyContent: 'end', width: '95%' }}>
                 <motion.div
-                  
+
                     className={click ? 'searchBar' : null}>
 
                     {click &&
@@ -215,9 +221,13 @@ export const ProductCards = ({ deviceType }) => {
                             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: .8 }}>
                             <input className='searchInput' placeholder='Search' />
+                            <IconButton className='searchIcon' sx={{ backgroundColor: '#f5f5f5' }}>
+                                <SearchIcon style={{ fontSize: '28px' }} />
+                            </IconButton>
+
 
                         </motion.div>}
-                    <IconButton className='searchIcon' onClick={() => setclick(!click)} sx={{backgroundColor:'#f5f5f5'}}>
+                    <IconButton className='searchIcon' onClick={() => setclick(!click)} sx={{ backgroundColor: '#f5f5f5', display: click && 'none' }}>
                         <SearchIcon style={{ fontSize: '28px' }} />
                     </IconButton>
                 </motion.div>
@@ -229,7 +239,7 @@ export const ProductCards = ({ deviceType }) => {
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}>
                 {currentItems.map((item, index) => (
-                    <div className="product_card" onClick={() => navigate('/productDetails')}>
+                    <div className="product_card" >
                         <div className="product_image_container">
                             <img
                                 src={item.image}
@@ -240,17 +250,37 @@ export const ProductCards = ({ deviceType }) => {
                                 <StarOutlinedIcon style={{ color: '#FFD700' }} /> <span>4.5</span>
                             </div>
                             <div className="product_actions">
-                                <button onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
+                                {/* <button onClick={() => handleClick({ vertical: 'top', horizontal: 'center' })}>
                                     <FavoriteBorderOutlinedIcon style={{ fontSize: "20px" }} />
                                 </button>
-                                <button onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
+                                <button onClick={() => handleClick({ vertical: 'top', horizontal: 'center' })}>
                                     <ShoppingCartOutlinedIcon style={{ fontSize: "20px" }} />
                                 </button>
-                                <button><RemoveRedEyeOutlinedIcon style={{ fontSize: "20px" }} /></button>
+                                <button><RemoveRedEyeOutlinedIcon style={{ fontSize: "20px" }} /></button> */}
+                                    <button onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
+                                        <FavoriteBorderOutlinedIcon style={{ fontSize: "20px" }} />
+                                    </button>
+                                    <button onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
+                                        <ShoppingCartOutlinedIcon style={{ fontSize: "20px" }} />
+                                    </button>
+                                    <button onClick={() => navigate('/productDetails')}>
+                                        <RemoveRedEyeOutlinedIcon style={{ fontSize: "20px" }} />
+                                    </button>
+
+                                    <Snackbar
+                                        anchorOrigin={{ vertical, horizontal }}
+                                        open={open}
+                                        onClose={handleClose}
+                                        key={vertical + horizontal}
+                                    >
+                                        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                                            Action completed!
+                                        </Alert>
+                                    </Snackbar>
                             </div>
                         </div>
 
-                        <div className="product_details">
+                        <div className="product_details" onClick={() => navigate('/productDetails')}>
                             <h3 className="product_brand">{item.title}</h3>
                             <p className="product_title">Chic Crop Top</p>
                             <div className="product_price_section">

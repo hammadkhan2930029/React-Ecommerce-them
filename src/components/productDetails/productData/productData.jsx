@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import './productData.css';
 import { motion, useInView } from "framer-motion";
 import { AppImages } from "../../../constants/AppImages";
@@ -53,10 +53,13 @@ const slideImages = [
 
 export const ProductData = () => {
 
+    const [mainImage, setMainImage] = useState(AppImages.cardimg1)
 
+    //------------------------------
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    // -------------------------------
 
     const navigate = useNavigate()
     const [count, setCount] = useState(1)
@@ -70,6 +73,12 @@ export const ProductData = () => {
         setExpanded((prevExpanded) => !prevExpanded);
     };
     // ------------------------------
+    const [selectColor2, setSelectColor2] = useState('Color')
+    const [selectSize, setSelectSize] = useState('Size')
+
+
+    // ------------------------------
+
     const refOne = React.useRef(null);
     const inViewOne = useInView(refOne, { triggerOnce: false });
     // ----------------------------------
@@ -117,20 +126,30 @@ export const ProductData = () => {
                 <motion.div className="left">
                     <div className="img_slider">
                         <div className="img_div">
-                            <Carousel>
+                            <img src={mainImage} className="product_slider_img" />
+                            {/* <Carousel>
                                 {slideImages.map((item, index) => (
                                     <Carousel.Item key={index}>
                                         <img src={item.url} className="product_slider_img" />
 
                                     </Carousel.Item>
                                 ))}
-                            </Carousel>
+                            </Carousel> */}
 
                         </div>
                         <div className="img_div_2">
-                            <img src={AppImages.cardimg1} alt="Product img" className="product_img" />
-                            <img src={AppImages.cardimg3} alt="Product img" className="product_img" />
-                            <img src={AppImages.cardimg5} alt="Product img" className="product_img" />
+                            <img src={AppImages.cardimg1} alt="Product img" className="product_img"
+                                onClick={() => {
+                                    setMainImage(AppImages.cardimg1)
+                                }} />
+                            <img src={AppImages.cardimg3} alt="Product img" className="product_img"
+                                onClick={() => {
+                                    setMainImage(AppImages.cardimg3)
+                                }} />
+                            <img src={AppImages.cardimg5} alt="Product img" className="product_img"
+                                onClick={() => {
+                                    setMainImage(AppImages.cardimg5)
+                                }} />
 
                         </div>
                     </div>
@@ -149,6 +168,37 @@ export const ProductData = () => {
                             <AskQueastion open={askQueation} setOpen={setAskQueation} />
 
                         </div>
+                        <motion.div className="right">
+                            <h3>Color</h3>
+                            <div className="color_div">
+                                <div className={selectColor == 1 ? "selected" : "color_border"} onClick={() => setSelectColor(1)}>
+
+                                    <div className="color1"></div>
+                                </div>
+                                <div className={selectColor == 2 ? "selected" : "color_border"} onClick={() => setSelectColor(2)}>
+
+                                    <div className="color2"></div>
+                                </div>
+                                <div className={selectColor == 3 ? "selected" : "color_border"} onClick={() => setSelectColor(3)}>
+
+                                    <div className="color3"></div>
+                                </div>
+
+                            </div>
+                            <div className="qty_div">
+                                <button className="btn" disabled={count == 1} onClick={() => setCount(count - 1)}><ArrowBackIosOutlinedIcon style={{ fontSize: '20px' }} /></button>
+                                <span className="qty">{count}</span>
+                                <button className="btn" onClick={() => setCount(count + 1)}>< ArrowForwardIosOutlinedIcon style={{ fontSize: '20px' }} /></button>
+
+
+                            </div>
+                            <div className="button_div">
+                                <button>Out of Stock</button>
+                                <button>Buy now</button>
+
+                            </div>
+
+                        </motion.div>
                         {/* ----------------------------------------------------------------------------------------- */}
                         <div className="accordion">
                             <Accordion
@@ -236,8 +286,7 @@ export const ProductData = () => {
 
                 </motion.div>
                 {/* ================================================================================================================ */}
-                <motion.div className="right"
-                >
+                {/* <motion.div className="right">
                     <h3>Color</h3>
                     <div className="color_div">
                         <div className={selectColor == 1 ? "selected" : "color_border"} onClick={() => setSelectColor(1)}>
@@ -267,7 +316,7 @@ export const ProductData = () => {
 
                     </div>
 
-                </motion.div>
+                </motion.div> */}
 
 
             </motion.div>
@@ -290,7 +339,7 @@ export const ProductData = () => {
                         <div className="part_2">
                             <span className="variant">Variants : </span>
                             <div onClick={handleClickColor} className="menu">
-                                <span>Color</span>
+                                <span>{selectColor2}</span>
                                 <KeyboardArrowDownIcon style={{ fontSize: '20px' }} />
 
 
@@ -304,12 +353,23 @@ export const ProductData = () => {
                                     'aria-labelledby': 'basic-button',
                                 }}
                             >
-                                <MenuItem onClick={handleCloseColor}>Red</MenuItem>
-                                <MenuItem onClick={handleCloseColor}>Green</MenuItem>
-                                <MenuItem onClick={handleCloseColor}>Yellow</MenuItem>
+                                <MenuItem
+                                    onClick={() => {
+                                        setSelectColor2('Red'),
+                                            handleCloseColor()
+                                    }}
+                                >Red</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setSelectColor2('Green'),
+                                        handleCloseColor()
+                                }}>Green</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setSelectColor2('Yellow'),
+                                        handleCloseColor()
+                                }}>Yellow</MenuItem>
                             </Menu>
                             <div onClick={handleClick} className="menu">
-                                <span>Size</span>
+                                <span>{selectSize}</span>
                                 <KeyboardArrowDownIcon style={{ fontSize: '20px' }} />
 
 
@@ -324,9 +384,18 @@ export const ProductData = () => {
                                     'aria-labelledby': 'basic-button',
                                 }}
                             >
-                                <MenuItem onClick={handleClose}>Small</MenuItem>
-                                <MenuItem onClick={handleClose}>Medium</MenuItem>
-                                <MenuItem onClick={handleClose}>Larg</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setSelectSize('Small')
+                                    handleClose()
+                                }}>Small</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setSelectSize('Medium')
+                                    handleClose()
+                                }}>Medium</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setSelectSize('Larg')
+                                    handleClose()
+                                }}>Larg</MenuItem>
                             </Menu>
 
                         </div>

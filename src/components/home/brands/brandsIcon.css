@@ -32,37 +32,58 @@
 }
 
 .icon_div {
-    width: 55%;
+    width: 75%;
     display: flex;
     justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+
 
 }
 
 .brand_icon {
-    width: 125px;
-    height: 125px;
+    width: 160px;
+    height: 160px;
 }
 
 /* 575px to 360px */
 @media (max-width: 575px) {
-    .heading_1{
+    .heading_1 {
         font-size: 32px;
     }
- 
- 
- 
- 
- 
- }
- 
- @media (max-width: 440px) {
-     
-    .heading_1{
+
+
+
+
+
+}
+
+@media (max-width: 440px) {
+
+    .heading_1 {
         font-size: 28px;
     }
- 
-     
- 
- 
- 
- }
+
+
+
+
+
+}
+
+@media (max-width: 360px) {
+
+    .icon_div {
+        width: 90%;
+    }
+
+    .brand_icon {
+        width: 125px;
+        height: 125px;
+    }
+
+
+
+
+
+}

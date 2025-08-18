@@ -74,7 +74,7 @@ export const Description = () => {
     const refOne = React.useRef(null);
     const inViewOne = useInView(refOne, { triggerOnce: false });
     return (
-        <motion.div>
+        <motion.div style={{padding:'20px'}}>
             <div style={{ display: 'flex', justifyContent: 'center', }}>
 
                 <div className="toggle">

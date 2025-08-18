@@ -49,21 +49,26 @@
 }
 .shop_icon_div span{
     padding: 5px;
+    
+
 }
 
-.shop_icon_div:hover {
-    background-color: var(--text-hover-color);
-}
-.shop_icon_div:hover span{
+
+/* .shop_icon_div:hover span{
     color: #fff;
     font-weight: 700;
-}
+} */
 
 .shop_brand_icon {
     width: 100px;
     height: 100px;
     color: #fff;
+    transition: all 0.3s ease-in-out;
 
+
+}
+.shop_brand_icon:hover {
+    transform: rotate(360deg)
 }
 /* ---------------------------------------------------- */
 .product_aera{
@@ -174,18 +179,18 @@
 
 }
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
 
      .shop_heading_1 {
         font-size: 28px;
     }
     .shop_brand_icon{
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
     .shop_icon_div {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
 }
 .shop_brands_icon_main{
         margin-bottom: 20px;
@@ -196,4 +201,13 @@
 }
 
 /* Below 360px */
-@media (max-width: 360px) {}
+@media (max-width: 360px) {
+     .shop_brand_icon{
+        width: 60px;
+        height: 60px;
+    }
+    .shop_icon_div {
+    width: 100px;
+    height: 100px;
+}
+}

@@ -212,21 +212,30 @@ export const CategoryDropdownTwo = ({ onNavigate }) => {
     };
     return (
         <div>
-            <div onClick={handleOpen}  style={{
-                        backgroundColor: '#ffff',
-                        width: '200px',
-                        display: 'flex',
-                        flexDirection:'row',
-                        alignItems:'center',
-                        margin: '10px',
-                        borderRadius: '10px',
-                        transition: 'transform 0.3s',
-                        color: '#000',
-                        padding:'5px',
-                        justifyContent:'space-between'
-                    }}>
+            <div onClick={handleOpen} style={{
+                backgroundColor: '#ffff',
+                width: '200px',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                margin: '10px',
+                borderRadius: '10px',
+                // transition: 'transform 0.3s',
+                // paddingTop: '5px',
+                // paddingBottom: '5px',
+                justifyContent: 'space-between'
+            }}>
 
-                <Button  style={{color: '#000'}}>Category </Button>
+                <span style={{
+                    color: 'var(--text-dark-color)',
+                    fontSize: '18px',
+                    padding: '10px 5px',
+                    cursor: 'pointer',
+                    fontFamily: 'sans-serif,poppins',
+                    fontWeight:'500'
+                }}>
+                    Category
+                </span>
                 <KeyboardArrowRightIcon />
             </div>
 

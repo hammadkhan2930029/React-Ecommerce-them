@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { AppImages } from '../../../constants/AppImages';
 import './ourProduct.css';
 import { motion, useInView,AnimatePresence } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -74,7 +76,9 @@ const productMap = {
     3: { data: productDetailsOnSale, tag: "On Sale", key: "onsale" },
 };
 
-const renderProductList = ({ data, tag, key }) => (
+
+
+const renderProductList = ({ data, tag, key },navigate) => (
     <div className='ourProduct_main'>
 
     <motion.div
@@ -86,7 +90,7 @@ const renderProductList = ({ data, tag, key }) => (
         transition={{ duration: 0.5 }}
     >
         {data.map((product, index) => (
-            <motion.div className="our_latestProduct" key={index}>
+            <motion.div className="our_latestProduct" key={index} onClick={() => navigate('/productDetails')}>
                 <motion.div className="our_imgMotionDiv">
                     <img src={product.image} className="our_latestCardImg" alt={product.title} />
                 </motion.div>
@@ -112,6 +116,7 @@ export const OurProductCards = () => {
 
     const inViewOne = useInView(refOne, { triggerOnce: false });
 
+const navigate = useNavigate();
   
   
 
@@ -135,7 +140,7 @@ export const OurProductCards = () => {
             </motion.div>
          
             <AnimatePresence mode="wait">
-                {renderProductList(productMap[select])}
+                {renderProductList(productMap[select],navigate)}
             </AnimatePresence>
 
         </motion.div>

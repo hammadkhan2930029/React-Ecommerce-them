@@ -19,43 +19,62 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import useScreenWidth from "../../../hooks/screenWidth";
 import { Category } from "@mui/icons-material";
 
-const cardData = [
-    { icon: AppImages.shopIcon1 },
-    { icon: AppImages.shopIcon2 },
-    { icon: AppImages.shopIcon3 },
-    { icon: AppImages.shopIcon4 },
-    { icon: AppImages.shopIcon5 },
-    { icon: AppImages.shopIcon6 },
-    { icon: AppImages.shopIcon7 },
-    { icon: AppImages.shopIcon8 },
-    { icon: AppImages.shopIcon9 },
-    { icon: AppImages.shopIcon11 },
-    { icon: AppImages.shopIcon12 },
 
 
-];
+
+
+// 
+
+//     { icon: AppImages.shopIcon1, hoverIcon: AppImages.hoverIcon111, isHover: false },
+//     { icon: AppImages.shopIcon2 },
+//     { icon: AppImages.shopIcon3 },
+//     { icon: AppImages.shopIcon4 },
+//     { icon: AppImages.shopIcon5 },
+//     { icon: AppImages.shopIcon6 },
+//     { icon: AppImages.shopIcon7 },
+//     { icon: AppImages.shopIcon8 },
+//     { icon: AppImages.shopIcon9 },
+//     { icon: AppImages.shopIcon11 },
+//     { icon: AppImages.shopIcon12 },
+
+
+// ];
 function valuetext(value) {
     return `$${value}`;
 }
 
 
 export const ShopComponent = () => {
+    const [cardData, setCardData] = useState(
+        [
+            { icon: AppImages.shopIcon1, title: 'Furniture' },
+            { icon: AppImages.shopIcon2, title: 'Cosmetics' },
+            { icon: AppImages.shopIcon3, title: 'Jewelry' },
+            { icon: AppImages.shopIcon4, title: 'Car' },
+            { icon: AppImages.shopIcon5, title: 'Cycle' },
+            { icon: AppImages.shopIcon6, title: 'Clothes' },
+            { icon: AppImages.shopIcon7, title: 'Handbags' },
+
+
+
+        ]
+    )
     const screenWidth = useScreenWidth()
     const [openDrawer, setOpendrawer] = useState(false)
 
     const [value1, setValue1] = React.useState(2);
-    
-    const [ expandedAccordians,setExpandedAccordians]=useState({
-        category:true,
-        brand:true,
-        rating:true,
-        colors:true,
-        price:true
+
+    const [expandedAccordians, setExpandedAccordians] = useState({
+        category: true,
+        brand: true,
+        rating: true,
+        colors: true,
+        price: true
     })
-    const toggleAccordian = (key)=>{
+    const toggleAccordian = (key) => {
         setExpandedAccordians(prev => ({
             ...prev,
-            [key]:!prev[key]
+            [key]: !prev[key]
         }))
     }
 
@@ -69,62 +88,63 @@ export const ShopComponent = () => {
     const refOne = React.useRef(null);
     const inViewOne = useInView(refOne, { triggerOnce: false });
     // ---------------------------------
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 8,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    responsive: [
-        {
-            breakpoint: 1440, // Large desktop
-            settings: {
-                slidesToShow: 7,
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 1440, // Large desktop
+                settings: {
+                    slidesToShow: 7,
+                },
             },
-        },
-        {
-            breakpoint: 1280, // Standard desktop
-            settings: {
-                slidesToShow: 6,
+            {
+                breakpoint: 1280, // Standard desktop
+                settings: {
+                    slidesToShow: 6,
+                },
             },
-        },
-        {
-            breakpoint: 1024, // Small desktop / large tablet
-            settings: {
-                slidesToShow: 5,
+            {
+                breakpoint: 1024, // Small desktop / large tablet
+                settings: {
+                    slidesToShow: 5,
+                },
             },
-        },
-        {
-            breakpoint: 900, // Tablet landscape
-            settings: {
-                slidesToShow: 4,
+            {
+                breakpoint: 900, // Tablet landscape
+                settings: {
+                    slidesToShow: 4,
+                },
             },
-        },
-        {
-            breakpoint: 768, // Tablet portrait
-            settings: {
-                slidesToShow: 3,
+            {
+                breakpoint: 768, // Tablet portrait
+                settings: {
+                    slidesToShow: 3,
+                },
             },
-        },
-        {
-            breakpoint: 600, // Large mobile
-            settings: {
-                slidesToShow: 3,
+            {
+                breakpoint: 600, // Large mobile
+                settings: {
+                    slidesToShow: 3,
+                },
             },
-        },
-        {
-            breakpoint: 430, // Small mobile
-            settings: {
-                slidesToShow: 3,
+            {
+                breakpoint: 440, // Small mobile
+                settings: {
+                    slidesToShow: 3,
+                },
             },
-        },
-    ],
-};
+        ],
+    };
 
     return (
         <div className="main_shop">
+
             <div className="icons_slider">
                 <motion.div
                     ref={refOne}
@@ -138,15 +158,38 @@ const settings = {
                                 <div key={index} className="shop_brands_icon_main">
                                     <div className="shop_icon_div">
                                         <img src={item.icon} className="shop_brand_icon" />
-                                        <span>Category</span>
+                                        <span>{item.title}</span>
                                     </div>
                                 </div>
                             ))}
                         </Slider>
+                        {/* <Slider {...settings}>
+                            {cardData.map((item, index) => (
+                                <div key={index} className="shop_brands_icon_main">
+                                    <div className="shop_icon_div">
+                                        <img
+                                            src={item.isHover ? item.hoverIcon : item.icon}
+                                            className="shop_brand_icon"
+                                            onMouseEnter={() => {
+                                                cardData[index].isHover = true;
+                                                setCardData([...cardData]); // state update
+                                            }}
+                                            onMouseLeave={() => {
+                                                cardData[index].isHover = false;
+                                                setCardData([...cardData]);
+                                            }}
+                                        />
+                                        <span>Category</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider> */}
+
                     </motion.div>
 
                 </motion.div>
             </div>
+
             {screenWidth < 991 && (
                 <div className="filter_div">
                     <button className="filter" onClick={() => setOpendrawer(true)}><FilterAltIcon /> Filter</button>
@@ -176,6 +219,7 @@ const settings = {
                             </div>
 
                         </Accordion>
+
 
                         {/* ------------------------- */}
                         <Accordion expanded={expandedAccordians.brand} onChange={() => toggleAccordian('brand')}>

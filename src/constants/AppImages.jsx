@@ -23,13 +23,20 @@ import shopicon4 from '../assets/images/icon/4.png';
 import shopicon5 from '../assets/images/icon/5.png';
 import shopicon6 from '../assets/images/icon/6.png';
 import shopicon7 from '../assets/images/icon/7.png';
-import shopicon8 from '../assets/images/icon/8.png';
-import shopicon9 from '../assets/images/icon/9.png';
-import shopicon11 from '../assets/images/icon/11.png';
-import shopicon12 from '../assets/images/icon/12.png';
+// import shopicon8 from '../assets/images/icon/8.png';
+// import shopicon9 from '../assets/images/icon/9.png';
+// import shopicon11 from '../assets/images/icon/11.png';
+// import shopicon12 from '../assets/images/icon/12.png';
 import placeholderImg  from '../assets/images/placholder_img.png';
 import newsletter from '../assets/images/newsletter.jpg'
-
+import brand1 from '../assets/images/icon/brand1.png';
+import brand2 from '../assets/images/icon/brand2.png';
+import brand3 from '../assets/images/icon/brand3.png';
+import brand4 from '../assets/images/icon/brand4.png';
+import brand5 from '../assets/images/icon/brand5.png';
+import brand6 from '../assets/images/icon/brand6.png';
+import hoverIcon111 from '../assets/images/icon/111.png'
+import hovericon222 from '../assets/images/icon/222.png'
 
 
 
@@ -53,12 +60,12 @@ export const  AppImages = {
     img3:img3,
     img4:img4,
     img5:img5,
-    icon1:icon1,
-    icon2:icon2,
-    icon3:icon3,
-    icon4:icon4,
-    icon5:icon5,
-    icon6:icon6,
+    icon1:brand1,
+    icon2:brand2,
+    icon3:brand3,
+    icon4:brand4,
+    icon5:brand5,
+    icon6:brand6,
     owner1:owner1,
     owner2:owner2,
     owner3:owner3,
@@ -70,10 +77,12 @@ export const  AppImages = {
     shopIcon5:shopicon5,
     shopIcon6:shopicon6,
     shopIcon7:shopicon7,
-    shopIcon8:shopicon8,
-    shopIcon9:shopicon9,
-    shopIcon11:shopicon11,
-    shopIcon12:shopicon12,
+    // shopIcon8:shopicon8,
+    // shopIcon9:shopicon9,
+    // shopIcon11:shopicon11,
+    // shopIcon12:shopicon12,
+    hoverIcon111:hoverIcon111,
+    hovericon222:hovericon222,
     placeholderImg:placeholderImg,
     newsletter:newsletter
 

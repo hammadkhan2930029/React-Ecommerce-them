@@ -51,7 +51,7 @@ export const Header = () => {
   // -----------------------------------------------
   const menuItems = [
     { id: 1, title: "Home", path: '/home' },
-    { id: 2, title: "Feature" },
+    // { id: 2, title: "Feature" },
     { id: 3, title: "Category" },
     { id: 4, title: "Shop" },
     { id: 5, title: "Blogs" },
@@ -117,16 +117,7 @@ export const Header = () => {
       >
         <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', }}>
           <Toolbar>
-            {/* <IconButton
-              onClick={() => setOpenDrawer(true)}
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon style={{ fontSize: 32 }} />
-            </IconButton> */}
+           
             <img src={AppImages.logo}
               alt="Logo"
               style={{

@@ -11,13 +11,14 @@ export default function RightDrawer({ open, onClose }) {
 
   const menuItems = [
     { id: 1, title: "Home", path: '/home' },
-    { id: 2, title: "Feature" },
     { id: 3, title: "Category" },
     { id: 4, title: "Shop" },
     { id: 5, title: "Blogs" },
     { id: 6, title: "About" },
     { id: 7, title: "Contact" },
     { id: 8, title: "Reviews" },
+    { id: 2, title: "Profile" },
+
 
 
   ];

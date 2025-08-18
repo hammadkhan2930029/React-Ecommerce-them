@@ -116,89 +116,107 @@ export const Header = () => {
       <motion.div
       >
         <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', }}>
-          <Toolbar>
-           
-            <img src={AppImages.logo}
-              alt="Logo"
-              style={{
-                maxWidth: '80px',
-                width: '20%',
-                height: 'auto',
-                objectFit: 'contain',
-              }} />
-            {screenWidth < 1024 ? (
-              <motion.div className='menuItems2'>
-                <IconButton
-                  onClick={() => setOpenDrawerRight(true)}
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="open drawer"
-                >
-                  <MenuOpenIcon className='icon' style={{ fontSize: 36, color: '#c10037' }} />
-                </IconButton>
-              </motion.div>
-            ) : (
-              <motion.div className='menuItems'
-                ref={refOne}
-                initial={{ opacity: 0, y: -100 }}
-                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: .8 }}>
-                {menuItems.map((item, index) => (
-                  item.title === 'Category' ? (
-                    <CategoryDropdown key={item.id} onNavigate={(val) => console.log('Navigate to:', val)} />
-                  ) : (
-                    <span
-                      key={item.id}
-                      className='menutext'
-                      onClick={() => handle(item.title)}
-                    >
-                      {item.title}
-                      {!(["home", "about", "contact", "blogs", "shop"].includes(item.title.toLowerCase())) &&
-                        <KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />}
-                    </span>
-                  )
+          <Toolbar className='headerToolBar'>
+            {/* -----------------------------------header_left------------------------------------------ */}
+
+            <div className='header_left2'>
+
+              <IconButton
+                onClick={() => setOpenDrawer(true)}
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="open drawer"
+              >
+                <MenuIcon className='icon' style={{ fontSize: 36, color: '#c10037' }} />
+              </IconButton>
+            </div>
+            {/* ------------------------------header_logo------------------------------ */}
+
+            <div className='header_logo'>
+
+              <img src={AppImages.logo}
+                alt="Logo"
+                className='header_logo_icon'
+                />
+            </div>
+            {/* --------------------------header_right------------------------------------ */}
+            <div className='header_right2'>
+              {screenWidth < 1024 ? (
+                <motion.div className='menuItems2'>
+                  <IconButton
+                    onClick={() => setOpenDrawerRight(true)}
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="open drawer"
+                  >
+                    <MenuOpenIcon className='icon' style={{ fontSize: 36, color: '#c10037' }} />
+                  </IconButton>
+                </motion.div>
+              ) : (
+                <motion.div className='menuItems'
+                  ref={refOne}
+                  initial={{ opacity: 0, y: -100 }}
+                  animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: .8 }}>
+                  {menuItems.map((item, index) => (
+                    item.title === 'Category' ? (
+                      <CategoryDropdown key={item.id} onNavigate={(val) => console.log('Navigate to:', val)} />
+                    ) : (
+                      <span
+                        key={item.id}
+                        className='menutext'
+                        onClick={() => handle(item.title)}
+                      >
+                        {item.title}
+                        {!(["home", "about", "contact", "blogs", "shop"].includes(item.title.toLowerCase())) &&
+                          <KeyboardArrowDownOutlinedIcon className='menuIcon' sx={{ fontSize: 20, fontWeight: 500, color: "#000" }} />}
+                      </span>
+                    )
 
 
 
-               
-                ))}
 
-                <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
-                <Badge badgeContent={4}
-                  sx={{
-                    '& .MuiBadge-badge': {
-                      backgroundColor: '#c10037',
-                      color: 'white',
-                    },
-                  }}>
-                  <ShoppingCartOutlinedIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', cursor: 'pointer' }} onClick={() => navigate('/cart')} />
-                </Badge>
-                <Menu
-                  id="basic-menu"
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  MenuListProps={{
-                    'aria-labelledby': 'basic-button',
-                  }}
-                >
-                  <MenuItem onClick={() => {
-                    navigate('/login')
-                    handleClose()
-                  }}>Login</MenuItem>
-                  <MenuItem onClick={() => {
-                    navigate('/register')
-                    handleClose()
-                  }}>Register</MenuItem>
-                  <MenuItem onClick={() => {
-                    navigate('/profile')
-                    handleClose()
-                  }}>Profile</MenuItem>
+                  ))}
 
-                </Menu>
-              </motion.div>
-            )}
+                  <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
+                  <Badge badgeContent={4}
+                    sx={{
+                      '& .MuiBadge-badge': {
+                        backgroundColor: '#c10037',
+                        color: 'white',
+                      },
+                    }}>
+                    <ShoppingCartOutlinedIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', cursor: 'pointer' }} onClick={() => navigate('/cart')} />
+                  </Badge>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button',
+                    }}
+                  >
+                    <MenuItem onClick={() => {
+                      navigate('/login')
+                      handleClose()
+                    }}>Login</MenuItem>
+                    <MenuItem onClick={() => {
+                      navigate('/register')
+                      handleClose()
+                    }}>Register</MenuItem>
+                    <MenuItem onClick={() => {
+                      navigate('/profile')
+                      handleClose()
+                    }}>Profile</MenuItem>
+
+                  </Menu>
+                </motion.div>
+              )}
+            </div>
+
           </Toolbar>
         </AppBar>
       </motion.div>

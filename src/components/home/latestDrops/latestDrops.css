@@ -124,7 +124,11 @@
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
-@media (max-width: 1180px) {}
+@media (max-width: 1024px) {
+    .main_main{
+        width: 100%;
+    }
+}
 
 /* 991px to 768px */
 @media (max-width: 991px) {

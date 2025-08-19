@@ -214,16 +214,15 @@ export const CategoryDropdownTwo = ({ onNavigate }) => {
         <div>
             <div onClick={handleOpen} style={{
                 backgroundColor: '#ffff',
-                width: '200px',
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
                 margin: '10px',
                 borderRadius: '10px',
-                // transition: 'transform 0.3s',
-                // paddingTop: '5px',
-                // paddingBottom: '5px',
-                justifyContent: 'space-between'
+              
+                justifyContent: 'space-between',
+                // boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+
             }}>
 
                 <span style={{
@@ -232,11 +231,11 @@ export const CategoryDropdownTwo = ({ onNavigate }) => {
                     padding: '10px 5px',
                     cursor: 'pointer',
                     fontFamily: 'sans-serif,poppins',
-                    fontWeight:'500'
+                    fontWeight: '500'
                 }}>
                     Category
                 </span>
-                <KeyboardArrowRightIcon />
+                <KeyboardArrowRightIcon sx={{color:'var(--icons-color)'}}/>
             </div>
 
 

@@ -21,11 +21,13 @@ import { useNavigate } from 'react-router-dom';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import PersonIcon from '@mui/icons-material/Person';
 import CategoryDropdown from './categoryDropDown/categoryDropDown';
+import SearchModal from './SearchModal/search';
 
 
 
 export const Header = () => {
 
+  const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -139,7 +141,7 @@ export const Header = () => {
               className='header_logo_icon'
             />
 
-            {screenWidth < 1024  ? (
+            {screenWidth < 1024 ? (
               <motion.div className='menuItems2'
                 sx={{ backgroundColor: 'white', color: 'black', top: 0 }}>
                 <IconButton
@@ -177,8 +179,10 @@ export const Header = () => {
 
 
                 ))}
+                <div onClick={()=> setOpenModal(true)}>
 
-                <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
+                  <SearchIcon className='menuIcon' sx={{ fontSize: 30, color: '#000', marginRight: '10px', cursor: 'pointer' }} />
+                </div>
                 <Badge badgeContent={4}
                   sx={{
                     '& .MuiBadge-badge': {
@@ -218,6 +222,7 @@ export const Header = () => {
         </AppBar>
       </motion.div>
       <RightDrawer open={OpenDrawerRight} onClose={() => setOpenDrawerRight(false)} />
+      <SearchModal visible={openModal} onClose={() => setOpenModal(false)} />
     </Box>
   );
 }
